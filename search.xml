@@ -54,22 +54,8 @@
       </tags>
   </entry>
   <entry>
-    <title>gdb Cheatsheet</title>
-    <url>/2020/06/30/gdb-cheatsheet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>tools</category>
-        <category>gdb</category>
-      </categories>
-      <tags>
-        <tag>gdb</tag>
-        <tag>tools</tag>
-        <tag>C language</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jvm-test-wym</title>
-    <url>/2020/07/03/jvm-test-wym/</url>
+    <title>jvm-test-xxz</title>
+    <url>/2020/07/03/jvm-test-xxz/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>jvm</category>
@@ -79,8 +65,8 @@
       </tags>
   </entry>
   <entry>
-    <title>jvm-test-xxz</title>
-    <url>/2020/07/03/jvm-test-xxz/</url>
+    <title>jvm-test-wym</title>
+    <url>/2020/07/03/jvm-test-wym/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>jvm</category>
@@ -151,6 +137,20 @@
       </categories>
       <tags>
         <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gdb Cheatsheet</title>
+    <url>/2020/06/30/gdb-cheatsheet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>tools</category>
+        <category>gdb</category>
+      </categories>
+      <tags>
+        <tag>gdb</tag>
+        <tag>tools</tag>
+        <tag>C language</tag>
       </tags>
   </entry>
 </search>
