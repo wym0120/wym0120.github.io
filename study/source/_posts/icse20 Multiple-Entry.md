@@ -7,7 +7,7 @@ tags:
 - icse
 categories: 
 - paper
-description:
+description: Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts
 ---
 
 目前遇到的问题：单入口难以检测到复杂的距离entry较远的activity，并且测试不充分

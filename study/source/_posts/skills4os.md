@@ -5,7 +5,7 @@ tags:
 - os
 categories:
 - [os,os lecture]
-description:
+description: 操作系统课程上的tip集合
 ---
 ### 常用命令
 |指令|常见用法|
