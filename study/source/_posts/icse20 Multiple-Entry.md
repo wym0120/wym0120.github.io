@@ -25,11 +25,12 @@ description: Multiple-Entry Testing of Android Applications by Constructing Acti
 2. 如何动态修改权重：通过多轮测试，Faxex策略基于Faxla的结果，并结合了activity之间的transition
    > 因为静态分析的一些技术限制，transition可能不够精准，因此Faxex中也会动态地发现更多可到达的状态
 
+### details
+1. ALM如何建立：最主要依赖于“跳转都是与string相关操作”这一假设，例如if-else中使用一个对string的比较，根据比较结果决定是否跳转或do something，这个假设的局限性就在于当遇到与string不相关的操作时就不能work
+   
 ### 没找到答案的问题：
 1. 如何确认一个activity是“global setting related”
-2. ALM由符号执行进行分析，因此产生的ALC也只是其中的一组符合条件的数据，而在多轮测试中还可能动态地需要根据权重来生成更多的测试数据 是这样理解吗？
    
 ### todo
-1. 确认ALM模型建立过程中能够handle住怎么样的信息，以及它的具体效果是怎么样的
-2. Evaluation，看RQ是否manke sense
-3. 关注相关工作以及baseline
+1. Evaluation，看RQ是否manke sense
+2. 关注相关工作以及baseline

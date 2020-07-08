@@ -20,4 +20,4 @@ description: 操作系统课程上的tip集合
 ### 使用小技巧
 1. Ubuntu Packages网站用来寻找缺少的文件在哪个包里
 2. strace xxx > /dev/null 把strace的标准输出重定向到/dev/null，也就是将执行的程序的输出都丢掉（假设程序中使用了printf）
-3. 
+3. make -nB 可以不实际执行编译而是直接输出出来
