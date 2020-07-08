@@ -27,10 +27,17 @@ description: Multiple-Entry Testing of Android Applications by Constructing Acti
 
 ### details
 1. ALM如何建立：最主要依赖于“跳转都是与string相关操作”这一假设，例如if-else中使用一个对string的比较，根据比较结果决定是否跳转或do something，这个假设的局限性就在于当遇到与string不相关的操作时就不能work
-   
+2. dummy activity：运行时构造出来的虚拟的入口用来访问一些需要权限的无法通过adb直接启动的activity
+
+### Evaluation
+1. RQ1: ALC构造的效果
+- 自己构造了一些测试用例
+2. RQ2: activity启动的效果
+3. RQ3: 是否提高了代码覆盖度
+4. RQ4: Fax是否能找到了更多的bug
+
 ### 没找到答案的问题：
 1. 如何确认一个activity是“global setting related”
    
 ### todo
-1. Evaluation，看RQ是否manke sense
-2. 关注相关工作以及baseline
+1. 关注相关工作以及baseline
