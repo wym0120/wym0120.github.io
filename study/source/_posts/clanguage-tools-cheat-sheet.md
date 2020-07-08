@@ -2,12 +2,13 @@
 title: C language tools cheat sheet
 date: 2020 07 08 21:29:37
 tags:
-  tools
-  C language
+- tools
+- C language
 categories:
-  [tools]
+- [tools]
 description: C语言虐我千百遍
 ---
+
 ## gdb
 ### 常用命令
 |指令|常见用法|备注|
