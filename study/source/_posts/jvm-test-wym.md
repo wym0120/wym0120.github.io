@@ -108,19 +108,19 @@ public class E5 {
 
 class Child extends Parent{
     public void doSomething(){
-        System.out.println("in Child");
+        System.out.print("in Child ");
     }
 }
 
 class Parent implements A{
     public void doSomething(){
-        System.out.println("in Parent");
+        System.out.print("in Parent ");
     }
 }
 
 interface A{
     default void doSomething(){
-        System.out.println("in interface A");
+        System.out.print("in interface A");
     }
 }
 ```
@@ -128,9 +128,9 @@ interface A{
 A. in Child ✅
 B. in Parent
 C. in interface A
-D. in Child \n in interface A
+D. in Child in interface A
 
-7. 以下代码执行结果为
+1. 以下代码执行结果为
 ```java
 public class Example {
     public static void main(String[] args) {
@@ -213,7 +213,118 @@ class Parent{
 }
 ```
 
-A. "BABAB"✅
+A. "BABAB" ✅
 B. "ABAAB" 
 C. "BABAA" 
 D. "ABABB"
+
+9. 以下代码执行结果为
+```java
+public class Example{
+    public static void main(String[] args) {
+            Parent child = (Parent) new Child();
+            child.doSomething();
+        }
+    }
+
+    class Child extends Parent{
+        static private int val=2;
+        public Child(){
+            super();
+            doSomething();
+        }
+
+        static {
+            val++;
+            doSomething();
+        }
+
+        public static void doSomething(){
+            System.out.print(val);
+        }
+    }
+
+    class Parent{
+        static private int val=1;
+        public Parent(){
+            doSomething();
+        }
+
+        static{
+            val++;
+            doSomething();
+        }
+
+        public static void doSomething(){
+            System.out.print(val);
+        }
+    }
+```
+
+A. 23333
+B. 22222
+C. 22333
+D. 23232 ✅
+
+10. 以下代码执行结果为
+```java
+    public class Example{
+        public static void main(String[] args) {
+            Parent child1 = new Child();
+            child1.doSomething();
+            Child child2 = new Child();
+            child2.doSomething();
+        }
+    }
+
+    class Child extends Parent{
+        static private int val=2;
+        public Child(){
+            super();
+            doSomething();
+        }
+
+        {
+            ++val;
+        }
+
+        static {
+            val++;
+            doSomething();
+        }
+
+        public static void doSomething(){
+            System.out.print(val);
+        }
+    }
+
+    class Parent{
+        static private int val=1;
+        public Parent(){
+            doSomething();
+        }
+
+        {
+            ++val;
+        }
+        static{
+            val++;
+            doSomething();
+        }
+        public static void doSomething(){
+            System.out.print(val);
+        }
+    }
+
+
+```
+
+A. 23343455            ✅
+B. 23343454
+C. 23344455
+D. 23344454
+C. 2334445565
+D. 2234345565
+E. 2334445465
+F. 2234345465
+F. 2333333333333
