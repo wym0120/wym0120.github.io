@@ -28,7 +28,7 @@ D. 解析 ✅
 
 3. 使用真实的java指令执行某个类时，假设在目录src下存在一个被修改过的java/lang/Object.class和一个Main.class,并且所有的检验机制都判定其合法，那么以下说法正确的是
 
-A. 除了直接覆盖掉JDK目录对应类这个方法以外，存在一个方法使得自己修改的这个Object类替换掉官方的实现 ✅
+A. 除了直接覆盖掉JDK目录对应类这个文件以外，存在一个方法使得自己修改的这个Object类替换掉官方的实现 ✅
 B. 无论如何也不可能加载到自己修改过的Object
 C. 能加载但是会被官方的覆盖掉
 D. 以上均不对
@@ -334,7 +334,7 @@ B. 运行时常量池、堆中实例对象 ✅
 C. 方法区、本地方法栈
 D. 局部变量表、方法区
 
-12. 下列表述正确的数量为
+12. 下列表述正确的数量有（）个
 “每个frame的操作数栈最大栈深度是运行时决定的”
 “类的initiating loader和defining loader可以是同一个loader”
 “<clinit>方法是类加载阶段由jvm动态生成的”
@@ -346,7 +346,7 @@ C. 2
 D. 3
 E. 4
 
-13. 以下说法正确的数量有
+13. 下列表述正确的数量有（）个
 “multianewarray中第一个从操作数栈中被pop出来的值代表第一维的长度，第二个代表第二维，以此类推...”
 “multianewarray对于长度的规定是不允许有负值但允许出现0，这种情况下它会被处理成1”
 “多维基本类型数组类的加载中不需要链接阶段”
@@ -358,4 +358,57 @@ C. 2
 D. 3
 E. 4
 
-14. 
+14. 方法签名“Object m(int i, double d, Thread t) {...}”的描述符是
+A.(IDLjava/lang/Thread;)Ljava/lang/Object; ✅
+B.(IDLjava/lang/Thread;)Ljava/lang/Object
+C.Ljava/lang/Object(IDLjava/lang/Thread;);
+D.Ljava/lang/Object(IDLjava/lang/Thread;)
+
+15. 下列表述正确的数量有（）个
+“每个常量都需要有1-2byte的tag来标明自己的类型”
+“UTF8info中包含了一个对StringInfo的index，而StringInfo中真正存储了字符串”
+“由于java无法表示无符号short类型，因此可以把数据读取到int，再进行 value || 0xff的操作来获取低16位”
+“常量池表的有效索引是从1到constant_pool_count”
+
+A. 0 ✅
+B. 1 
+C. 2
+D. 3
+E. 4
+
+16. 下列表述正确的数量有（）个
+“在设置加载器的搜索路径时，dir/* 这样的表示会递归搜索dir目录以及子目录中所有的jar包”
+“加载器搜索时如果能够在多个路径中找到某个类，那么以最先找到的结果作为返回结果”
+“java.lang.Object这个类在实际的jar包中的文件名是Object.class”
+“多个路径设置可以使用File.separator作为分割”
+
+A. 0
+B. 1 
+C. 2 ✅
+D. 3
+E. 4
+
+17. 下列表述正确的数量有（）个
+“双亲委托中用户类加载器会同时委托给bootstrap加载器和ext加载器”
+“双亲委托中当加载器无法从自己的搜索空间中找到类时才会向其他加载器发出委托”
+“一个类可以加载同一个包下面声明为protected的另一个类”
+```java
+这三个类在同一个包中，Visitor无法通过编译
+public class Visitor{
+    Visible1.Unknown v1 = new Visible1.Unknown();
+    Visible2.Unknown v2 = new Visible2.Unknown();
+}
+public class Visible1{
+    private static class Unknown{}
+}
+class Visible2{
+    public static class Unknown{}
+}
+```
+A. 0
+B. 1 
+C. 2 ✅
+D. 3
+E. 4
+
+18.  
