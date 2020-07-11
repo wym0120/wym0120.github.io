@@ -5,7 +5,7 @@ tags:
 - jvm
 categories:
 - jvm
-description: wym jvm test
+description: 绝密档案
 ---
 1. 对于一个数组对象int[] arr，什么能够使 "arr instanceof ___"的结果为true
  
