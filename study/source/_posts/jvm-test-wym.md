@@ -1,5 +1,5 @@
 ---
-title: jvm-test-wym
+title: jvm-test
 date: 2020-07-03 14:01:12
 tags:
 - jvm
@@ -365,7 +365,7 @@ C.Ljava/lang/Object(IDLjava/lang/Thread;);
 D.Ljava/lang/Object(IDLjava/lang/Thread;)
 
 15. 下列表述正确的数量有（）个
-“每个常量都需要有1-2byte的tag来标明自己的类型”
+“每个常量最多需要2byte的tag来标明自己的类型”
 “UTF8info中包含了一个对StringInfo的index，而StringInfo中真正存储了字符串”
 “由于java无法表示无符号short类型，因此可以把数据读取到int，再进行 value || 0xff的操作来获取低16位”
 “常量池表的有效索引是从1到constant_pool_count”
@@ -428,3 +428,254 @@ A. 验证 Verification
 B. 准备 Preparation
 C. 解析 Resolution
 D. 创建 Creation ✅
+
+
+1. 我们在测试用例中请大家自行在JVVM中实现的测试用方法类名是：
+
+   ```
+   A. TestUtil ✅
+   B. TestHack
+   C. TestCase
+   D. IOUtil
+   ```
+
+2. 下列哪种功能IDEA的debugger没有提供：
+
+   ```
+   A. 在抛出特定异常之前暂停程序的异常断点
+   B. 符合特定条件（如某个变量等于某个值）时才触发的断点
+   C. 在某个断点被触发之后才生效的断点
+   D. 以上功能都提供了 ✅
+   ```
+
+3. 指令`invokeStatic`是在哪次实验中要求实现的？
+
+   ```
+   A. Lab3
+   B. Lab4
+   C. Lab5
+   D. Lab6 ✅
+   ```
+
+4. 下列关于字节码的说法中，错误的是：
+
+   ```
+   A. Java字节码之所以叫字节码是因为指令的操作码(opcode)只有一个字节
+   B. GOTO的offset是相对于GOTO的操作码的地址的
+   C. Java字节码储存在classfile的常量池（constantpool）字段中 ✅
+   D. invokeVirtual 比 invokeInterface 指令短
+   ```
+
+5. 在使用Java程序读取数据类型`u2`时，应该使用哪种类型的变量？
+
+   ```
+   A. unsigned short
+   B. int ✅
+   C. short
+   D. char
+   ```
+
+6. 关于指令`FCMPG`和指令`FCMPL`的说法中，正确的是：（假设当前操作数栈的情况是: ...op1,op2）
+
+   ```
+   A. 如果op1>op2，FCMPG压栈1，FCMPL压栈-1
+   B. 如果op1>op2，FCMPG压栈-1，FCMPL压栈1
+   C. 如果op1==op2, FCMPL和FCMPG都压栈-1
+   D. FCMPL和FCMPG仅在op1和(或)op2中有NaN的时候行为才有区别 ✅
+   ```
+
+7. `byte a = 0xff;`那么在Java中，表达式`a & 0xff`的值和类型分别是
+
+   ```
+   A. -1, int ✅
+   B. 0xff, int
+   C. -1, short
+   D. 0xff, byte
+   ```
+
+8. 关于指令`ILOAD`，下面说法中正确的是：
+
+   ```
+   A. ILOAD 把一个4字节的数据当作int从局部变量表(LocalVars)加载到操作数栈(OperandStack)中 ✅
+   B. ILOAD 把一个4字节的数据当作int从操作数栈加载到局部变量表中
+   C. ILOAD 把一个4字节的数据当作int从常量池(ConstantPool) 加载到操作数栈中
+   D. 以上说法都不对
+   ```
+
+9. 在实验手册中，要求大家使用的JDK是：
+
+   ```
+   A. OpenJDK 8
+   B. 任何JDK 1.8
+   C. Oracle JDK 8 ✅
+   D. Maven 5
+   ```
+
+10. "双亲委托机制"是：
+
+    ```
+    A. 实现运行时多态的机制
+    B. 提高编译器性能的机制
+    C. 用在类加载器上的机制 ✅
+    D. 实现虚函数调用的机制
+    ```
+
+11. 下列关于`invokeVirtual`的内容，错误的是：
+
+    ```
+    A. invokeVirtual的实现中可以使用虚函数表（Vtable）进行优化
+    B. invokeVirtual可以用来调用本地方法(native method)
+    C. invokeVirtual可以用来调用构造方法(Constructor) ✅
+    D. ABC里至少有一个是错的
+    ```
+
+12. 这段代码正确地实现`ISUB`指令了吗？
+
+    ```java
+    public class ISUB extends NoOperandsInstruction {
+        @Override
+        public void execute(StackFrame frame) {
+            OperandStack stack = frame.getOperandStack();
+            int val1 = stack.popInt();
+            int val2 = stack.popInt();
+            int res = val1 - val2;
+            stack.pushInt(res);
+        }
+    }
+    ```
+
+    ```
+    A. 正确实现了
+    B. 没有正确实现 ✅
+    C. 别选这一项，这是判断题
+    D. 楼上说的对
+    ```
+
+13. 关于`StackFrame`的说法中，正确的是：
+
+    ```
+    A. 在运行过程中，每个method对应且仅对应一个StackFrame
+    B. 有的StackFrame可能有多个method
+    C. 有的method可能对应多个StackFrame ✅
+    D. StackFrame可以多线程共享
+    ```
+
+14. `System.out.println("this is a string")`方法有几个参数？
+
+    ```
+    A. 1个，是内容为"this is a string"的String ✅
+    B. 2个，分别是this和String
+    C. 2个，分别是类名和String
+    D. println是个宏(macro), 不是方法
+    ```
+
+15. 方法`foo`描述符为`(III)V`, 关于`foo`的说法正确的是：
+
+    ```
+    A. foo的返回值是Void类型的对象
+    B. foo的maxLocal可能是2
+    C. foo的maxLocal可能是6 ✅
+    D. 调用foo的时候应该使用invokeVirtual指令
+    ```
+
+16. 需要正确配置的Java环境变量是：
+
+    ```
+    A. $JAVAHOME
+    B. $JAVA_HOME ✅
+    C. $JavaHome
+    D. $java_home
+    ```
+
+17. 大作业中，medium1测试用例一直是`空指针异常`说明：
+
+    ```
+    A. 有指令没有实现
+    B. 所有指令都实现了但是有指令实现错误
+    C. 框架代码写错了
+    D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，选这一项，并且记得下次不要再这样问问题了喔 ✅
+    ```
+
+18. 实验和大作业过程中，用哪个指令来反汇编`.class`文件？
+
+    ```
+    A. javac
+    B. javap ✅
+    C. java -jar
+    D. mvn decompile
+    ```
+
+19. 下列关于`classfile`中`attribute`的说法正确的是：
+
+    ```
+    A. Code属于一种Attribute，每个方法都有这个Attribute 
+    B. 在classfile中加入自定义的Attribute不会影响JVM正常解析classfile ✅
+    C. 在classfile中，Attribute储存在constantpool里
+    D. 以上说法都不对
+    ```
+
+20. 下列关于`classfile`中`IntergerInfo`这一常量池信息说法正确的是：
+
+    ```
+    A. 其中四字节的int是按小端顺序储存的
+    B. 其中四字节的int是按大端顺序储存的 ✅
+    C. 储存顺序和JVM的实现有关，选择一种即可
+    D. classfile中储存的int是6字节，在加载到JVM后需要进行ValueSetConversion
+    ```
+
+21. 如果`FADD`执行时操作数栈顶的数据其实是int（例如是被ICONST指令加载进来的）：
+
+    ```
+    A. JVM的行为是未定义的，可以随意处理 ✅
+    B. JVM应该在执行到这条指令时抛出异常
+    C. JVM应该把int的值转换成float
+    D. Java5之后，JVM可以使用指令多态技术把FADD替换成IADD而不会引发异常
+    ```
+
+22. 下面哪个是JVM中加载引用的指令：
+
+    ```
+    A. ALOAD ✅
+    B. BLOAD
+    C. ILOAD
+    D. DLOAD
+    ```
+
+23. 在描述符中，如何表示`long`类型:
+
+    ```
+    A. L
+    B. J ✅
+    C. K
+    D. Ljava/lang/Long;
+    ```
+
+24. 下面这段代码对`LUSHR`的实现正确吗？
+
+    ```java
+    @Override
+        public void execute(StackFrame frame) {
+            OperandStack stack = frame.getOperandStack();
+            int val2 = stack.popInt();
+            long val1 = stack.popLong();
+            long res = val1 >>> (val2 & 0x2f);
+            stack.pushLong(res);
+        }
+    ```
+
+    ```
+    A. 正确
+    B. 不正确 ✅
+    C. 这是道判断题，别选这一项
+    D. 楼上说的对
+    ```
+
+25. `GOTO`指令的`offset`是：
+
+    ```
+    A. 有符号数 ✅
+    B. 无符号数
+    C. 对常量池中一个IntegerInfo的引用，IntegerInfo储存了真正的offset值
+    D. 跳转目标的绝对地址
+    ```
+    
