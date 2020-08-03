@@ -43,11 +43,14 @@ description: C语言虐我千百遍
 |fpic|生成位置无关代码|有对应fno-pic|
 |fno-stack-protector|不开启栈保护||
 |fno-builtin|关闭内建函数|内建函数通常能够加快执行效率，减少代码，但是不利于调试|
+|fno-toplevel-reorder|取消对函数的重排序，严格按照源码中的顺序排列||
+|freestanding|表示没有任何运行库的环境||
 
 #### W系列
 |选项|含义|注意事项|
 |---|---|---|
 |Wno-main|不对异常的main函数进行警告||
+|-Wl,--verbose|将,后面的参数传递给ld，用于输出编译信息||
 
 #### M系列
 |选项|含义|注意事项|

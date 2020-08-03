@@ -28,3 +28,11 @@ KLEE的优势：
 ### Evalution
 
 ### Details
+运行原理：
+KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间
+
+KLEE的设计
+symbolic process(state) : register file, stack, heap, pc,path condition
+
+### todo
+Evalution部分还没有看，这部分实验很厉害，好好看一下
