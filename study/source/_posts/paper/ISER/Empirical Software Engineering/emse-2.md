@@ -27,9 +27,10 @@ keywords: integer overflow, integer wraparound, undefined behavior
 ### 总体评价
 
 ### Motivation
-C / C++中integer溢出是非常难检测的，原因如下：
-- 本身对bit和byte级别的操作在C和C++中都是非常常见的
-- C和C++中对有符号数的规定中包含了UB
+C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下：
+  - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊
+  - C和C++中对有符号数的规定中包含了UB
+  - 开发者容易误用带符号数和无符号数
 
 ### Evalution
 

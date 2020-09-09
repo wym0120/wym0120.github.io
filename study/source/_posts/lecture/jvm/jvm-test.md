@@ -34,7 +34,7 @@ C. 能加载但是会被官方的覆盖掉
 D. 以上均不对
 
 4. 以下代码中执行doSomething方法时调用到的invoke相关指令是？
-```java
+```
 public class Example {
     public static void main(String[] args) {
         Child c = new Child();
@@ -66,7 +66,7 @@ interface B extends A{
    E. invokedynamic
 
 5. 以下代码中执行doSomething方法时调用到的invoke相关指令是？
-```java
+```
 public class Example {
     public static void main(String[] args) {
         A c = new Child();
@@ -98,7 +98,7 @@ interface B extends A{
    E. invokedynamic
 
 6. 以下代码执行结果为
-```java
+```
 public class E5 {
     public static void main(String[] args) {
         Parent c = new Child();
@@ -131,7 +131,7 @@ C. in interface A
 D. in Child in interface A
 
 1. 以下代码执行结果为
-```java
+```
 public class Example {
     public static void main(String[] args) {
         Child child = new Child();
@@ -175,7 +175,7 @@ C. "BABAA" ✅
 D. "ABABB"
 
 8. 以下代码执行结果为
-```java
+```
 public class Example {
     public static void main(String[] args) {
         Parent child = new Child();
@@ -219,7 +219,7 @@ C. "BABAA"
 D. "ABABB"
 
 9. 以下代码执行结果为
-```java
+```
 public class Example{
     public static void main(String[] args) {
             Parent child = (Parent) new Child();
@@ -267,7 +267,7 @@ C. 22333
 D. 23232 ✅
 
 10. 以下代码执行结果为
-```java
+```
     public class Example{
         public static void main(String[] args) {
             Parent child1 = new Child();
@@ -392,7 +392,7 @@ E. 4
 “双亲委托中用户类加载器会同时委托给bootstrap加载器和ext加载器”
 “双亲委托中当加载器无法从自己的搜索空间中找到类时才会向其他加载器发出委托”
 “一个类可以加载同一个包下面声明为protected的另一个类”
-```java
+```
 这三个类在同一个包中，Visitor无法通过编译
 public class Visitor{
     Visible1.Unknown v1 = new Visible1.Unknown();
@@ -506,7 +506,7 @@ D. 创建 Creation ✅
 
 12. 这段代码正确地实现`ISUB`指令了吗？
 
-    ```java
+    ```
     public class ISUB extends NoOperandsInstruction {
         @Override
         public void execute(StackFrame frame) {
@@ -610,7 +610,7 @@ D. 创建 Creation ✅
 
 24. 下面这段代码对`LUSHR`的实现正确吗？
 
-    ```java
+    ```
     @Override
         public void execute(StackFrame frame) {
             OperandStack stack = frame.getOperandStack();
