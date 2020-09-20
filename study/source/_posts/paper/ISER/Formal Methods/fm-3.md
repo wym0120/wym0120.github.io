@@ -1,10 +1,10 @@
 ---
-title: "KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs"
+title: "[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs"
 categories:
   - paper
 date: 2020-07-25 09:51:29
-tags:
-description: "KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs"
+tags: Formal Methods
+description: "Cristian Cadar, Daniel Dunbar, and Dawson Engler. KLEE: Unassisted and automatic generation of high-coverage tests for complex systems programs. OSDI'08"
 ---
 
 ### Abstract

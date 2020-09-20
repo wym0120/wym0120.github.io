@@ -1,11 +1,12 @@
 ---
-title: os-lecture-notes
+title: "[课堂笔记] 操作系统"
 date: 2020-07-05 21:22:21
 tags:
 - os
+- lecture notes
 categories:
 - [os,os lecture]
-description: 操作系统上课笔记
+description: 操作系统课堂笔记
 ---
 ## 理论课
 

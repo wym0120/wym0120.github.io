@@ -1,10 +1,10 @@
 ---
-title: Symbolic execution and program testing
+title: "[ISER] [FM] Symbolic execution and program testing"
 categories:
   paper
 date: 2020-07-17 22:31:21
-tags:
-description: Symbolic execution and program testing
+tags: Formal Methods
+description: James C. King. Symbolic execution and program testing, 1976
 ---
 
 ### Abstract

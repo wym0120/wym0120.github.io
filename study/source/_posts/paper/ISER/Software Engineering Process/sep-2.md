@@ -1,9 +1,9 @@
 ---
-title: A study of developer work habits
+title: "[ISER] [SEP] A study of developer work habits"
 categories:
   - paper
 date: 2020-08-27 19:42:48
-tags: Software Engineering Process (SEP)
+tags: Software Engineering Process
 description: "Thomas D. LaToza, Gina Venolia, and Robert DeLine. Maintaining mental models: A study of developer work habits. ICSE'06."
 ---
 

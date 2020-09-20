@@ -1,9 +1,9 @@
 ---
-title: Development and evaluation of a model of programming errors
+title: "[ISER] [SEP] Development and evaluation of a model of programming errors"
 categories:
   - paper
 date: 2020-08-19 21:47:52
-tags: Software Engineering Process (SEP)
+tags: Software Engineering Process
 description: Andrew J. Ko and Brad A. Myers. Development and evaluation of a model of programming errors
 ---
 

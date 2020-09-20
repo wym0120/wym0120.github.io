@@ -1,10 +1,10 @@
 ---
-title: fm-4
+title: "[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis"
 categories:
   - paper
 date: 2020-07-25 09:51:35
-tags:
-description:
+tags: Formal Methods
+description: "Sergey Mechtaev, Jooyong Yi, and Abhik Roychoudhury. Angelix: Scalable multiline program patch synthesis via symbolic analysis. ICSE'16"
 ---
 
 ### Abstract

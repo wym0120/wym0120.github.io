@@ -1,10 +1,10 @@
 ---
-title: On the Naturalness of Software
+title: "[ISER] [EMSE] On the Naturalness of Software"
 categories:
   - paper
 date: 2020-08-12 20:01:51
-tags: EMSE
-description: On the Naturalness of Software
+tags: Empirical Software Engineering
+description: Abram Hindle, Earl Barr, Mark Gabel, Zhendong Su, and Prem Devanbu. On the naturalness of software. ICSE'12
 ---
 
 ### Abstract

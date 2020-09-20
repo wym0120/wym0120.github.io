@@ -1,9 +1,9 @@
 ---
-title: 程序设计语言的形式语义课堂笔记
+title: "[课堂笔记] 程序设计语言的形式语义"
 date: 2020-09-10 07:51:07
-tags:
+tags: lecture notes
 categories: FSPL 
-description: Formal Semantics of Programming Languauges notes
+description: 程序设计语言的形式语义课堂笔记
 ---
  
 ### Introduction

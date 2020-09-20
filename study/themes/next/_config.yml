@@ -121,6 +121,7 @@ menu:
   categories: /categories/ || fa fa-th
   code: /categories/code/ || fa fa-file-code
   papers: /categories/paper/ || fa fa-file-alt
+  notes: /tags/lecture-notes/ || fa fa-file-alt
   # archives: /archives/ || fa fa-archive
   # schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap

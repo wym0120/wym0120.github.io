@@ -1,10 +1,10 @@
 ---
-title: Model Checking for Programming Languages using VeriSoft
+title: "[ISER] [FM] Model Checking for Programming Languages using VeriSoft"
 categories:
   - paper
 date: 2020-07-19 13:58:55
-tags:
-description: Model Checking for Programming Languages using VeriSoft
+tags: Formal Methods
+description: Patrice Godefroid. Model checking for programming languages using VeriSoft. POPL'97
 ---
 
 ### Abstract

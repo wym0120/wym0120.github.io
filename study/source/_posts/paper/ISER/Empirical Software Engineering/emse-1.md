@@ -1,10 +1,10 @@
 ---
-title: Learning from Mistakes — A Comprehensive Study on Real World Concurrency Bug Characteristics
+title: "[ISER] [EMSE] Learning from Mistakes — A Comprehensive Study on Real World Concurrency Bug Characteristics"
 categories:
   - paper
 date: 2020-08-04 15:55:42
-tags: EMSE
-description: Learning from Mistakes — A Comprehensive Study on Real World Concurrency Bug Characteristics
+tags: Empirical Software Engineering
+description: Shan Lu, Soyeon Park, Eunsoo Seo, and Yuanyuan Zhou. Learning from mistakes — A comprehensive study on real world concurrency bug characteristics. ASPLOS'08
 
 
 ---

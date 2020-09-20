@@ -1,10 +1,10 @@
 ---
-title: A Three-Year Participant Observation of Software Startup Software Evolution
+title: "[ISER] [SEP] code2vec: Learning distributed representations of code"
 categories:
   - paper
-date: 2020-08-27 19:42:51
-tags: Software Engineering Process (SEP)
-description:
+date: 2020-09-18 18:48:08
+tags: Software Engineering Process
+description: "Uri Alon, Meital Zilberstein, Omer Levy, and Eran Yahav. code2vec: Learning distributed representations of code. POPL'19"
 ---
 
 ### Abstract

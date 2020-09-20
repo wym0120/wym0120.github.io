@@ -1,10 +1,10 @@
 ---
-title: emse-2
+title: "[ISER] [EMSE] Understanding integer overflow in C/C++"
 categories:
   - paper
 date: 2020-08-19 21:19:55
-tags:
-description:
+tags: Empirical Software Engineering
+description: Will Dietz, Peng Li, John Regehr, and Vikram Adve. Understanding integer overflow in C/C++. ICSE'12
 ---
 
 ### Abstract

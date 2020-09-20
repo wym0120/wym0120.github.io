@@ -3,6 +3,7 @@ title: skills4os
 date: 2020-07-05 20:40:45
 tags:
 - os
+- lecture notes
 categories:
 - [os,os lecture]
 description: 操作系统课程上的tip集合
