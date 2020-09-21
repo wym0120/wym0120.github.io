@@ -1,0 +1,48 @@
+One of the most expensive and time-
+onsuming 
+omponents
+of the debugging pro
+ess is lo
+ating the errors or faults. To
+lo
+ate faults, developers must identify statements involved
+in failures and sele
+t suspi
+ious statements that might 
+on-
+tain faults. This paper presents a new te
+hnique that uses
+visualization to assist with these tasks. The te
+hnique uses
+
+olor to visually map the parti
+ipation of ea
+h program
+statement in the out
+ome of the exe
+ution of the program
+with a test suite, 
+onsisting of both passed and failed test
+
+ases. Based on this visual mapping, a user 
+an inspe
+t
+the statements in the program, identify statements involved
+in failures, and lo
+ate potentially faulty statements. The
+paper also des
+ribes a prototype tool that implements our
+te
+hnique along with a set of empiri
+al studies that use the
+tool for evaluation of the te
+hnique. The empiri
+al studies
+show that, for the sub je
+t we studied, the te
+hnique 
+an be
+ee
+tive in helping a user lo
+ate faults in a program
+
