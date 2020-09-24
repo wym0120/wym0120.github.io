@@ -1,11 +1,11 @@
-
+---
 title: "[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code"
 categories:
-   paper
-date: 20200918 18:24:17
-tags: Software Testing and Analysis
-description: "Dawson Engler, David Yu Chen, Seth Hallem, Andy Chou, and Benjamin Chelf. Bugs as deviant behavior: A general approach to inferring errors in systems code. SOSP'01"
-
+- paper
+- date: 20200918 18:24:17
+- tags: Software Testing and Analysis
+- description: "Dawson Engler, David Yu Chen, Seth Hallem, Andy Chou, and Benjamin Chelf. Bugs as deviant behavior: A general approach to inferring errors in systems code. SOSP'01"
+---
 
 ### Abstract
 > A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules. 
@@ -13,7 +13,7 @@ description: "Dawson Engler, David Yu Chen, Seth Hallem, Andy Chou, and Benjamin
 
 > The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.
  
-> If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system  for example, finding all functions that fit the rule template "\<a\> must be paired with < b>." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify man ually.
+> If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system  for example, finding all functions that fit the rule template "\<a\> must be paired with < b>." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.
 
 ### 总体评价
 

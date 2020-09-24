@@ -29,3 +29,30 @@ constructor 是用来构造的而不是计算的
 > Think about standard decimal numerals: the numeral [1] is not a computation; it's a piece of data. When we write [111] to mean the number one hundred and eleven, we are using [1] three times, to write down a concrete representation of a number.
 
 如果对一个函数的传参不完整那么它还是一个函数，直到所有的参数都被获取到才会变成值
+
+### lambda calculus
+一般一个lambda的程序就叫做一个term（项）或者叫做lambda表达式
+todo：BNF范式
+
+pure lambda calculus：(Terms) M,N ::= x | lambdax.M | M N
+1. x: 默认用xyz等小写变量来表示程序变量
+2. lambdax.M ： lambda抽象，例如 int f (int x)return x -> lambdax.x
+3. M N :lambda应用，例如 int f(int x){return x} ; f(3) -> (lambdax.x) 3
+4. 本身不接受3作为一个参数，但是可以用 | n扩展语义，还可以引入一些整数计算
+
+表达式简化： 每一个lambda尽可能管到最右边
+函数应用是左结合的
+一个lambda abstraction中只有一个参数
+
+自由变量，不能随意改名
+约束变量，可以改名
+
+求解约束变量的集合
+bv(x) = empty
+bv(lambdax.M) = {x} ∪ bv(M)
+bv(M N) = bv(M) ∪ bv(N)
+
+substitution
+(lambdax.M)[N/M] = lambdax.M
+原因 （lambdax.M）N -> M[N/x]
+这里直接的lambdax.M相当于 (lambdax.(lambdax.M))[N/x]，N代换的是前面的隐藏的x
