@@ -39,3 +39,8 @@ Cluster analysis
 outlier analysis 异常分析
 Trend and evolution analysis 
 other pattern-directed or statistical analyses
+
+### What is Warehouse
+
+### From Tables And Spreadsheets To Data Cubes
+围绕着一组数据，往往有很多的其他数据项来为它服务，显示它的上下文。这种信息在操作型的应用中往往是缺失的。

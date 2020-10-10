@@ -56,3 +56,11 @@ substitution
 (lambdax.M)[N/M] = lambdax.M
 原因 （lambdax.M）N -> M[N/x]
 这里直接的lambdax.M相当于 (lambdax.(lambdax.M))[N/x]，N代换的是前面的隐藏的x
+（相当于代换了形参，但是形参又是可以随便换名字的所以相当于什么都不做）
+
+"->"这个代表这 term x term 上的一个relation
+合流性定理：选择一个 ***特定*** 的M' 并且选择 ***特定*** 的策略使得M1，M2都能通过0至多步到达它
+
+两种化简的策略：
+normal order reduction：总是选择最左最外的（out-most）redex去做reduction，也就是最优先选择化简function body
+applicative order reduction：总是选择最左最内的（inner-most）redex去做reduction，也就是最优先选择化简参数。相比于normal order可能效率更低因为参数不一定会被使用到

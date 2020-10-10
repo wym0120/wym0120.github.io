@@ -5,4 +5,3 @@ tags: lecture notes
 categories:
 description: 软件工程研究入门课堂笔记
 ---
-## 9.18 Introduction
