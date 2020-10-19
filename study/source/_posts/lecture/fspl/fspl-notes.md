@@ -64,3 +64,9 @@ substitution
 两种化简的策略：
 normal order reduction：总是选择最左最外的（out-most）redex去做reduction，也就是最优先选择化简function body
 applicative order reduction：总是选择最左最内的（inner-most）redex去做reduction，也就是最优先选择化简参数。相比于normal order可能效率更低因为参数不一定会被使用到
+
+---
+
+### Simply-Typed Lambda calculus
+一竖一横 $\vdash$ 表示是否能推出来
+一竖两横 $\models$ 表示含义
