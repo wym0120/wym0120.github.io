@@ -4,7 +4,7 @@ date: 2020-10-21 15:48:02
 tags:
 categories: report
 description : How To Speak by Patrick Winston
---- 
+---
 ### 如何开始一个talk
 不要在一开始就使用一个玩笑作为开场: 因为大部分人在这个时候正在习惯你的用词、声音，或者正在调整笔记本电脑。而是应该使用一个Promise，告诉听众们他们会在接下一段时间中听到什么东西。
 
