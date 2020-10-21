@@ -2,7 +2,7 @@
 title: "[MIT Lecture] How to Speak"
 date: 2020-10-21 15:48:02
 tags:
-categories: 
+categories: report
 description : How To Speak by Patrick Winston
 --- 
 ### 如何开始一个talk
