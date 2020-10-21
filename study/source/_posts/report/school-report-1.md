@@ -3,7 +3,7 @@ title: Bridging the gap between AI and SE
 date: 2020-10-19 13:58:17
 tags: 
 categories: report 
-description:
+description: Bridging the gap between AI and SE
 ---
 background : 大量的软件开发过程中间产品
 problem : 大量的噪音和数据具有异构性
