@@ -85,3 +85,13 @@ Example可以从后往前看，“如果我们要证明这个，那么我们应�
 
 STLC只和constructive propositional logic对应
 STLC中没有一个closed term能够定型出 𝜌+(𝜌→𝜎)
+
+### Operational Semantics
+operational semantics 操作语义：指明了程序该如何运行
+denotational semanticcs 指称语义：总是把程序指称到一个域上
+axiomatic semantics 公理语义：howel logic
+
+small-step $(c,\sigma)\rightarrow(c',\sigma)$
+big-step $(c,\sigma)\implies(c',\sigma)$
+
+我们认为state是variable到生活中的n的映射，即我们会对这些符号赋予含义
