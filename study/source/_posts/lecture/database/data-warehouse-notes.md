@@ -40,7 +40,11 @@ outlier analysis 异常分析
 Trend and evolution analysis 
 other pattern-directed or statistical analyses
 
+## 第二章
 ### What is Warehouse
 
 ### From Tables And Spreadsheets To Data Cubes
 围绕着一组数据，往往有很多的其他数据项来为它服务，显示它的上下文。这种信息在操作型的应用中往往是缺失的。
+
+### Further development of data cube technology
+部分物化：本质上就是提前预测一些会被查询到的数据结果并且计算好，如果出现了预期之外的需求，可以拿这部分的数据再重新计算，相当于从子集中取出更小的子集

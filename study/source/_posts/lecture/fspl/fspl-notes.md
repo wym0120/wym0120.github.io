@@ -95,3 +95,6 @@ small-step $(c,\sigma)\rightarrow(c',\sigma)$
 big-step $(c,\sigma)\implies(c',\sigma)$
 
 我们认为state是variable到生活中的n的映射，即我们会对这些符号赋予含义
+
+### contextual semantics
+见pdf标注
