@@ -754,10 +754,13 @@ D. 以上说法都不对☑️
 ```sql
 A. CREATE STREAMWINDOW traffic_stream AS SELECT * FROM original_stream
 STREAM w1 AS (length '1' minute slide '24' hour);
+
 B. CREATE STREAM traffic_stream AS SELECT * FROM original_stream
 STREAMWINDOW w1 AS (length '1' minute slide '24' hour);
+
 C. ☑️CREATE STREAM traffic_stream AS SELECT * FROM original_stream
 STREAMWINDOW w1 AS (length '24' hour slide '1' minute);
+
 D. CREATE STREAM traffic_stream AS SELECT * FROM original_stream AS (length '24'
 second slide '1' minute);
 ```
@@ -791,14 +794,17 @@ A. sqoop list-databases
 --username root
 --password 111111
 --connect jdbc:mysql://192.168.164.25:3306/
+
 B. sqoop list-databases
 --username root
 -P
 --connect jdbc:mysql://192.168.164.25:3306/
+
 C. sqoop list-databases
 --username root
 --password-file file:/root/.pwd
 --connect jdbc:mysql://192.168.164.25:3306/
+
 D. ☑️sqoop list-tables
 --username root
 --password 111111
@@ -864,3 +870,67 @@ A. 为集群中每个节点的安装操作系统
 B. 选一个节点作为管理节点，修改其 /etc/hosts 文件
 C. 安装 Transwarp Manager 管理界面
 D. 配置集群安全模式☑️
+
+### 问答题 
+1. 集群有 8 个节点，每个节点有 8 块硬盘（默认 3 副本）。如果某个节点有 3 块盘损坏，是否可能存在数据块丢失情况；如果有 3 个节点发生故障，是否可能存在数据块丢失情况；并简述原因。
+2. 请描述 TDH 平台中在 Yarn 上可以使用哪几种调度策略，并分别阐述各调度策略的特点。
+```
+FIFO Scheduler（先进先出调度器）：(策略)将所有任务放入一个队列，先进队列的先获得资源，排在后面的任务只有等待。(缺点)－资源利用率低，无法交叉运行任务。－灵活性差。
+
+Capacity Scheduler（容量调度器）：(思想)提前做预算，在预算指导下分享集群资源。(策略)集群资源由多个队列分享。每个队列都要预设资源分配的比例（提前做预算）。空闲资源优先分配给“实际资源/预算资源”比值最低的队列。队列内部采用FIFO调度策略。(特点)层次化的队列设计。容量保证：每个队列都要预设资源占比，防止资源独占。弹性分配：空闲资源可以分配给任何队列，当多个队列争用时，会按比例进行平衡。支持动态管理。访问控制。多租户：多用户共享集群资源。
+
+Fair Scheduler（公平调度器）：（调度策略)多队列公平共享集群资源。通过平分的方式，动态分配资源，无需预先设定资源分配比例。队列内部可配置调度策略：FIFO、Fair（默认）。
+```
+3. 请描述一个 100GB 文件写入 HDFS 的整个过程（使用 bulkload 方式实现）
+```
+抽取：从数据源中抽取数据
+对于MySQL，运行mysqldump命令导出数据
+
+转换：利用MapReduce，将数据转换为HFile文件
+对于TSV或CSV文件，使用HBase ImportTsv工具将其转换成HFile文件 －每个输出文件夹中的每个区域都会创建一个HFile文件
+
+加载：将HFile文件加载到HBase
+利用HBase CompleteBulkLoad工具，将HFile文件移动到HBase表的相应目录中，完成加载
+
+具体来说：
+1)客户端发送创建文件指令给分布式文件系统
+2)文件系统告知namenode (检查权限，查看文件是否存在。EditLog增加记录。返回输出流对象)
+3)客户端往输出流中写入数据,分成一个个数据包
+4)根据namenode分配,输出流往datanode写数据(多个datanode构成一个管道pipeline,输出流写第一个,后面的转发)
+4)每个datanode写完一个块后，返回确认信息
+5)写完数据，关闭输出流
+6)发送完成信号给namenode
+```
+4. 请以 WordCount 为例描述 MapReduce 的运行过程，并列出 Spark 相较 MapReduce 的 优势
+```
+过程：todo
+
+优势：基于内存计算RDD;基于DAG优化任务流程(延迟计算);易于部署,更低的框架开销;丰富的API支持。
+```
+5. 写出以下场景下的优化思路 
+a. 假设在 Inceptor 上执行任务，发现 Map Task 数量多、执行时间短，应采取哪种措施来提升性能？
+```
+对数据块进行合并：Automerge（碎片自动合并）
+```
+b. 请简述在 Inceptor 中大表与大表做 join、大表与小表做 join 时分别有哪些优化手段
+```
+大表与大表的普通JOIN：实现普通JOIN的过程是这样的：扫描过滤两张表的数据（Map Stages），然后通过Shuffle将Key哈希值相同的数据分发到各个节点，在各节点内部执行JOIN（Reduce Stages）
+
+MapJoin是一种针对大表与小表JOIN的特殊实现方式，在大小表数据量悬殊的情况下能有效的提升JOIN执行效率，一般受优化开关或者Hint控制启动。
+```
+6. 请列出 TDH 下的 4 大组件（Inceptor、Hyperbase、StreamSQL、Discover）的特性以及适用场景。
+7. 假设集群的每个节点初始有 6 块硬盘，运行一段时间后，每个节点又加了 4 块新硬盘， 为了使数据在所有硬盘上分布均匀，能否通过 hdfs balancer 达到效果，为什么？并列出能达到效果的两种措施。
+```
+不能，旧版本的hdfs仅支持节点间的数据平衡，新版本可通过balancer实现
+1.手动重写所有数据  2.将数据全部移到几个节点上，再在节点间数据平衡
+```
+8. 请描述高并发检索和综合搜索的场景特点，这两种场景应使用哪种技术来做支撑， 并指出数据和索引各自的存储位置。
+9.  请描述 HDFS 的高可用性实现机制
+10. 请列举出平台支持的 5 种存储格式/引擎的表，并详细描述各自的存储特点、使用场景、支持的操作以及是否支持分区分桶
+```
+Text 表：
+ORC 表：
+事务表：
+HoloDesk 表：
+Hyperbase 表：
+```
