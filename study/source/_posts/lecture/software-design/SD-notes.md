@@ -82,6 +82,9 @@ description: 软件设计课堂笔记 & 复习
 8. Single Responsibility ：A class should have only one reason to change 
 9. Principle of Least Knowledge ：talk only to your immediate friends 
 
+⚠️以下分类不一定完全正确仅代表个人观点
+![](https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209232932.png)
+
 #### 思考题
 1. 好莱坞原则与依赖倒置的关系
 ```
