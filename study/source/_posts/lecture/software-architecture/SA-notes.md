@@ -4,6 +4,7 @@ date: 2020-12-17 18:39:11
 tags: lecture notes
 categories: 
 description: 软件体系结构课堂笔记
+mathjax: true
 ---
 
 ## Introduction

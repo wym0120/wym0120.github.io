@@ -5,6 +5,7 @@ tags:
 categories:
 - paper
 description:
+mathjax : true
 ---
 
 ### Abstract
