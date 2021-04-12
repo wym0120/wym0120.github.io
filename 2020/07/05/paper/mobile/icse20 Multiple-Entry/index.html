@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wym0120.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts">
+<meta property="og:url" content="https://wym0120.github.io/2020/07/05/paper/mobile/icse20%20Multiple-Entry/index.html">
+<meta property="og:site_name" content="Academic Notes">
+<meta property="og:description" content="Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-05T02:25:34.000Z">
+<meta property="article:modified_time" content="2021-04-12T15:01:26.111Z">
+<meta property="article:author" content="MinguW">
+<meta property="article:tag" content="mobile">
+<meta property="article:tag" content="testing">
+<meta property="article:tag" content="icse">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wym0120.github.io/2020/07/05/paper/mobile/icse20%20Multiple-Entry/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script>
+  ((w, d) => {
+    'use strict';
+      const userScheme = localStorage.getItem('Scheme');
+      if (!userScheme) return;
+    d.documentElement.className += ' darkScheme';
+  })(window, document);
+</script>
+
+  <title>Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts | Academic Notes</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Academic Notes" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Academic Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-code">
+
+    <a href="/categories/code/" rel="section"><i class="fa fa-file-code fa-fw"></i>code</a>
+
+  </li>
+        <li class="menu-item menu-item-papers">
+
+    <a href="/categories/paper/" rel="section"><i class="fa fa-file-alt fa-fw"></i>papers</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/tags/lecture-notes/" rel="section"><i class="fa fa-file-alt fa-fw"></i>notes</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">1.</span> <span class="nav-text">总体评价</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%85%A5%E5%8F%A3%E6%83%B3%E8%A6%81%E6%B5%8B%E8%AF%95%E5%85%85%E5%88%86%E7%9A%84%E5%9B%BA%E6%9C%89%E7%BC%BA%E9%99%B7"><span class="nav-number">1.1.</span> <span class="nav-text">单入口想要测试充分的固有缺陷：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%85%A5%E5%8F%A3%E8%AF%95%E5%9B%BE%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">多入口试图如何解决问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E4%B8%AA%E5%B7%A5%E4%BD%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E9%99%90%E5%88%B6"><span class="nav-number">1.3.</span> <span class="nav-text">整个工作的一些限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to"><span class="nav-number">1.4.</span> <span class="nav-text">how-to：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evaluation"><span class="nav-number">1.5.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%A1%E6%89%BE%E5%88%B0%E7%AD%94%E6%A1%88%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.6.</span> <span class="nav-text">没找到答案的问题：</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MinguW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wym0120" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wym0120" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+<div class="night-mode motion-element">
+  <a role="button" class="night-btn">
+    <i class="fa fa-lightbulb-o"></i>
+    Night Mode
+  </a>
+</div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wym0120.github.io/2020/07/05/paper/mobile/icse20%20Multiple-Entry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="MinguW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Academic Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-05 10:25:34" itemprop="dateCreated datePublished" datetime="2020-07-05T10:25:34+08:00">2020-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 23:01:26" itemprop="dateModified" datetime="2021-04-12T23:01:26+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/paper/" itemprop="url" rel="index"><span itemprop="name">paper</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="总体评价">总体评价</h2>
+<p>做的不怎么样，应该会被reject。因为soundness不够，并且覆盖率甚至不如APE（APE是sound的）</p>
+<h3 id="单入口想要测试充分的固有缺陷">单入口想要测试充分的固有缺陷：</h3>
+<ol type="1">
+<li>有些activity因为复杂手势或者复杂的逻辑操作而无法达到，每个activity距离默认的入口的距离不同，测试的exploration对于不同的activity是不同的，这就导致了越难发现的activity越难被测充分</li>
+<li>有的测试方法能够找到activity之间的数据依赖但是不知道什么因素能够对后面的activity造成影响，可能达到这个activity的时候并不是一个完整的能够引发bug的上下文环境。并且这个上下文环境甚至可能是来自于app外部的 (1.Furthermore, because of the infinite test space of GUI programs, it is difficult to launch activities under complete contexts using SET 2. ...XXX has different behaviors depending on its Activity Launching Contexts (ALCs), which is generated by previous event operations or received from outside (e.g., another app))</li>
+<li>即使达到了某个activity，也无法知道到底是否覆盖完全了（当然，这个问题本身也是不可判定的）</li>
+</ol>
+<h3 id="多入口试图如何解决问题">多入口试图如何解决问题：</h3>
+<ol type="1">
+<li>找到什么才是最能够影响某个activity的启动结果的因素，然后尽可能测试这个因素 -&gt; ICC（inter-component communication）最为重要 &gt; 其余因素还有设备配置、activity栈以及全局数据。设备配置直接报告，activity栈能够在空栈的情况下使用Faxla策略，在非空情况下使用Faxex策略。而全局数据，如果能够探索到全局设置相关的activity，在多轮的测试中会修改它</li>
+<li>试图直接启动某个activity，然后生成它需要的ICC并测试</li>
+<li>动态的维护每个activity的explore weight使得能够触发更多transition的activity能够被更多的测试到，并且让一些意外crash掉的activity也能够被覆盖到（毕竟不能crash了发现了一个bug就丢掉，可能这个crash的节点是后面更多crash节点的entry）</li>
+</ol>
+<h3 id="整个工作的一些限制">整个工作的一些限制</h3>
+<ul>
+<li>focus在启动环节，是以activity来进行划分，对于某个activity中的一些例如button的点击应该是完全没有纳入测试范围的</li>
+<li>在basic attribute基本只用到了string相关API而不能够使用其他JDK的库更不用说第三方库</li>
+</ul>
+<h3 id="how-to">how-to：</h3>
+<ol type="1">
+<li>如何产生多入口：把原本只能通过EA(exported activity 能够被外部app启动)达到的IA（internal activity）修改成为EA，只需要把andorid：exported设置为true或者修改manifest中的intent filter</li>
+<li>如何动态修改权重：通过多轮测试，Faxex策略基于Faxla的结果，并结合了activity之间的transition &gt; 因为静态分析的一些技术限制，transition可能不够精准，因此Faxex中也会动态地发现更多可到达的状态</li>
+<li>ALM如何建立：最主要依赖于“跳转都是与string相关操作”这一假设，例如if-else中使用一个对string的比较，根据比较结果决定是否跳转或do something，这个假设的局限性就在于当遇到与string不相关的操作时就不能work</li>
+<li>dummy activity：运行时构造出来的虚拟的入口用来访问一些需要权限的无法通过adb直接启动的activity</li>
+</ol>
+<h3 id="evaluation">Evaluation</h3>
+<ol type="1">
+<li>RQ1: ALC构造的效果</li>
+</ol>
+<ul>
+<li>自己构造了一些测试用例</li>
+</ul>
+<ol start="2" type="1">
+<li>RQ2: activity启动的效果</li>
+</ol>
+<ul>
+<li>baseline : Monkey Ape IntentFuzzer</li>
+<li>最终整个Fax覆盖率达到96.4%，成功启动了60%的activity</li>
+</ul>
+<ol start="3" type="1">
+<li>RQ3: 是否提高了代码覆盖度</li>
+</ol>
+<ul>
+<li>略低于IntentFuzzer的覆盖率，但不知道这个是一个怎么样的baseline</li>
+</ul>
+<ol start="4" type="1">
+<li>RQ4: Fax是否能找到了更多的bug</li>
+</ol>
+<ul>
+<li>确实找到了bug，但是没有baseline</li>
+</ul>
+<p>整个evaluation都不行，并且它自己一个fuzz interface的work去和默认入口执行的比较这本身就不fair</p>
+<h3 id="没找到答案的问题">没找到答案的问题：</h3>
+<ol type="1">
+<li>如何确认一个activity是“global setting related”</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mobile/" rel="tag"># mobile</a>
+              <a href="/tags/testing/" rel="tag"># testing</a>
+              <a href="/tags/icse/" rel="tag"># icse</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/03/lecture/jvm/jvm-test/" rel="prev" title="JVM习题">
+      <i class="fa fa-chevron-left"></i> JVM习题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/05/lecture/os/skills4os/" rel="next" title="skills4os">
+      skills4os <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MinguW</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+  ((w, d) => {
+    'use strict';
+      let userScheme = localStorage.getItem('Scheme');
+      if (userScheme) d.documentElement.className += ' darkScheme';
+      const btn = d.querySelector('.night-btn');
+      w.addEventListener('keydown', e => {
+        if (e.altKey && e.code === 'KeyX') btn.click();
+      });
+      btn.addEventListener('click', () => {
+        d.documentElement.classList.toggle('darkScheme');
+        if ( d.documentElement.classList.contains('darkScheme') ) {
+          localStorage.setItem('Scheme', 'Dark');
+          return;
+        }
+        localStorage.removeItem('Scheme');
+      });
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

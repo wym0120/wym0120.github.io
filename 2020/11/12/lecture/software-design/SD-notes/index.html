@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wym0120.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="软件设计课堂笔记 &amp; 复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[课堂笔记] 高级软件设计">
+<meta property="og:url" content="https://wym0120.github.io/2020/11/12/lecture/software-design/SD-notes/index.html">
+<meta property="og:site_name" content="Academic Notes">
+<meta property="og:description" content="软件设计课堂笔记 &amp; 复习">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209212805.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215200.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215132.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215105.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215537.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215328.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215302.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215002.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215450.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215602.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215225.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215659.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215511.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215353.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215633.png">
+<meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209232932.png">
+<meta property="article:published_time" content="2020-11-12T06:33:15.000Z">
+<meta property="article:modified_time" content="2021-04-12T15:01:26.107Z">
+<meta property="article:author" content="MinguW">
+<meta property="article:tag" content="lecture notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209212805.png">
+
+<link rel="canonical" href="https://wym0120.github.io/2020/11/12/lecture/software-design/SD-notes/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script>
+  ((w, d) => {
+    'use strict';
+      const userScheme = localStorage.getItem('Scheme');
+      if (!userScheme) return;
+    d.documentElement.className += ' darkScheme';
+  })(window, document);
+</script>
+
+  <title>[课堂笔记] 高级软件设计 | Academic Notes</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Academic Notes" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Academic Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-code">
+
+    <a href="/categories/code/" rel="section"><i class="fa fa-file-code fa-fw"></i>code</a>
+
+  </li>
+        <li class="menu-item menu-item-papers">
+
+    <a href="/categories/paper/" rel="section"><i class="fa fa-file-alt fa-fw"></i>papers</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/tags/lecture-notes/" rel="section"><i class="fa fa-file-alt fa-fw"></i>notes</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">模式类图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">策略模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E4%BD%93%E7%8E%B0%E4%BB%80%E4%B9%88%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">3.1.</span> <span class="nav-text">模式体现什么设计原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%8F%E5%9B%BE%E6%B1%87%E6%80%BB"><span class="nav-number">3.2.</span> <span class="nav-text">意图汇总</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">3.3.</span> <span class="nav-text">设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#principles"><span class="nav-number">3.3.1.</span> <span class="nav-text">Principles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="nav-number">3.3.2.</span> <span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%BC%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">3.4.</span> <span class="nav-text">不同模式之间的比较</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MinguW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wym0120" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wym0120" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+<div class="night-mode motion-element">
+  <a role="button" class="night-btn">
+    <i class="fa fa-lightbulb-o"></i>
+    Night Mode
+  </a>
+</div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wym0120.github.io/2020/11/12/lecture/software-design/SD-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="MinguW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Academic Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [课堂笔记] 高级软件设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-11-12 14:33:15" itemprop="dateCreated datePublished" datetime="2020-11-12T14:33:15+08:00">2020-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 23:01:26" itemprop="dateModified" datetime="2021-04-12T23:01:26+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Designing/" itemprop="url" rel="index"><span itemprop="name">Designing</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">软件设计课堂笔记 & 复习</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="基本概念">基本概念</h2>
+<ol type="1">
+<li><p>设计模式的定义 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在软件工程中，设计模式是一种在特定上下文中应对反复出现的问题的可重用的通用的解决方案</span><br></pre></td></tr></table></figure></p></li>
+<li><p>设计模式的分类 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209212805.png" /></p></li>
+</ol>
+<h2 id="模式类图">模式类图</h2>
+<h3 id="策略模式">策略模式</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215200.png" /> ### 状态模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215132.png" /> ### 观察者模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215105.png" /> ### 装饰者模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215537.png" /> ### 工厂方法模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215328.png" /> ### 抽象工厂模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215302.png" /> ### 命令模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215002.png" /> ### 适配器模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215450.png" /> ### 外观模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215602.png" /> ### 模版模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215225.png" /> ### 迭代器模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215659.png" /> ### 组合模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215511.png" /> ### 单例模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215353.png" /> ### 代理模式 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209215633.png" /></p>
+<h2 id="题目">题目</h2>
+<h3 id="模式体现什么设计原则">模式体现什么设计原则</h3>
+<h3 id="意图汇总">意图汇总</h3>
+<table>
+<thead>
+<tr class="header">
+<th>模式</th>
+<th>意图</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>策略</td>
+<td>定义一系列算法，封装每个算法，并使它们可互换。策略允许算法独立于使用它的客户机而变化。</td>
+</tr>
+<tr class="even">
+<td>状态</td>
+<td>允许对象在内部状态发生改变时改变它的行为</td>
+</tr>
+<tr class="odd">
+<td>观察者</td>
+<td>定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新</td>
+</tr>
+<tr class="even">
+<td>装饰者</td>
+<td>允许向一个现有的对象添加新的功能，同时又不改变其结构</td>
+</tr>
+<tr class="odd">
+<td>工厂</td>
+<td>定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行</td>
+</tr>
+<tr class="even">
+<td>抽象工厂</td>
+<td>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类</td>
+</tr>
+<tr class="odd">
+<td>命令</td>
+<td>将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化</td>
+</tr>
+<tr class="even">
+<td>适配器</td>
+<td>将一个类的接口转换成客户希望的另外一个接口</td>
+</tr>
+<tr class="odd">
+<td>外观</td>
+<td>为高层模块提供一个一致的接口访问多个复杂的子系统</td>
+</tr>
+<tr class="even">
+<td>模版</td>
+<td>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤</td>
+</tr>
+<tr class="odd">
+<td>迭代器</td>
+<td>提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示</td>
+</tr>
+<tr class="even">
+<td>组合</td>
+<td>将对象组合成树形结构以表示"部分-整体"的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性</td>
+</tr>
+<tr class="odd">
+<td>单例</td>
+<td>保证一个类仅有一个实例，并提供一个访问它的全局访问点</td>
+</tr>
+<tr class="even">
+<td>代理</td>
+<td>为其他对象提供一种代理以控制对这个对象的访问</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="设计原则">设计原则</h3>
+<h4 id="principles">Principles</h4>
+<ol type="1">
+<li>Encapsulate what varies.</li>
+<li>Favor composition over inheritance.</li>
+<li>Program to interfaces, not implementations.</li>
+<li>Strive for loosely coupled designs between objects that interact.</li>
+<li>The Open-Closed Principle ：Classes should be open for extension, but closed for modification</li>
+<li>Dependency Inversion Principle ：Depend upon abstractions. Do not depend upon concrete classes.</li>
+<li>The Hollywood Principle ：Don’t call me, we’ll call you</li>
+<li>Single Responsibility ：A class should have only one reason to change</li>
+<li>Principle of Least Knowledge ：talk only to your immediate friends</li>
+</ol>
+<p>⚠️以下分类不一定完全正确仅代表个人观点 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20201209232932.png" /></p>
+<h4 id="思考题">思考题</h4>
+<ol type="1">
+<li>好莱坞原则与依赖倒置的关系 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">依赖倒置原则强调尽可能避免使用具体类，而多使用抽象。而好莱坞原则是让低层组件能够被 hook 进计算并且高层不依赖低层。两者的目的都是结偶，但是依赖倒置更加注重如何在设计中避免依赖</span><br></pre></td></tr></table></figure></li>
+<li>好莱坞原则中低层组建不可以调用高层组建中的方法吗？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">不完全是，低层会调用高层中继承来的方法。好莱坞原则要避免的是高层和低层之间的环形依赖</span><br></pre></td></tr></table></figure></li>
+<li>透明的组合模式和安全的组合模式之间的tradeoff <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">透明的组合模式：客户不去了解具体实现，采用一致处理，牺牲安全性</span><br><span class="line">安全的组合模式：先判断再处理，牺牲透明性</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr />
+<h3 id="不同模式之间的比较">不同模式之间的比较</h3>
+<ol type="1">
+<li>比较策略模式和状态模式 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 策略模式是定义一个算法家族，把他们封装起来，使得他们之间可以相互替换</span><br><span class="line">- 状态模式是将一个个状态封装成一个个类，当内部状态发生改变时，改变他们的行为</span><br><span class="line">- 策略模式和状态模式的类图几乎一样，策略模式中，客户端知道具体的策略有哪些，客户端能够通过setStrategy方法来动态的设置具体使用哪个策略，状态模式中，客户端不知道内部状态是怎么变化的，状态模式通过状态转移来组合State对象，最后把行为呈现出来</span><br></pre></td></tr></table></figure></li>
+<li>比较策略模式和模版方法模式 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 策略模式和模版方法模式的共同点是都封装算法</span><br><span class="line">- 策略模式是定义算法家族，让他们之间可以相互替换，模版方法是针对一个算法流程，某个步骤的具体细节交给子类去实现。策略模式可以改变算法流程，使一个个步骤可以相互替换，模版方法模式算法流程是固定的</span><br><span class="line">- 策略模式使用组合来实现，模版方法模式使用继承来实现</span><br></pre></td></tr></table></figure></li>
+<li>比较适配器模式、外观模式、装饰者模式的意图 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 适配器模式是把一个类的接口转换成客户期望的接口，让原本接口不兼容的类兼容，适配器模式一般用于想要复用某个类的场景；外观模式是封装子系统，提供简单的子系统的入口，同时简化层间调用</span><br><span class="line">- 装饰者模式是动态的给被装饰者添加职责，主要目的是扩展功能</span><br><span class="line">- 对于装饰者和适配器，他们都属于包装模式，装饰者需要满足is-a关系，不管如何包装，都有共同的父类，而适配器主要解决兼容问题，不一定要统一父类</span><br></pre></td></tr></table></figure></li>
+<li>比较模版方法模式和工厂模式 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">工厂模式是模版方法的特殊实现，工厂里面的创建对象，就相当于只有一个步骤的模版方法模式，这个步骤交给子类去实现</span><br></pre></td></tr></table></figure></li>
+<li>比较装饰者模式和静态代理模式 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 装饰者模式是动态的给组件对象添加“职责”，更多的考虑功能的扩展，而代理模式控制对象</span><br><span class="line">的访问，也能做方法的增强</span><br><span class="line">- 装饰者模式中，客户端可以看到具体的装饰有哪些，而代理模式把对象的具体信息给隐藏了</span><br><span class="line">起来</span><br><span class="line">- 装饰者模式是把原始组件对象传入构造器中，代理模式是创建一个对象的实例</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/lecture-notes/" rel="tag"># lecture notes</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/21/report/MIT-how-to-speck/" rel="prev" title="[MIT Lecture] How to Speak">
+      <i class="fa fa-chevron-left"></i> [MIT Lecture] How to Speak
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/08/transwarp/" rel="next" title="transwarp-QA">
+      transwarp-QA <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MinguW</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+  ((w, d) => {
+    'use strict';
+      let userScheme = localStorage.getItem('Scheme');
+      if (userScheme) d.documentElement.className += ' darkScheme';
+      const btn = d.querySelector('.night-btn');
+      w.addEventListener('keydown', e => {
+        if (e.altKey && e.code === 'KeyX') btn.click();
+      });
+      btn.addEventListener('click', () => {
+        d.documentElement.classList.toggle('darkScheme');
+        if ( d.documentElement.classList.contains('darkScheme') ) {
+          localStorage.setItem('Scheme', 'Dark');
+          return;
+        }
+        localStorage.removeItem('Scheme');
+      });
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

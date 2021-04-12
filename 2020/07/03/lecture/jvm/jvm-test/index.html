@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wym0120.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="绝密档案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM习题">
+<meta property="og:url" content="https://wym0120.github.io/2020/07/03/lecture/jvm/jvm-test/index.html">
+<meta property="og:site_name" content="Academic Notes">
+<meta property="og:description" content="绝密档案">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-03T06:01:12.000Z">
+<meta property="article:modified_time" content="2021-04-12T15:01:26.106Z">
+<meta property="article:author" content="MinguW">
+<meta property="article:tag" content="jvm">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wym0120.github.io/2020/07/03/lecture/jvm/jvm-test/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script>
+  ((w, d) => {
+    'use strict';
+      const userScheme = localStorage.getItem('Scheme');
+      if (!userScheme) return;
+    d.documentElement.className += ' darkScheme';
+  })(window, document);
+</script>
+
+  <title>JVM习题 | Academic Notes</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Academic Notes" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Academic Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-code">
+
+    <a href="/categories/code/" rel="section"><i class="fa fa-file-code fa-fw"></i>code</a>
+
+  </li>
+        <li class="menu-item menu-item-papers">
+
+    <a href="/categories/paper/" rel="section"><i class="fa fa-file-alt fa-fw"></i>papers</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/tags/lecture-notes/" rel="section"><i class="fa fa-file-alt fa-fw"></i>notes</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MinguW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wym0120" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wym0120" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+<div class="night-mode motion-element">
+  <a role="button" class="night-btn">
+    <i class="fa fa-lightbulb-o"></i>
+    Night Mode
+  </a>
+</div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wym0120.github.io/2020/07/03/lecture/jvm/jvm-test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="MinguW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Academic Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JVM习题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-03 14:01:12" itemprop="dateCreated datePublished" datetime="2020-07-03T14:01:12+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 23:01:26" itemprop="dateModified" datetime="2021-04-12T23:01:26+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jvm/" itemprop="url" rel="index"><span itemprop="name">jvm</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">绝密档案</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ol type="1">
+<li>对于一个数组对象int[] arr，什么能够使 "arr instanceof ___"的结果为true</li>
+</ol>
+<p>1 java.lang.Object 2 java.io.Serializable 3 java.lang.Cloneable 4 java.lang.Runable</p>
+<p>A. 123 ✅ B. 134 C. 234 D. 1234</p>
+<ol start="2" type="1">
+<li>类的生命周期有：加载 -&gt; 验证 -&gt; 准备 -&gt; 解析 -&gt; 初始化 -&gt; 使用 -&gt; 卸载，其中类加载的哪个/哪些阶段的发生顺序不是固定的</li>
+</ol>
+<p>A. 初始化 B. 初始化 解析 C. 解析 验证 D. 解析 ✅</p>
+<ol start="3" type="1">
+<li>使用真实的java指令执行某个类时，假设在目录src下存在一个被修改过的java/lang/Object.class和一个Main.class,并且所有的检验机制都判定其合法，那么以下说法正确的是</li>
+</ol>
+<p>A. 除了直接覆盖掉JDK目录对应类这个文件以外，存在一个方法使得自己修改的这个Object类替换掉官方的实现 ✅ B. 无论如何也不可能加载到自己修改过的Object C. 能加载但是会被官方的覆盖掉 D. 以上均不对</p>
+<ol start="4" type="1">
+<li><p>以下代码中执行doSomething方法时调用到的invoke相关指令是？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Example &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Child c &#x3D; new Child();</span><br><span class="line">        c.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent implements B&#123;</span><br><span class="line">    public void doSomething()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface A&#123;</span><br><span class="line">    public void doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface B extends A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>A. invokespecial B. invokestatic C. invokevirtual ✅ D. invokeinterface E. invokedynamic</p></li>
+<li><p>以下代码中执行doSomething方法时调用到的invoke相关指令是？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Example &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        A c &#x3D; new Child();</span><br><span class="line">        c.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent implements B&#123;</span><br><span class="line">    public void doSomething()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface A&#123;</span><br><span class="line">    public void doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface B extends A&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>A. invokespecial B. invokestatic C. invokevirtual D. invokeinterface ✅ E. invokedynamic</p></li>
+<li><p>以下代码执行结果为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class E5 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Parent c &#x3D; new Child();</span><br><span class="line">        c.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    public void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;in Child &quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent implements A&#123;</span><br><span class="line">    public void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;in Parent &quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface A&#123;</span><br><span class="line">    default void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;in interface A&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<p>A. in Child ✅ B. in Parent C. in interface A D. in Child in interface A</p>
+<ol type="1">
+<li>以下代码执行结果为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Example &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Child child &#x3D; new Child();</span><br><span class="line">        child.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    public Child()&#123;</span><br><span class="line">        super();</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;A&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent&#123;</span><br><span class="line">    public Parent()&#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static&#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;B&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>A. "BABAB" B. "ABAAB" C. "BABAA" ✅ D. "ABABB"</p>
+<ol start="8" type="1">
+<li>以下代码执行结果为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Example &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Parent child &#x3D; new Child();</span><br><span class="line">        child.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    public Child()&#123;</span><br><span class="line">        super();</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;A&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent&#123;</span><br><span class="line">    public Parent()&#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static&#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void doSomething()&#123;</span><br><span class="line">        System.out.print(&quot;B&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>A. "BABAB" ✅ B. "ABAAB" C. "BABAA" D. "ABABB"</p>
+<ol start="9" type="1">
+<li>以下代码执行结果为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Example&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">            Parent child &#x3D; (Parent) new Child();</span><br><span class="line">            child.doSomething();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Child extends Parent&#123;</span><br><span class="line">        static private int val&#x3D;2;</span><br><span class="line">        public Child()&#123;</span><br><span class="line">            super();</span><br><span class="line">            doSomething();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static &#123;</span><br><span class="line">            val++;</span><br><span class="line">            doSomething();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static void doSomething()&#123;</span><br><span class="line">            System.out.print(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Parent&#123;</span><br><span class="line">        static private int val&#x3D;1;</span><br><span class="line">        public Parent()&#123;</span><br><span class="line">            doSomething();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static&#123;</span><br><span class="line">            val++;</span><br><span class="line">            doSomething();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static void doSomething()&#123;</span><br><span class="line">            System.out.print(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>A. 23333 B. 22222 C. 22333 D. 23232 ✅</p>
+<ol start="10" type="1">
+<li>以下代码执行结果为 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Example&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Parent child1 &#x3D; new Child();</span><br><span class="line">        child1.doSomething();</span><br><span class="line">        Child child2 &#x3D; new Child();</span><br><span class="line">        child2.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    static private int val&#x3D;2;</span><br><span class="line">    public Child()&#123;</span><br><span class="line">        super();</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        ++val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        val++;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void doSomething()&#123;</span><br><span class="line">        System.out.print(val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent&#123;</span><br><span class="line">    static private int val&#x3D;1;</span><br><span class="line">    public Parent()&#123;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        ++val;</span><br><span class="line">    &#125;</span><br><span class="line">    static&#123;</span><br><span class="line">        val++;</span><br><span class="line">        doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">    public static void doSomething()&#123;</span><br><span class="line">        System.out.print(val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>A. 23343455 ✅ B. 23343454 C. 23344455 D. 23344454 C. 2334445565 D. 2234345565 E. 2334445465 F. 2234345465</p>
+<ol start="11" type="1">
+<li><p>以下哪个选项中的内容全部能够被线程共享 A. 堆中实例对象、字符串常量池、本地方法栈 B. 运行时常量池、堆中实例对象 ✅ C. 方法区、本地方法栈 D. 局部变量表、方法区</p></li>
+<li><p>下列表述正确的数量有（）个 “每个frame的操作数栈最大栈深度是运行时决定的” “类的initiating loader和defining loader可以是同一个loader” “<clinit>方法是类加载阶段由jvm动态生成的” “final static类型的变量是在类加载的准备阶段被赋值的”</p></li>
+</ol>
+<p>A. 0 B. 1 ✅ C. 2 D. 3 E. 4</p>
+<ol start="13" type="1">
+<li>下列表述正确的数量有（）个 “multianewarray中第一个从操作数栈中被pop出来的值代表第一维的长度，第二个代表第二维，以此类推...” “multianewarray对于长度的规定是不允许有负值但允许出现0，这种情况下它会被处理成1” “多维基本类型数组类的加载中不需要链接阶段” “数组加载过程中不会抛出IllegalAccessError”</li>
+</ol>
+<p>A. 0 B. 1 ✅ C. 2 D. 3 E. 4</p>
+<ol start="14" type="1">
+<li><p>方法签名“Object m(int i, double d, Thread t) {...}”的描述符是 A.(IDLjava/lang/Thread;)Ljava/lang/Object; ✅ B.(IDLjava/lang/Thread;)Ljava/lang/Object C.Ljava/lang/Object(IDLjava/lang/Thread;); D.Ljava/lang/Object(IDLjava/lang/Thread;)</p></li>
+<li><p>下列表述正确的数量有（）个 “每个常量最多需要2byte的tag来标明自己的类型” “UTF8info中包含了一个对StringInfo的index，而StringInfo中真正存储了字符串” “由于java无法表示无符号short类型，因此可以把数据读取到int，再进行 value || 0xff的操作来获取低16位” “常量池表的有效索引是从1到constant_pool_count”</p></li>
+</ol>
+<p>A. 0 ✅ B. 1 C. 2 D. 3 E. 4</p>
+<ol start="16" type="1">
+<li>下列表述正确的数量有（）个 “在设置加载器的搜索路径时，dir/* 这样的表示会递归搜索dir目录以及子目录中所有的jar包” “加载器搜索时如果能够在多个路径中找到某个类，那么以最先找到的结果作为返回结果” “java.lang.Object这个类在实际的jar包中的文件名是Object.class” “多个路径设置可以使用File.separator作为分割”</li>
+</ol>
+<p>A. 0 B. 1 C. 2 ✅ D. 3 E. 4</p>
+<ol start="17" type="1">
+<li><p>下列表述正确的数量有（）个 “双亲委托中用户类加载器会同时委托给bootstrap加载器和ext加载器” “双亲委托中当加载器无法从自己的搜索空间中找到类时才会向其他加载器发出委托” “一个类可以加载同一个包下面声明为protected的另一个类” <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这三个类在同一个包中，Visitor无法通过编译</span><br><span class="line">public class Visitor&#123;</span><br><span class="line">    Visible1.Unknown v1 &#x3D; new Visible1.Unknown();</span><br><span class="line">    Visible2.Unknown v2 &#x3D; new Visible2.Unknown();</span><br><span class="line">&#125;</span><br><span class="line">public class Visible1&#123;</span><br><span class="line">    private static class Unknown&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Visible2&#123;</span><br><span class="line">    public static class Unknown&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> A. 0 B. 1 C. 2 ✅ D. 3 E. 4</p></li>
+<li><p>输入java -h得到的结果中包含“java [-options] -jar jarfile [args...]”，下列说法正确的是 A. []中的内容代表可选；jarfile不是一个必须的参数，可以先输入args再通过别的指令额外指定 B. []中的内容是必须至少选择一个的意思；jarfile是一个必须的参数 C. []中的内容代表可选；jarfile是一个必须的参数 ✅ D. []中的内容是必须至少选择一个的意思；jarfile不是一个必须的参数，可以先输入args再通过别的指令额外指定</p></li>
+<li><p>如果要使用commons cli的库实现自己的命令行接口，其中哪个流程是不涉及的 A. 预定义 B. 解析 C. 通过用户输入参数动态新增定义 ✅ D. 使用（实现业务逻辑）</p></li>
+<li><p>类加载的链接阶段不包括什么子阶段 A. 验证 Verification B. 准备 Preparation C. 解析 Resolution D. 创建 Creation ✅</p></li>
+<li><p>下列哪种功能IDEA的debugger没有提供：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 在抛出特定异常之前暂停程序的异常断点</span><br><span class="line">B. 符合特定条件（如某个变量等于某个值）时才触发的断点</span><br><span class="line">C. 在某个断点被触发之后才生效的断点</span><br><span class="line">D. 以上功能都提供了 ✅</span><br></pre></td></tr></table></figure></li>
+<li><p>下列关于字节码的说法中，错误的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. Java字节码之所以叫字节码是因为指令的操作码(opcode)只有一个字节</span><br><span class="line">B. GOTO的offset是相对于GOTO的操作码的地址的</span><br><span class="line">C. Java字节码储存在classfile的常量池（constantpool）字段中 ✅</span><br><span class="line">D. invokeVirtual 比 invokeInterface 指令短</span><br></pre></td></tr></table></figure></li>
+<li><p>在使用Java程序读取数据类型<code>u2</code>时，应该使用哪种类型的变量？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. unsigned short</span><br><span class="line">B. int ✅</span><br><span class="line">C. short</span><br><span class="line">D. char</span><br></pre></td></tr></table></figure></li>
+<li><p>关于指令<code>FCMPG</code>和指令<code>FCMPL</code>的说法中，正确的是：（假设当前操作数栈的情况是: ...op1,op2）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 如果op1&gt;op2，FCMPG压栈1，FCMPL压栈-1</span><br><span class="line">B. 如果op1&gt;op2，FCMPG压栈-1，FCMPL压栈1</span><br><span class="line">C. 如果op1&#x3D;&#x3D;op2, FCMPL和FCMPG都压栈-1</span><br><span class="line">D. FCMPL和FCMPG仅在op1和(或)op2中有NaN的时候行为才有区别 ✅</span><br></pre></td></tr></table></figure></li>
+<li><p><code>byte a = 0xff;</code>那么在Java中，表达式<code>a &amp; 0xff</code>的值和类型分别是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. -1, int ✅</span><br><span class="line">B. 0xff, int</span><br><span class="line">C. -1, short</span><br><span class="line">D. 0xff, byte</span><br></pre></td></tr></table></figure></li>
+<li><p>关于指令<code>ILOAD</code>，下面说法中正确的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. ILOAD 把一个4字节的数据当作int从局部变量表(LocalVars)加载到操作数栈(OperandStack)中 ✅</span><br><span class="line">B. ILOAD 把一个4字节的数据当作int从操作数栈加载到局部变量表中</span><br><span class="line">C. ILOAD 把一个4字节的数据当作int从常量池(ConstantPool) 加载到操作数栈中</span><br><span class="line">D. 以上说法都不对</span><br></pre></td></tr></table></figure></li>
+<li><p>"双亲委托机制"是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 实现运行时多态的机制</span><br><span class="line">B. 提高编译器性能的机制</span><br><span class="line">C. 用在类加载器上的机制 ✅</span><br><span class="line">D. 实现虚函数调用的机制</span><br></pre></td></tr></table></figure></li>
+<li><p>下列关于<code>invokeVirtual</code>的内容，错误的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. invokeVirtual的实现中可以使用虚函数表（Vtable）进行优化</span><br><span class="line">B. invokeVirtual可以用来调用本地方法(native method)</span><br><span class="line">C. invokeVirtual可以用来调用构造方法(Constructor) ✅</span><br><span class="line">D. ABC里至少有一个是错的</span><br></pre></td></tr></table></figure></li>
+<li><p>这段代码正确地实现<code>ISUB</code>指令了吗？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class ISUB extends NoOperandsInstruction &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void execute(StackFrame frame) &#123;</span><br><span class="line">        OperandStack stack &#x3D; frame.getOperandStack();</span><br><span class="line">        int val1 &#x3D; stack.popInt();</span><br><span class="line">        int val2 &#x3D; stack.popInt();</span><br><span class="line">        int res &#x3D; val1 - val2;</span><br><span class="line">        stack.pushInt(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 正确实现了</span><br><span class="line">B. 没有正确实现 ✅</span><br><span class="line">C. 别选这一项，这是判断题</span><br><span class="line">D. 楼上说的对</span><br></pre></td></tr></table></figure></li>
+<li><p>关于<code>StackFrame</code>的说法中，正确的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 在运行过程中，每个method对应且仅对应一个StackFrame</span><br><span class="line">B. 有的StackFrame可能有多个method</span><br><span class="line">C. 有的method可能对应多个StackFrame ✅</span><br><span class="line">D. StackFrame可以多线程共享</span><br></pre></td></tr></table></figure></li>
+<li><p><code>System.out.println("this is a string")</code>方法有几个参数？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 1个，是内容为&quot;this is a string&quot;的String ✅</span><br><span class="line">B. 2个，分别是this和String</span><br><span class="line">C. 2个，分别是类名和String</span><br><span class="line">D. println是个宏(macro), 不是方法</span><br></pre></td></tr></table></figure></li>
+<li><p>方法<code>foo</code>描述符为<code>(III)V</code>, 关于<code>foo</code>的说法正确的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. foo的返回值是Void类型的对象</span><br><span class="line">B. foo的maxLocal可能是2</span><br><span class="line">C. foo的maxLocal可能是6 ✅</span><br><span class="line">D. 调用foo的时候应该使用invokeVirtual指令</span><br></pre></td></tr></table></figure></li>
+<li><p>实验和大作业过程中，用哪个指令来反汇编<code>.class</code>文件？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. javac</span><br><span class="line">B. javap ✅</span><br><span class="line">C. java -jar</span><br><span class="line">D. mvn decompile</span><br></pre></td></tr></table></figure></li>
+<li><p>下列关于<code>classfile</code>中<code>attribute</code>的说法正确的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. Code属于一种Attribute，每个方法都有这个Attribute </span><br><span class="line">B. 在classfile中加入自定义的Attribute不会影响JVM正常解析classfile ✅</span><br><span class="line">C. 在classfile中，Attribute储存在constantpool里</span><br><span class="line">D. 以上说法都不对</span><br></pre></td></tr></table></figure></li>
+<li><p>下列关于<code>classfile</code>中<code>IntergerInfo</code>这一常量池信息说法正确的是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 其中四字节的int是按小端顺序储存的</span><br><span class="line">B. 其中四字节的int是按大端顺序储存的 ✅</span><br><span class="line">C. 储存顺序和JVM的实现有关，选择一种即可</span><br><span class="line">D. classfile中储存的int是6字节，在加载到JVM后需要进行ValueSetConversion</span><br></pre></td></tr></table></figure></li>
+<li><p>如果<code>FADD</code>执行时操作数栈顶的数据其实是int（例如是被ICONST指令加载进来的）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. JVM的行为是未定义的，可以随意处理 ✅</span><br><span class="line">B. JVM应该在执行到这条指令时抛出异常</span><br><span class="line">C. JVM应该把int的值转换成float</span><br><span class="line">D. Java5之后，JVM可以使用指令多态技术把FADD替换成IADD而不会引发异常</span><br></pre></td></tr></table></figure></li>
+<li><p>下面哪个是JVM中加载引用的指令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. ALOAD ✅</span><br><span class="line">B. BLOAD</span><br><span class="line">C. ILOAD</span><br><span class="line">D. DLOAD</span><br></pre></td></tr></table></figure></li>
+<li><p>在描述符中，如何表示<code>long</code>类型:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. L</span><br><span class="line">B. J ✅</span><br><span class="line">C. K</span><br><span class="line">D. Ljava&#x2F;lang&#x2F;Long;</span><br></pre></td></tr></table></figure></li>
+<li><p>下面这段代码对<code>LUSHR</code>的实现正确吗？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void execute(StackFrame frame) &#123;</span><br><span class="line">        OperandStack stack &#x3D; frame.getOperandStack();</span><br><span class="line">        int val2 &#x3D; stack.popInt();</span><br><span class="line">        long val1 &#x3D; stack.popLong();</span><br><span class="line">        long res &#x3D; val1 &gt;&gt;&gt; (val2 &amp; 0x2f);</span><br><span class="line">        stack.pushLong(res);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 正确</span><br><span class="line">B. 不正确 ✅</span><br><span class="line">C. 这是道判断题，别选这一项</span><br><span class="line">D. 楼上说的对</span><br></pre></td></tr></table></figure></li>
+<li><p><code>GOTO</code>指令的<code>offset</code>是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A. 有符号数 ✅</span><br><span class="line">B. 无符号数</span><br><span class="line">C. 对常量池中一个IntegerInfo的引用，IntegerInfo储存了真正的offset值</span><br><span class="line">D. 跳转目标的绝对地址</span><br></pre></td></tr></table></figure></li>
+</ol>
+<!-- 1. 我们在测试用例中请大家自行在JVVM中实现的测试用方法类名是：
+
+   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   A. TestUtil ✅</span><br><span class="line">   B. TestHack</span><br><span class="line">   C. TestCase</span><br><span class="line">   D. IOUtil</span><br><span class="line">   &#96;&#96;&#96; --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 16. 需要正确配置的Java环境变量是：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>A. $JAVAHOME
+B. $JAVA_HOME ✅
+C. $JavaHome
+D. $java_home
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 17. 大作业中，medium1测试用例一直是&#96;空指针异常&#96;说明：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+A. 有指令没有实现
+B. 所有指令都实现了但是有指令实现错误
+C. 框架代码写错了
+D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，选这一项，并且记得下次不要再这样问问题了喔 ✅
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 9. 在实验手册中，要求大家使用的JDK是：</span><br><span class="line"></span><br></pre></td></tr></table></figure></code></pre>
+<p>A. OpenJDK 8 B. 任何JDK 1.8 C. Oracle JDK 8 ✅ D. Maven 5 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 3. 指令&#96;invokeStatic&#96;是在哪次实验中要求实现的？</span><br><span class="line"></span><br></pre></td></tr></table></figure> A. Lab3 B. Lab4 C. Lab5 D. Lab6 ✅ ``` --&gt;</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/jvm/" rel="tag"># jvm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/02/report/GUI-report/" rel="prev" title="GUI-report">
+      <i class="fa fa-chevron-left"></i> GUI-report
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/05/paper/mobile/icse20%20Multiple-Entry/" rel="next" title="Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts">
+      Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MinguW</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+  ((w, d) => {
+    'use strict';
+      let userScheme = localStorage.getItem('Scheme');
+      if (userScheme) d.documentElement.className += ' darkScheme';
+      const btn = d.querySelector('.night-btn');
+      w.addEventListener('keydown', e => {
+        if (e.altKey && e.code === 'KeyX') btn.click();
+      });
+      btn.addEventListener('click', () => {
+        d.documentElement.classList.toggle('darkScheme');
+        if ( d.documentElement.classList.contains('darkScheme') ) {
+          localStorage.setItem('Scheme', 'Dark');
+          return;
+        }
+        localStorage.removeItem('Scheme');
+      });
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

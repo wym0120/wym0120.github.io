@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wym0120.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Patrice Godefroid. Model checking for programming languages using VeriSoft. POPL&#39;97">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[ISER] [FM] Model Checking for Programming Languages using VeriSoft">
+<meta property="og:url" content="https://wym0120.github.io/2020/07/19/paper/ISER/Formal%20Methods/fm-2/index.html">
+<meta property="og:site_name" content="Academic Notes">
+<meta property="og:description" content="Patrice Godefroid. Model checking for programming languages using VeriSoft. POPL&#39;97">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-19T05:58:55.000Z">
+<meta property="article:modified_time" content="2021-04-12T15:01:26.108Z">
+<meta property="article:author" content="MinguW">
+<meta property="article:tag" content="Formal Methods">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wym0120.github.io/2020/07/19/paper/ISER/Formal%20Methods/fm-2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script>
+  ((w, d) => {
+    'use strict';
+      const userScheme = localStorage.getItem('Scheme');
+      if (!userScheme) return;
+    d.documentElement.className += ' darkScheme';
+  })(window, document);
+</script>
+
+  <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft | Academic Notes</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Academic Notes" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Academic Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-code">
+
+    <a href="/categories/code/" rel="section"><i class="fa fa-file-code fa-fw"></i>code</a>
+
+  </li>
+        <li class="menu-item menu-item-papers">
+
+    <a href="/categories/paper/" rel="section"><i class="fa fa-file-alt fa-fw"></i>papers</a>
+
+  </li>
+        <li class="menu-item menu-item-notes">
+
+    <a href="/tags/lecture-notes/" rel="section"><i class="fa fa-file-alt fa-fw"></i>notes</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text">Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmodel-checking"><span class="nav-number">5.1.</span> <span class="nav-text">什么是model checking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%A9%E5%87%8F%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4"><span class="nav-number">5.2.</span> <span class="nav-text">缩减状态空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%8E%A2%E7%B4%A2%E7%AD%96%E7%95%A5"><span class="nav-number">5.3.</span> <span class="nav-text">优化探索策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#todo"><span class="nav-number">5.4.</span> <span class="nav-text">todo</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MinguW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wym0120" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wym0120" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+<div class="night-mode motion-element">
+  <a role="button" class="night-btn">
+    <i class="fa fa-lightbulb-o"></i>
+    Night Mode
+  </a>
+</div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wym0120.github.io/2020/07/19/paper/ISER/Formal%20Methods/fm-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="MinguW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Academic Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [ISER] [FM] Model Checking for Programming Languages using VeriSoft
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-19 13:58:55" itemprop="dateCreated datePublished" datetime="2020-07-19T13:58:55+08:00">2020-07-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 23:01:26" itemprop="dateModified" datetime="2021-04-12T23:01:26+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/paper/" itemprop="url" rel="index"><span itemprop="name">paper</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Patrice Godefroid. Model checking for programming languages using VeriSoft. POPL'97</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
+</blockquote>
+<p>keywords: model-checking</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<ol type="1">
+<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
+<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
+<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
+</ol>
+<h3 id="evalution">Evalution</h3>
+<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
+<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
+<h3 id="details">Details</h3>
+<h4 id="什么是model-checking">什么是model checking</h4>
+<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
+<h4 id="缩减状态空间">缩减状态空间</h4>
+<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
+<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
+<blockquote>
+<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
+</blockquote>
+<h4 id="优化探索策略">优化探索策略</h4>
+<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
+<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
+<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
+<h4 id="todo">todo</h4>
+<p>算法的直觉还是没能很好的get，再讨论一下</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Formal-Methods/" rel="tag"># Formal Methods</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/17/paper/ISER/Formal%20Methods/fm-1/" rel="prev" title="[ISER] [FM] Symbolic execution and program testing">
+      <i class="fa fa-chevron-left"></i> [ISER] [FM] Symbolic execution and program testing
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/20/lecture/os/interesting-bug-1/" rel="next" title="由pipeline和重定向引发的血案">
+      由pipeline和重定向引发的血案 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MinguW</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+  ((w, d) => {
+    'use strict';
+      let userScheme = localStorage.getItem('Scheme');
+      if (userScheme) d.documentElement.className += ' darkScheme';
+      const btn = d.querySelector('.night-btn');
+      w.addEventListener('keydown', e => {
+        if (e.altKey && e.code === 'KeyX') btn.click();
+      });
+      btn.addEventListener('click', () => {
+        d.documentElement.classList.toggle('darkScheme');
+        if ( d.documentElement.classList.contains('darkScheme') ) {
+          localStorage.setItem('Scheme', 'Dark');
+          return;
+        }
+        localStorage.removeItem('Scheme');
+      });
+  })(window, document);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
