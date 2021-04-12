@@ -254,29 +254,6 @@
   </entry>
   
   <entry>
-    <title>[课堂笔记] 数据挖掘和知识发现</title>
-    <link href="https://wym0120.github.io/2020/09/18/lecture/database/data-warehouse-notes/"/>
-    <id>https://wym0120.github.io/2020/09/18/lecture/database/data-warehouse-notes/</id>
-    <published>2020-09-18T10:42:19.000Z</published>
-    <updated>2021-04-12T15:01:26.105Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2><h3 id="knowledge-hierarchy">Knowledge Hierarchy</h3><p>Data : 单纯的数据流 Information : 数据的集合，变成了一个事实 knowledge : 如何解释信息 Wisdom : 如何利用知识来进行决策</p><p>knowledge is something meaningful drawn from data knowledge is just what is useful to you</p><h3 id="data-mining">data mining</h3><p>Definition : Extarction of interesting (non-trivial implicit previously unknown and potentially useful) infomation or patterns from data in large database</p><p>features : - 其实并不需要一个完全普适的一些知识,也就是所谓的interesting - 数据挖掘具有一定的时效性，只在数据来源上面成立 - 挖掘出来的信息既不应该是已有数据中的信息，也不应该没有数据支撑 - 必须要大规模的数据 - 和需要分析的问题相关的数据需要尽量完整 - 数据挖掘通过人的检查之后产生knowledge</p><h3 id="step-of-a-kdd-process">step of a KDD process</h3><p>见ppt 数据选择：选择什么是相关的什么是不相关的</p><h3 id="data-mining-functinoalities">Data Mining Functinoalities</h3><p>Concept description 主要是用来描述被划分出来的集合中到底什么才是能区分两种集合的关键特征 Association （correlation and causality） Classification and Predication Cluster analysis outlier analysis 异常分析 Trend and evolution analysis other pattern-directed or statistical analyses</p><h2 id="第二章">第二章</h2><h3 id="what-is-warehouse">What is Warehouse</h3><h3 id="from-tables-and-spreadsheets-to-data-cubes">From Tables And Spreadsheets To Data Cubes</h3><p>围绕着一组数据，往往有很多的其他数据项来为它服务，显示它的上下文。这种信息在操作型的应用中往往是缺失的。</p><h3 id="further-development-of-data-cube-technology">Further development of data cube technology</h3><p>部分物化：本质上就是提前预测一些会被查询到的数据结果并且计算好，如果出现了预期之外的需求，可以拿这部分的数据再重新计算，相当于从子集中取出更小的子集</p>]]></content>
-    
-    <summary type="html">
-    
-      数据挖掘和知识发现课堂笔记
-    
-    </summary>
-    
-    
-      <category term="notes" scheme="https://wym0120.github.io/categories/notes/"/>
-    
-    
-      <category term="notes" scheme="https://wym0120.github.io/tags/notes/"/>
-    
-  </entry>
-  
-  <entry>
     <title>[ISER] [SME] Ten years of implementation and experience</title>
     <link href="https://wym0120.github.io/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/"/>
     <id>https://wym0120.github.io/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</id>
@@ -452,6 +429,29 @@
     
     </summary>
     
+    
+    
+      <category term="lecture notes" scheme="https://wym0120.github.io/tags/lecture-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[课堂笔记] 程序设计语言的形式语义</title>
+    <link href="https://wym0120.github.io/2020/09/10/lecture/fspl/fspl-notes/"/>
+    <id>https://wym0120.github.io/2020/09/10/lecture/fspl/fspl-notes/</id>
+    <published>2020-09-09T23:51:07.000Z</published>
+    <updated>2021-04-12T15:01:26.105Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3><ul><li>PL的核心：构建抽象，以程序语言为中心去解决计算问题</li><li>PL能做到的是什么<ul><li>用形式化的方式去描述语言的结构和程序的作用</li><li>用一种更严格的方法的方法去证明程序的正确性 more than testing</li></ul></li></ul><p>如何定义语言的行为 operational / denotational / axiomatic semantics(操作 / 指称 / 公理语义)</p><p>数学基础 1. lambda 演算 - functional programming 函数式 - imperative programming 命令式 - declarative programming 声明式</p><h3 id="coq">coq</h3><p>inductive data type</p><p>constructor 是用来构造的而不是计算的 &gt; Think about standard decimal numerals: the numeral [1] is not a computation; it's a piece of data. When we write [111] to mean the number one hundred and eleven, we are using [1] three times, to write down a concrete representation of a number.</p><p>如果对一个函数的传参不完整那么它还是一个函数，直到所有的参数都被获取到才会变成值</p><h3 id="lambda-calculus">lambda calculus</h3><p>一般一个lambda的程序就叫做一个term（项）或者叫做lambda表达式 todo：BNF范式</p><p>pure lambda calculus：(Terms) M,N ::= x | lambdax.M | M N 1. x: 默认用xyz等小写变量来表示程序变量 2. lambdax.M ： lambda抽象，例如 int f (int x)return x -&gt; lambdax.x 3. M N :lambda应用，例如 int f(int x){return x} ; f(3) -&gt; (lambdax.x) 3 4. 本身不接受3作为一个参数，但是可以用 | n扩展语义，还可以引入一些整数计算</p><p>表达式简化： 每一个lambda尽可能管到最右边 函数应用是左结合的 一个lambda abstraction中只有一个参数</p><p>自由变量，不能随意改名 约束变量，可以改名</p><p>求解约束变量的集合 bv(x) = empty bv(lambdax.M) = {x} ∪ bv(M) bv(M N) = bv(M) ∪ bv(N)</p><p>substitution (lambdax.M)[N/M] = lambdax.M 原因 （lambdax.M）N -&gt; M[N/x] 这里直接的lambdax.M相当于 (lambdax.(lambdax.M))[N/x]，N代换的是前面的隐藏的x （相当于代换了形参，但是形参又是可以随便换名字的所以相当于什么都不做）</p><p>"-&gt;"这个代表这 term x term 上的一个relation 合流性定理：选择一个 <strong><em>特定</em></strong> 的M' 并且选择 <strong><em>特定</em></strong> 的策略使得M1，M2都能通过0至多步到达它</p><p>两种化简的策略： normal order reduction：总是选择最左最外的（out-most）redex去做reduction，也就是最优先选择化简function body applicative order reduction：总是选择最左最内的（inner-most）redex去做reduction，也就是最优先选择化简参数。相比于normal order可能效率更低因为参数不一定会被使用到</p><hr /><h3 id="simply-typed-lambda-calculus">Simply-Typed Lambda calculus</h3><p>一竖一横 <span class="math inline">\(\vdash\)</span> 表示是否能推出来 一竖两横 <span class="math inline">\(\models\)</span> 表示含义</p><p>Value v::constants | <span class="math inline">\(\lambda x.M\)</span> | &lt;v...v&gt; | left v | right v Value无法继续做reduction, Value 也是具备类型的</p><h3 id="curry-howard-isomorphism">Curry-Howard Isomorphism</h3><p>"命题就是类型，证明就是程序"</p><p>如何知道一个类型是非空的，即这个集合中至少存在一个term满足该类型？ 根据Curry-Howard同构来替换 Example可以从后往前看，“如果我们要证明这个，那么我们应该首先获得这个前提...”</p><p>项的定型过程就是命题的证明过程，因此可以把项本身就做一个证明</p><p>STLC只和constructive propositional logic对应 STLC中没有一个closed term能够定型出 𝜌+(𝜌→𝜎)</p><h3 id="operational-semantics">Operational Semantics</h3><p>operational semantics 操作语义：指明了程序该如何运行 denotational semanticcs 指称语义：总是把程序指称到一个域上 axiomatic semantics 公理语义：howel logic</p><p>small-step <span class="math inline">\((c,\sigma)\rightarrow(c&#39;,\sigma)\)</span> big-step <span class="math inline">\((c,\sigma)\implies(c&#39;,\sigma)\)</span></p><p>我们认为state是variable到生活中的n的映射，即我们会对这些符号赋予含义</p><h3 id="contextual-semantics">contextual semantics</h3><p>见pdf标注</p>]]></content>
+    
+    <summary type="html">
+    
+      程序设计语言的形式语义课堂笔记
+    
+    </summary>
+    
+    
+      <category term="FSPL" scheme="https://wym0120.github.io/categories/FSPL/"/>
     
     
       <category term="lecture notes" scheme="https://wym0120.github.io/tags/lecture-notes/"/>

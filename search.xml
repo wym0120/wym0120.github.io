@@ -18,23 +18,6 @@
       </categories>
   </entry>
   <entry>
-    <title>GUI-report</title>
-    <url>/2020/07/02/report/GUI-report/</url>
-    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
-<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
-<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
-<h2 id="overall-performance">overall performance</h2>
-<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
-      <tags>
-        <tag>gui</tag>
-        <tag>mobile</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[MIT Lecture] How to Speak</title>
     <url>/2020/10/21/report/MIT-how-to-speck/</url>
     <content><![CDATA[<h3 id="如何开始一个talk">如何开始一个talk</h3>
@@ -202,6 +185,23 @@
       </tags>
   </entry>
   <entry>
+    <title>GUI-report</title>
+    <url>/2020/07/02/report/GUI-report/</url>
+    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
+<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
+<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
+<h2 id="overall-performance">overall performance</h2>
+<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+]]></content>
+      <categories>
+        <category>report</category>
+      </categories>
+      <tags>
+        <tag>gui</tag>
+        <tag>mobile</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jetbrains Report 重构？重写？</title>
     <url>/2020/07/31/report/jetbrain-report/</url>
     <content><![CDATA[<p>问题1: 长方法：不是一个很容易解决的问题 根源的原因：重复</p>
@@ -217,17 +217,6 @@
       <tags>
         <tag>coding</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Bridging the gap between AI and SE</title>
-    <url>/2020/10/19/report/school-report-1/</url>
-    <content><![CDATA[<p>background : 大量的软件开发过程中间产品 problem : 大量的噪音和数据具有异构性 key point : 把软件过程中产生的产品逆向来造各种各样的工具 + 机器来理解人的行为 -&gt; 智能软件开发</p>
-<p>research topics: - intelligent code assistant - code completion - clone detection - API recommenddation - stackoverflow + API doc - knowledge graphbased api misuse detection - automated answer - interactive query refinement for technical question retrieval - intelligent bug management and fixing - feature engineering for invalid bug determination - just in time defect identification and localization(data from github) - automatic document generation - code summarization - code comment updating - commit message generation - pull request generation - hunman-centric software engineering - predicting coding context - development intention and behavior</p>
-<p>research methodology: empirical study -&gt; (intelligent tools &lt;-&gt; empirical study)</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
   </entry>
   <entry>
     <title>mobileperf</title>
@@ -298,32 +287,15 @@
       </tags>
   </entry>
   <entry>
-    <title>[课堂笔记] 数据挖掘和知识发现</title>
-    <url>/2020/09/18/lecture/database/data-warehouse-notes/</url>
-    <content><![CDATA[<h2 id="introduction">Introduction</h2>
-<h3 id="knowledge-hierarchy">Knowledge Hierarchy</h3>
-<p>Data : 单纯的数据流 Information : 数据的集合，变成了一个事实 knowledge : 如何解释信息 Wisdom : 如何利用知识来进行决策</p>
-<p>knowledge is something meaningful drawn from data knowledge is just what is useful to you</p>
-<h3 id="data-mining">data mining</h3>
-<p>Definition : Extarction of interesting (non-trivial implicit previously unknown and potentially useful) infomation or patterns from data in large database</p>
-<p>features : - 其实并不需要一个完全普适的一些知识,也就是所谓的interesting - 数据挖掘具有一定的时效性，只在数据来源上面成立 - 挖掘出来的信息既不应该是已有数据中的信息，也不应该没有数据支撑 - 必须要大规模的数据 - 和需要分析的问题相关的数据需要尽量完整 - 数据挖掘通过人的检查之后产生knowledge</p>
-<h3 id="step-of-a-kdd-process">step of a KDD process</h3>
-<p>见ppt 数据选择：选择什么是相关的什么是不相关的</p>
-<h3 id="data-mining-functinoalities">Data Mining Functinoalities</h3>
-<p>Concept description 主要是用来描述被划分出来的集合中到底什么才是能区分两种集合的关键特征 Association （correlation and causality） Classification and Predication Cluster analysis outlier analysis 异常分析 Trend and evolution analysis other pattern-directed or statistical analyses</p>
-<h2 id="第二章">第二章</h2>
-<h3 id="what-is-warehouse">What is Warehouse</h3>
-<h3 id="from-tables-and-spreadsheets-to-data-cubes">From Tables And Spreadsheets To Data Cubes</h3>
-<p>围绕着一组数据，往往有很多的其他数据项来为它服务，显示它的上下文。这种信息在操作型的应用中往往是缺失的。</p>
-<h3 id="further-development-of-data-cube-technology">Further development of data cube technology</h3>
-<p>部分物化：本质上就是提前预测一些会被查询到的数据结果并且计算好，如果出现了预期之外的需求，可以拿这部分的数据再重新计算，相当于从子集中取出更小的子集</p>
+    <title>Bridging the gap between AI and SE</title>
+    <url>/2020/10/19/report/school-report-1/</url>
+    <content><![CDATA[<p>background : 大量的软件开发过程中间产品 problem : 大量的噪音和数据具有异构性 key point : 把软件过程中产生的产品逆向来造各种各样的工具 + 机器来理解人的行为 -&gt; 智能软件开发</p>
+<p>research topics: - intelligent code assistant - code completion - clone detection - API recommenddation - stackoverflow + API doc - knowledge graphbased api misuse detection - automated answer - interactive query refinement for technical question retrieval - intelligent bug management and fixing - feature engineering for invalid bug determination - just in time defect identification and localization(data from github) - automatic document generation - code summarization - code comment updating - commit message generation - pull request generation - hunman-centric software engineering - predicting coding context - development intention and behavior</p>
+<p>research methodology: empirical study -&gt; (intelligent tools &lt;-&gt; empirical study)</p>
 ]]></content>
       <categories>
-        <category>notes</category>
+        <category>report</category>
       </categories>
-      <tags>
-        <tag>notes</tag>
-      </tags>
   </entry>
   <entry>
     <title>[课堂笔记] 程序设计语言的形式语义</title>
@@ -380,45 +352,6 @@
     <url>/2020/09/25/lecture/fspl/tpl-notes/</url>
     <content><![CDATA[<h2 id="ch3-untyped-arithmetic-expressions">ch3 Untyped Arithmetic Expressions</h2>
 ]]></content>
-  </entry>
-  <entry>
-    <title>[课堂笔记] 软件工程研究入门</title>
-    <url>/2020/09/18/lecture/iser/iser-notes/</url>
-    <content><![CDATA[<h3 id="conduct-rigorous-and-scientific-research">Conduct Rigorous And Scientific Research</h3>
-<h4 id="写作中的presentation">写作中的presentation</h4>
-<ul>
-<li>前后用词一致</li>
-<li>类似句子不要换用句式</li>
-<li>并排枚举的时候强制加上逗号</li>
-<li>宾语从句里面也不要省略that，例如Suppose that / We assume that</li>
-</ul>
-<h4 id="research-formulation">Research Formulation</h4>
-<p>整体上来说，做科研和写论文通常是一起进行的。</p>
-<p>关键概念：必须先定义再使用，用数学上可表达或者机器可执行的形式去定义 非关键概念：尽量把它扔掉 在同一篇论文中每个概念都需要一个很明确的指代，而不能经常变换</p>
-<p>Research Problem 需要有明确的定义的问题边界，不要over claim</p>
-<p>Motivating Example 找到一些有区分度的例子——已有工作在这个例子中不能做，而我们的工作可以做</p>
-<p>Inadequacy Of Related Work 只需要展示不同点，而不要去批判</p>
-<p>Insight 最重要的点，为什么我们的工作比相关工作做的更好</p>
-<h4 id="experimentation">Experimentation</h4>
-<p>Experimentation 和 Case Study的区别：实验环节是可以控制变量的，并且是在一个实验室的环境中。case study是无法控制变量的，是在实际生产环境中的结果</p>
-<h5 id="questions-and-subjects">Questions and Subjects</h5>
-<p>问题设置：在<strong><em>什么条件下</em></strong>通过<strong><em>什么途径</em></strong>在什么<strong><em>方面</em></strong>做得好 主体的选择是否具有代表性</p>
-<h5 id="experimentation-design">Experimentation Design</h5>
-<p>Variable Independent variables（factors） ： 类似与函数中的自变量 Dependent variables ：类似于函数中的应变量，是用于衡量实验结果的一些指标 Controlled variables ：由于难以控制因此一些被固定下来的值，但是这些值对实验不会产生决定性的影响</p>
-<h5 id="threats-to-validity">Threats to Validity</h5>
-<ul>
-<li>constuct validity</li>
-<li>internal validity</li>
-<li>external validity</li>
-<li>concluusion validity</li>
-</ul>
-<p>todo：看一下原文</p>
-<h5 id="exercise-and-discussion">Exercise and discussion</h5>
-<p>回答为什么这些threats会影响实验数据<strong><em>但是</em></strong>为什么不会影响结论的正确性</p>
-]]></content>
-      <tags>
-        <tag>lecture notes</tag>
-      </tags>
   </entry>
   <entry>
     <title>JVM习题</title>
@@ -549,20 +482,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[课堂笔记] 软件工程管理</title>
-    <url>/2020/09/14/lecture/mse/MSE-notes/</url>
-    <content><![CDATA[<p>软件工程的根本困难 : 软件开发中苦难的部分是规格化、设计、测试这些概念上的结构，而不是对概念的进行表达和对现实实现逼真程度进行验证。</p>
-<h3 id="软件过程剪裁融合定制">软件过程剪裁、融合、定制</h3>
-<p>motivation 一个软件过程无法适用于所有的场景，因此需要将多个软件过程的优势结合起来</p>
-]]></content>
-      <categories>
-        <category>MSE</category>
-      </categories>
-      <tags>
-        <tag>lecture notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[课堂笔记] 操作系统</title>
     <url>/2020/07/05/lecture/os/os-lecture-notes/</url>
     <content><![CDATA[<h2 id="理论课">理论课</h2>
@@ -594,57 +513,42 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>skills4os</title>
-    <url>/2020/07/05/lecture/os/skills4os/</url>
-    <content><![CDATA[<h3 id="常用命令">常用命令</h3>
-<table>
-<thead>
-<tr class="header">
-<th>指令</th>
-<th>常见用法</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>file</td>
-<td>查看文件信息</td>
-</tr>
-<tr class="even">
-<td>xxd</td>
-<td>查看二进制文件</td>
-</tr>
-<tr class="odd">
-<td>readelf</td>
-<td>查看elf文件</td>
-</tr>
-<tr class="even">
-<td>objdump</td>
-<td>查看二进制代码</td>
-</tr>
-<tr class="odd">
-<td>nm</td>
-<td>列举出.o文件的符号</td>
-</tr>
-<tr class="even">
-<td>strings</td>
-<td>查看文件中的字符串</td>
-</tr>
-</tbody>
-</table>
-<h3 id="使用小技巧">使用小技巧</h3>
-<ol type="1">
-<li>Ubuntu Packages网站用来寻找缺少的文件在哪个包里</li>
-<li>strace xxx &gt; /dev/null 把strace的标准输出重定向到/dev/null，也就是将执行的程序的输出都丢掉（假设程序中使用了printf）</li>
-<li>make -nB 可以不实际执行编译而是直接输出出来</li>
-</ol>
+    <title>[课堂笔记] 软件工程研究入门</title>
+    <url>/2020/09/18/lecture/iser/iser-notes/</url>
+    <content><![CDATA[<h3 id="conduct-rigorous-and-scientific-research">Conduct Rigorous And Scientific Research</h3>
+<h4 id="写作中的presentation">写作中的presentation</h4>
+<ul>
+<li>前后用词一致</li>
+<li>类似句子不要换用句式</li>
+<li>并排枚举的时候强制加上逗号</li>
+<li>宾语从句里面也不要省略that，例如Suppose that / We assume that</li>
+</ul>
+<h4 id="research-formulation">Research Formulation</h4>
+<p>整体上来说，做科研和写论文通常是一起进行的。</p>
+<p>关键概念：必须先定义再使用，用数学上可表达或者机器可执行的形式去定义 非关键概念：尽量把它扔掉 在同一篇论文中每个概念都需要一个很明确的指代，而不能经常变换</p>
+<p>Research Problem 需要有明确的定义的问题边界，不要over claim</p>
+<p>Motivating Example 找到一些有区分度的例子——已有工作在这个例子中不能做，而我们的工作可以做</p>
+<p>Inadequacy Of Related Work 只需要展示不同点，而不要去批判</p>
+<p>Insight 最重要的点，为什么我们的工作比相关工作做的更好</p>
+<h4 id="experimentation">Experimentation</h4>
+<p>Experimentation 和 Case Study的区别：实验环节是可以控制变量的，并且是在一个实验室的环境中。case study是无法控制变量的，是在实际生产环境中的结果</p>
+<h5 id="questions-and-subjects">Questions and Subjects</h5>
+<p>问题设置：在<strong><em>什么条件下</em></strong>通过<strong><em>什么途径</em></strong>在什么<strong><em>方面</em></strong>做得好 主体的选择是否具有代表性</p>
+<h5 id="experimentation-design">Experimentation Design</h5>
+<p>Variable Independent variables（factors） ： 类似与函数中的自变量 Dependent variables ：类似于函数中的应变量，是用于衡量实验结果的一些指标 Controlled variables ：由于难以控制因此一些被固定下来的值，但是这些值对实验不会产生决定性的影响</p>
+<h5 id="threats-to-validity">Threats to Validity</h5>
+<ul>
+<li>constuct validity</li>
+<li>internal validity</li>
+<li>external validity</li>
+<li>concluusion validity</li>
+</ul>
+<p>todo：看一下原文</p>
+<h5 id="exercise-and-discussion">Exercise and discussion</h5>
+<p>回答为什么这些threats会影响实验数据<strong><em>但是</em></strong>为什么不会影响结论的正确性</p>
 ]]></content>
-      <categories>
-        <category>os</category>
-        <category>os lecture</category>
-      </categories>
       <tags>
         <tag>lecture notes</tag>
-        <tag>os</tag>
       </tags>
   </entry>
   <entry>
@@ -790,18 +694,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[课堂笔记] 计算机网络</title>
-    <url>/2020/09/15/lecture/web/web-notes/</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>lecture notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts</title>
     <url>/2020/07/05/paper/mobile/icse20%20Multiple-Entry/</url>
     <content><![CDATA[<h2 id="总体评价">总体评价</h2>
@@ -906,27 +798,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
-    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
-</blockquote>
-<p>keywords: integer overflow, integer wraparound, undefined behavior</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [EMSE] On the Naturalness of Software</title>
     <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -939,6 +810,27 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
+    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
+</blockquote>
+<p>keywords: integer overflow, integer wraparound, undefined behavior</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
