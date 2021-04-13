@@ -18,23 +18,6 @@
       </categories>
   </entry>
   <entry>
-    <title>GUI-report</title>
-    <url>/2020/07/02/report/GUI-report/</url>
-    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
-<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
-<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
-<h2 id="overall-performance">overall performance</h2>
-<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
-      <tags>
-        <tag>gui</tag>
-        <tag>mobile</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[MIT Lecture] How to Speak</title>
     <url>/2020/10/21/report/MIT-how-to-speck/</url>
     <content><![CDATA[<h3 id="如何开始一个talk">如何开始一个talk</h3>
@@ -77,6 +60,23 @@
       <categories>
         <category>report</category>
       </categories>
+  </entry>
+  <entry>
+    <title>GUI-report</title>
+    <url>/2020/07/02/report/GUI-report/</url>
+    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
+<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
+<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
+<h2 id="overall-performance">overall performance</h2>
+<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+]]></content>
+      <categories>
+        <category>report</category>
+      </categories>
+      <tags>
+        <tag>gui</tag>
+        <tag>mobile</tag>
+      </tags>
   </entry>
   <entry>
     <title>How to write and publish technical papers in English</title>
@@ -798,6 +798,29 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [EMSE] On the Naturalness of Software</title>
+    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
+</blockquote>
+<blockquote>
+<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
+</blockquote>
+<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
     <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -879,29 +902,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>通过工具自动分类的结果：</p>
 <p>RQ2: 代码会因为哪些原因被log</p>
 <p>RQ3: 是否存在某种途径能够自动决定log的位置</p>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] On the Naturalness of Software</title>
-    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
-</blockquote>
-<blockquote>
-<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
-</blockquote>
-<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
 ]]></content>
       <categories>
         <category>paper</category>
@@ -1014,26 +1014,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
-</blockquote>
-<p>keywords: Veritesting, Symbolic Execution, Verification</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1057,6 +1037,26 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
 <h3 id="todo">todo</h3>
 <p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
+</blockquote>
+<p>keywords: Veritesting, Symbolic Execution, Verification</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
 ]]></content>
       <categories>
         <category>paper</category>
@@ -1125,8 +1125,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1145,8 +1145,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1186,6 +1186,26 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [SME] A technique for cheap recovery</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
     <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1199,26 +1219,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] A technique for cheap recovery</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
