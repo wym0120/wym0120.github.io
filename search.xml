@@ -1,238 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[课堂笔记] 软件过程改进</title>
-    <url>/2021/04/12/cmmi/</url>
-    <content><![CDATA[<h1 id="cmmi-模型概述">CMMI 模型概述</h1>
-<h2 id="过程改进">过程改进</h2>
-<h3 id="过程的定义">过程的定义</h3>
-<blockquote>
-<ul>
-<li><strong>IEEE: Sequence of steps performed for a given purpose</strong></li>
-<li><strong>PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a specified end result</strong></li>
-<li><strong>CMMI GLOSSARY: A set of interrelated activities, which transform in puts into outputs, to achieve a given purpose</strong></li>
-</ul>
-</blockquote>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413091924.png" /></p>
-<p><strong>如上图所示，将这三个重要方面结合到一起的是组织中所使用的过程。</strong></p>
-<h3 id="过程改进的好处">过程改进的好处</h3>
-<ul>
-<li>过程使您能够了解正在发生的事情。</li>
-<li>通过定义，测量和控制过程，改进将更加成功和持久。</li>
-<li>成功引入适当的技术，技巧和工具的可能性增加。</li>
-<li>人们可以更加充分地发挥潜力，更加有效。</li>
-</ul>
-<hr />
-<h2 id="连续式表示法与阶段式表示法">连续式表示法与阶段式表示法</h2>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413092723.png" /></p>
-<blockquote>
-<p>CMMI 支持两种使用级别的改进路径。一条路径使组织能够逐步改进其选定的单个过程域（或一组过程域）所对应的过程。另一条路径使组织能够以增量方式应对层次相继的过程域集合来改进相关的过程集。连续式表示法的关注点在于由能力等级度量的过程域能力，而阶段式表示法的关注点在于由成熟度级别度量的总体成熟度。</p>
-<p>随着组织达成某一成熟度级别中一系列过程域的通用目标和特定目标，组织在提升组织级成熟度的同时也收获了过程改进带来的收益。 由于每一成熟度级别都为下一级别打下必要的基础，因此，<strong>在成熟度级别上的跳级尝试往往会导致反效果。</strong></p>
-<p><strong>同时</strong>，需要认识到的是，过程改进活动应该关注于以组织的业务环境为背景的组织需要上，并认识到更高的成熟度级别中的过程域可以应对组织或项目的当前的与未来的需要。<strong>例如虽然过程组并非成熟度级别 2 级组织的必要特征，但是它可以成为组织达成成熟度级别 2 级途径中的有用部分。</strong></p>
-<p>大多数组织对其所选的过程域，至少会选择能力等级 1 级作为目标，这要求达成所有选定过程域的特定目标。然而，将目标定于高于能力等级 1 级的组织会通过实施通用目标与通用实践，来专注于组织内所选过程的制度化。适用于每个过程域的通用目标也已预设完成。通用目标 2 适用于成熟度级别 2 级，通用目标 3 适用于成熟度级别 3 级到 5 级。</p>
-</blockquote>
-<hr />
-<h2 id="等价阶段式定级">等价阶段式定级</h2>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413165108.png" /></p>
-<h2 id="关于-cmmi-模型的一系列理解">关于 CMMI 模型的一系列理解</h2>
-<blockquote>
-<p>能力成熟度模型（Capability Maturity Model，CMM），包括 CMMI，都是对现实世界的简化表述，它涵盖了开发产品与服务的活动。CMMI 开发模型是一个参考模型，是实践的结构化集合，描述了有效过程的特征。CMMI 开发模型并不规定项目或组织必须遵循特定的过程顺序，或每天必须开发出一定数量的产品，或必须达成特定的绩效指标。模型所规定的是项目或组织应该具备应对开发相关实践的过程。项目或组织可将其过程映射至本模型中的过程域，以确定这些过程是否具备。</p>
-</blockquote>
-<h3 id="为什么要有标准过程">为什么要有标准过程</h3>
-<blockquote>
-<p>标准过程并不是教条主义，而是为了让项目小组更好地识别其他团队的优秀做法，促进共享。</p>
-</blockquote>
-<h3 id="如何使用过程模型">如何使用过程模型？</h3>
-<blockquote>
-<p>帮助设定过程改进目标和优先级; 帮助确保稳定，有能力且成熟的过程;作为改善项目和组织过程的指南;通过评估方法来诊断组织当前的实践状态</p>
-</blockquote>
-<h3 id="为什么过程模型很重要">为什么过程模型很重要</h3>
-<blockquote>
-<p>过程模型提供一个开始改进的地方;社区先前经验的好处;共同的语言和共同的愿景;优先行动的框架 定义改进对组织意味着什么的方法</p>
-</blockquote>
-<h2 id="关于-cmmi-模型的一系列知识点">关于 CMMI 模型的一系列知识点</h2>
-<ol type="1">
-<li>CMMIv1.2分为哪三个集群</li>
-</ol>
-<blockquote>
-<ul>
-<li>面向开发的CMMI（CMMI-DEV）</li>
-<li>面向采购的CMMI（CMMI-ACQ）</li>
-<li>面向服务的CMMI（CMMI-SVC）</li>
-</ul>
-</blockquote>
-<ol start="2" type="1">
-<li>CMMI来源于那三个模型 ，研究机构</li>
-</ol>
-<blockquote>
-<ul>
-<li>软件工程 sw-cmm</li>
-<li>系统工程 EIA/IS</li>
-<li>集成化产品和过程开发 IPD-CMM</li>
-</ul>
-</blockquote>
-<ol start="3" type="1">
-<li>评估方法简述，评估三种类型、评估的主要依据、评估的结果</li>
-</ol>
-<blockquote>
-<ul>
-<li>SCAMPI评估方法是用于过程改进的标准CMMI评估方法</li>
-<li>SCAMPI评估方法有三种类型：
-<ul>
-<li>Class A:凡是按体系要求的项目都需要按体系要求做，评估的时候采取抽样评估；</li>
-<li>Class B:评估试点项目与体系文档、CMMI模型的符合度；</li>
-<li>Class C:评估完成的过程体系与CMMI模型的差距；</li>
-</ul></li>
-<li>目标下的全部实践被全部实施或者被大部分实施，所有缺点不会影响目标的达成。</li>
-</ul>
-</blockquote>
-<hr />
-<h2 id="过程域之间的关系">过程域之间的关系</h2>
-<h3 id="过程管理类">过程管理类</h3>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094344.png" /></p>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094416.png" /></p>
-<h3 id="项目管理类">项目管理类</h3>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094441.png" /></p>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094504.png" /></p>
-<h3 id="工程类">工程类</h3>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /></p>
-<h3 id="支持类">支持类</h3>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094548.png" /></p>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094612.png" /></p>
-<hr />
-<h1 id="通用目标与通用实践">通用目标与通用实践</h1>
-<h2 id="已执行已管理已定义之间的区别">已执行、已管理、已定义之间的区别</h2>
-<blockquote>
-<p>已执行与已管理之间的关键区别在于过程得到管理的程度。已管理的过程得到了计划（该计划可以是一份更全面的计划的一部分），并且过程的执行依据计划得到了管理。当实际结果与执行情况显著偏离计 划时，会采取纠正措施。已管理的过程能达成该计划的目标，并得到了制度化以实现执行上的一致。</p>
-<p>已管理与已定义之间的关键区别在于过程描述、标准与规程 的适用范围。对于已管理的过程，其过程描述、标准与规程适用于特定的 项目、组或组织级功能。因此，同一组织内的两个项目，其已管理的过程可能并不相同。</p>
-<p>另一项关键区别在于，相比已管理的过程，已定义的过程描述更为详细， 执行更为严格。这一区别意味着改进信息更容易被理解、分析并使用。最后，已定义过程的管理建立在更为深入的理解之上，包括在过程活动的相互关系方面的理解，以及在过程、过程工作产品与过程服务的详细度量项方面的理解。</p>
-</blockquote>
-<h2 id="过程之间的关系">过程之间的关系</h2>
-<blockquote>
-<p>达成过程域的 GG 1，就等于说你达成了该过程域的特定目标。</p>
-<p>达成过程域的GG 2，就等于说你管理了与该过程域相关联的过程的执行。过程就如同任何项目或 支持活动那样得到了计划与监督。</p>
-<p>达成过程域的 GG 3，就等于说存在组织级标准过程，能够对其进行裁剪(按标准原样执行也是一种裁剪)得到你将要使用的过程。</p>
-</blockquote>
-<h2 id="通用目标与通用实践-1">通用目标与通用实践</h2>
-<h3 id="gg1-达成特定目标">GG1 达成特定目标</h3>
-<blockquote>
-<p>过程域的特定目标得到过程的支持，过程的支持通过将可识别的输入工作产品转换为可识别的输出工作产品来实现。</p>
-</blockquote>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>通用实践</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>GP 1.1 执行特定实践</td>
-<td>本通用实践的目的在于产生工作产品与交付服务，这些产品与服务是实施（即执行）过程所期望得到的。这些实践能够以非正式方式完成，而不用遵循文档化的过程描述或计划。执行这些实践的严格程度取决于管理与实施该项工作的个人，并可能有很大的差异。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="gg2-制度化为已管理的过程">GG2 制度化为已管理的过程</h3>
-<blockquote>
-<p>过程得到制度化为已管理的过程。</p>
-</blockquote>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>通用实践</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>GP 2.1 建立组织级方针</td>
-<td><strong>建立并维护组织级方针，以计划并执行过程。</strong>本通用实践的目的在于定义对过程的组织级期望，并实现这些期望对组织中受影响的人员的可视化。一般来说，高层管理人员负责建立并沟通组织 的指导原则、指示与期望。并非所有来自高层管理人员的指示都带有“方针”的标签。存在适当的组织级指示是本通用实践所期望的，无论其被称作什么，或通过什么手段进行传达。</td>
-</tr>
-<tr class="even">
-<td>GP 2.2 计划过程</td>
-<td><strong>建立并维护计划，以执行过程。</strong>本通用实践的目的在于确定需要什么来执行过程并达成已建立的目标，以准备执行过程的计划，准备过程的描述，并获得相关干系人对计划的同意。</td>
-</tr>
-<tr class="odd">
-<td>GP 2.3 提供资源</td>
-<td><strong>提供充分的资源，以执行过程、开发工作产品并提供过程的服务。</strong>本通用实践的目的在于确保计划所定义的、执行过程所必需的资源在需要 时可用。资源包括充分的资金、适当的实体设施、有技能的人员以及适当 的工具等。 对于术语“充分的”，其解释取决于诸多因素，并且可能随着时间而变化。 资源不充分可以通过增加资源或者减少需求、约束与承诺等手段来解决。</td>
-</tr>
-<tr class="even">
-<td>GP 2.4 分派职责</td>
-<td><strong>分派职责与职权，以执行过程、开发工作产品并提供过程的服务。</strong>本通用实践的目的在于确保在过程的整个生命期中都存在执行过程与达 成所规定结果的责任。所分派的人员必须拥有执行所分派职责的适当职权。职责的分派可以使用详细的岗位描述来进行，或使用如过程执行计划那样 的活文档来进行。职责的动态分派是实施本通用实践的另一种合理方式， 只要在过程的整个生命期中都能够确保职责的分派与接受。<strong>子实践</strong>1. 分派执行过程的总体职责与职权。2. 分派执行过程的特定任务的职责与职权。3. 确定人员理解并接受分派给他们的职责与职权。</td>
-</tr>
-<tr class="odd">
-<td>GP 2.5 培训人员</td>
-<td><strong>必要时，培训过程的执行或支持人员。</strong>本通用实践的目的在于确保人员拥有执行或支持过程所需要的技能与专长。 为将要执行工作的人员提供适当的培训。为那些与执行工作的人员有交互的人员提供概要培训使其了解情况。提供培训的方法的实例有：自学；自主培训；自定进度的程序化教学；正式的在岗培训（on-the-job training）；辅导；以及正式的课堂培训等。培训建立起对过程的共同理解，并传授执行过程所需的技能与知识，从而支持过程的成功执行。</td>
-</tr>
-<tr class="even">
-<td>GP 2.6 控制工作产品</td>
-<td><strong>将所选择的过程工作产品置于适当的控制级别。</strong>本通用实践的目的在于建立并维护所选择的过程工作产品（或其描述）在其使用寿命内的完整性。所选择的工作产品在执行过程的计划中进行明确识别，同时明确说明适当的控制级别。不同的控制级别适用于不同的工作产品与不同的时间点。对有些工作产品来说，进行版本控制可能已经足够，这样就可以了解在过去或现在的任何给定时间点所使用工作产品的版本，并且变更的纳入是受控的。版本控制 往往处于工作产品所有者（可能是个人、小组或团队）的单独控制之下。有时，将工作产品置于正式的或者是有基线的配置管理之下会很重要。此类控制包含了在预先确定的节点定义与建立基线。这些基线得到了正式评审与批准，并作为进一步开发所指定的工作产品的基础。参阅“配置管理”过程域以进一步了解如何使用配置识别、配置控制、配置状态记录与报告以及配置审计来建立并维护工作产品的完整性。介于版本控制与正式配置管理之间的其它控制级别也是可能的。所识别的工作产品可能在不同时间点被置于各种不同的控制级别之下。</td>
-</tr>
-<tr class="odd">
-<td>GP 2.7 识别相关干系人，并使之参与</td>
-<td><strong>识别过程的相关干系人，并使之按计划参与。</strong>本通用实践的目的在于建立并维护在执行过程时所期望的相关干系人的参与。<strong>子实践</strong>1. 对与过程相关的干系人及其适当的参与进行识别。可从过程活动的输入提供者、输出使用者和活动执行者之中识别相关干系人。一旦识别出相关干系人，就要对他们参与过程活动的适当级别进行计划。2. 在适当的情况下，与项目计划人员或其他计划人员分享这些识别结果。3. 使相关干系人按计划参与。</td>
-</tr>
-<tr class="even">
-<td>GP 2.8 监督并控制过程</td>
-<td><strong>对照执行过程的计划，监督并控制过程，并采取适当的纠正措施。</strong>本通用实践的目的在于对过程进行日常的直接监督与控制。通过维护对过 程适当的可视性，必要时就能够采取适当的纠正措施。对过程进行监督与 控制可能涉及到对过程或其产生的工作产品的适当属性进行度量。</td>
-</tr>
-<tr class="odd">
-<td>GP 2.9 客观评价遵守程度</td>
-<td><strong>对照过程描述、标准与规程，对过程与所选工作产品的遵守程度进行客观评价，并处理不符合的情况。</strong>本通用实践的目的在于提供可信的保证，确保过程与所选的工作产品按照 计划得到了实施，并且遵守过程描述、标准与规程。评价遵守程度的工作通常由不直接负责管理或执行过程活动的人员来从 事。很多情况下，对遵守程度的评价都由过程外部或项目外部的组织内人 员来进行，或者由组织外人员来完成。因此，即使在过程处于压力之下的 时候（例如：工作落后于进度时，工作超出预算时），仍然能够取得对遵 守程度的可信保证。</td>
-</tr>
-<tr class="even">
-<td>GP 2.10 与上级管理层一起进行状态评审</td>
-<td><strong>与上级管理层一起对过程的活动、状态与结果进行评审，并解决问题。</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="gg3-制度化为已定义的过程">GG3 制度化为已定义的过程</h3>
-<blockquote>
-<p>过程得到制度化为已定义的过程</p>
-</blockquote>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>通用实践</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>GP 3.1 建立已定义的过程</td>
-<td><strong>建立并维护已定义过程的描述。</strong>本通用实践的目的在于建立并维护从组织的标准过程集中裁剪得到的过 程描述，以应对具体实例的需要。组织应该具备覆盖过程域的标准过程， 同时拥有裁剪这些标准过程的指南，以满足项目或组织级功能的需要。具 备了已定义的过程，就能降低在全组织范围内执行过程方面的差异性，从 而能够有效地分享过程资产、数据与经验总结。</td>
-</tr>
-<tr class="even">
-<td>GP 3.2 收集与过程相关的经验</td>
-<td><strong>收集源于过程的计划与执行的、与过程相关的经验，以支持组织过程与过程资产未来的使用与改进。</strong>本通用实践的目的在于收集过程相关的经验，包括源于过程的计划与执行的信息与产物。过程相关的经验实例有工作产品、度量项、度量结果、经验教训与过程改进建议。对信息与产物进行收集，这样它们能够被包含在组织级过程资产中，使那些（或那些将要）计划与执行相同或相似过程的人员可以使用。信息与产物被存储在组织的度量库与组织的过程资产库中。</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="过程域">过程域</h1>
-<hr />
-<h1 id="术语表">术语表</h1>
-<hr />
-<hr />
-<h1 id="ppt-中问题整理">PPT 中问题整理</h1>
-]]></content>
-      <tags>
-        <tag>lecture</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Citrine: Providing Intelligent Copy-and-Paste</title>
     <url>/2020/09/25/paper/copy-and-paste-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1051,49 +819,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [EMSE] Why we refactor? Confessions of GitHub contributors</title>
-    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] On the Naturalness of Software</title>
-    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
-</blockquote>
-<blockquote>
-<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
-</blockquote>
-<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [EMSE] Where Do Developers Log? An Empirical Study on Logging Practices in Industry</title>
     <url>/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1163,45 +888,46 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
-    <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
+    <title>[ISER] [EMSE] On the Naturalness of Software</title>
+    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
+<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
 </blockquote>
-<p>keywords: model-checking</p>
+<blockquote>
+<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
+</blockquote>
+<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
-<ol type="1">
-<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
-<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
-<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
-</ol>
 <h3 id="evalution">Evalution</h3>
-<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
-<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
 <h3 id="details">Details</h3>
-<h4 id="什么是model-checking">什么是model checking</h4>
-<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
-<h4 id="缩减状态空间">缩减状态空间</h4>
-<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
-<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
-<blockquote>
-<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
-</blockquote>
-<h4 id="优化探索策略">优化探索策略</h4>
-<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
-<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
-<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
-<h4 id="todo">todo</h4>
-<p>算法的直觉还是没能很好的get，再讨论一下</p>
 ]]></content>
       <categories>
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Formal Methods</tag>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] Why we refactor? Confessions of GitHub contributors</title>
+    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
       </tags>
   </entry>
   <entry>
@@ -1246,6 +972,68 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
+    <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
+</blockquote>
+<p>keywords: model-checking</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<ol type="1">
+<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
+<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
+<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
+</ol>
+<h3 id="evalution">Evalution</h3>
+<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
+<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
+<h3 id="details">Details</h3>
+<h4 id="什么是model-checking">什么是model checking</h4>
+<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
+<h4 id="缩减状态空间">缩减状态空间</h4>
+<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
+<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
+<blockquote>
+<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
+</blockquote>
+<h4 id="优化探索策略">优化探索策略</h4>
+<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
+<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
+<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
+<h4 id="todo">todo</h4>
+<p>算法的直觉还是没能很好的get，再讨论一下</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
+</blockquote>
+<p>keywords: Veritesting, Symbolic Execution, Verification</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1278,26 +1066,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
-</blockquote>
-<p>keywords: Veritesting, Symbolic Execution, Verification</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
     <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1317,28 +1085,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
+    <title>[ISER] [SEP] A study of developer work habits</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1377,8 +1125,28 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A study of developer work habits</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
+    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1407,6 +1175,30 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
+</blockquote>
+<blockquote>
+<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
+</blockquote>
+<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
@@ -1447,30 +1239,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>keywords:</p>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
-</blockquote>
-<blockquote>
-<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
-</blockquote>
-<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
@@ -1580,6 +1348,258 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </categories>
       <tags>
         <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[课堂笔记] 软件过程改进</title>
+    <url>/2021/04/12/cmmi/</url>
+    <content><![CDATA[<h1 id="cmmi-模型概述">CMMI 模型概述</h1>
+<h2 id="过程改进">过程改进</h2>
+<h3 id="过程的定义">过程的定义</h3>
+<blockquote>
+<ul>
+<li><strong>IEEE: Sequence of steps performed for a given purpose</strong></li>
+<li><strong>PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a specified end result</strong></li>
+<li><strong>CMMI GLOSSARY: A set of interrelated activities, which transform in puts into outputs, to achieve a given purpose (These activities can be mapped to one or more practices in CMMI process areas to allow a model to be useful for process improvement and process appraisal.)</strong></li>
+</ul>
+</blockquote>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413091924.png" /></p>
+<p><strong>如上图所示，将这三个重要方面结合到一起的是组织中所使用的过程。</strong></p>
+<h3 id="过程改进的好处">过程改进的好处</h3>
+<ul>
+<li>过程使您能够了解正在发生的事情。</li>
+<li>通过定义，测量和控制过程，改进将更加成功和持久。</li>
+<li>成功引入适当的技术，技巧和工具的可能性增加。</li>
+<li>人们可以更加充分地发挥潜力，更加有效。</li>
+</ul>
+<hr />
+<h2 id="连续式表示法与阶段式表示法">连续式表示法与阶段式表示法</h2>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413092723.png" /></p>
+<blockquote>
+<p>CMMI 支持两种使用级别的改进路径。一条路径使组织能够逐步改进其选定的单个过程域（或一组过程域）所对应的过程。另一条路径使组织能够以增量方式应对层次相继的过程域集合来改进相关的过程集。连续式表示法的关注点在于由能力等级度量的过程域能力，而阶段式表示法的关注点在于由成熟度级别度量的总体成熟度。</p>
+<p>随着组织达成某一成熟度级别中一系列过程域的通用目标和特定目标，组织在提升组织级成熟度的同时也收获了过程改进带来的收益。 由于每一成熟度级别都为下一级别打下必要的基础，因此，<strong>在成熟度级别上的跳级尝试往往会导致反效果。</strong></p>
+<p><strong>同时</strong>，需要认识到的是，过程改进活动应该关注于以组织的业务环境为背景的组织需要上，并认识到更高的成熟度级别中的过程域可以应对组织或项目的当前的与未来的需要。<strong>例如虽然过程组并非成熟度级别 2 级组织的必要特征，但是它可以成为组织达成成熟度级别 2 级途径中的有用部分。</strong></p>
+<p>大多数组织对其所选的过程域，至少会选择能力等级 1 级作为目标，这要求达成所有选定过程域的特定目标。然而，将目标定于高于能力等级 1 级的组织会通过实施通用目标与通用实践，来专注于组织内所选过程的制度化。适用于每个过程域的通用目标也已预设完成。通用目标 2 适用于成熟度级别 2 级，通用目标 3 适用于成熟度级别 3 级到 5 级。</p>
+</blockquote>
+<hr />
+<h2 id="等价阶段式定级">等价阶段式定级</h2>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413165108.png" /></p>
+<h2 id="关于-cmmi-模型的一系列理解">关于 CMMI 模型的一系列理解</h2>
+<blockquote>
+<p>能力成熟度模型（Capability Maturity Model，CMM），包括 CMMI，都是对现实世界的简化表述，它涵盖了开发产品与服务的活动。CMMI 开发模型是一个参考模型，是实践的结构化集合，描述了有效过程的特征。CMMI 开发模型并不规定项目或组织必须遵循特定的过程顺序，或每天必须开发出一定数量的产品，或必须达成特定的绩效指标。模型所规定的是项目或组织应该具备应对开发相关实践的过程。项目或组织可将其过程映射至本模型中的过程域，以确定这些过程是否具备。</p>
+</blockquote>
+<h3 id="为什么要有标准过程">为什么要有标准过程</h3>
+<blockquote>
+<p>标准过程并不是教条主义，而是为了让项目小组更好地识别其他团队的优秀做法，促进共享。</p>
+</blockquote>
+<h3 id="如何使用过程模型">如何使用过程模型</h3>
+<blockquote>
+<p>帮助设定过程改进目标和优先级; 帮助确保稳定，有能力且成熟的过程;作为改善项目和组织过程的指南;通过评估方法来诊断组织当前的实践状态</p>
+</blockquote>
+<h3 id="为什么过程模型很重要">为什么过程模型很重要</h3>
+<blockquote>
+<p>过程模型提供一个开始改进的地方;社区先前经验的好处;共同的语言和共同的愿景;优先行动的框架 定义改进对组织意味着什么的方法</p>
+</blockquote>
+<h2 id="关于-cmmi-模型的一系列知识点">关于 CMMI 模型的一系列知识点</h2>
+<ol type="1">
+<li>CMMIv1.2分为哪三个集群</li>
+</ol>
+<blockquote>
+<ul>
+<li>面向开发的CMMI（CMMI-DEV）</li>
+<li>面向采购的CMMI（CMMI-ACQ）</li>
+<li>面向服务的CMMI（CMMI-SVC）</li>
+</ul>
+</blockquote>
+<ol start="2" type="1">
+<li>CMMI来源于那三个模型 ，研究机构</li>
+</ol>
+<blockquote>
+<ul>
+<li>软件工程 sw-cmm</li>
+<li>系统工程 EIA/IS</li>
+<li>集成化产品和过程开发 IPD-CMM</li>
+</ul>
+</blockquote>
+<ol start="3" type="1">
+<li>评估方法简述，评估三种类型、评估的主要依据、评估的结果</li>
+</ol>
+<blockquote>
+<ul>
+<li>SCAMPI评估方法是用于过程改进的标准CMMI评估方法</li>
+<li>SCAMPI评估方法有三种类型：
+<ul>
+<li>Class A:凡是按体系要求的项目都需要按体系要求做，评估的时候采取抽样评估；</li>
+<li>Class B:评估试点项目与体系文档、CMMI模型的符合度；</li>
+<li>Class C:评估完成的过程体系与CMMI模型的差距；</li>
+</ul></li>
+<li>目标下的全部实践被全部实施或者被大部分实施，所有缺点不会影响目标的达成。</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="过程域之间的关系">过程域之间的关系</h2>
+<h3 id="过程管理类">过程管理类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094344.png" /></p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094416.png" /></p>
+<h3 id="项目管理类">项目管理类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094441.png" /></p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094504.png" /></p>
+<h3 id="工程类">工程类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /></p>
+<h3 id="支持类">支持类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094548.png" /></p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094612.png" /></p>
+<hr />
+<h1 id="通用目标与通用实践">通用目标与通用实践</h1>
+<h2 id="对制度化的理解">对制度化的理解</h2>
+<blockquote>
+<p>制度化是过程改进中的一个重要概念。当制度化在通用目标与通用实践的描述中被提及时，就意味着该过程已根植于工作的执行方式中，并且具有过程履行（即执行）的承诺与一致性。已制度化的过程在有压力的情况下更可能得到保持。</p>
+<p><strong>说人话就是“主动的、习惯成自然”。接下来引出通用目标和通用实践，这两个东西就是帮助制度化的工具。</strong></p>
+</blockquote>
+<h2 id="对通用实践的理解">对通用实践的理解</h2>
+<blockquote>
+<p>通用实践之所以被称为“通用”，是因为相同的实践适用于多个过程域。 与通用目标相关联的通用实践描述了一些活动，这些活动被认为对通用目标的达成具有重要意义，并且有助于过程域所关联过程的制度化。通用实践是可以应用于所有过程域的组件。要将通用实践视为提醒。其目的在于提醒你正确地做事，属于期望的模型组件。</p>
+</blockquote>
+<h2 id="通用实践和过程域的关系">通用实践和过程域的关系</h2>
+<blockquote>
+<p>如果说通用目标与通用实践是直接应对过程在组织范围内制度化的模型组件，那么很多过程域则通过支持通用实践的实施来应对制度化。此类过程域含有一个或多个特定实践，当其被实施时，某一通用实践也能得到完全的实施，或产生工作产品用于某一通用实践的实施。</p>
+</blockquote>
+<h2 id="已执行已管理已定义之间的区别">已执行、已管理、已定义之间的区别</h2>
+<blockquote>
+<p>已执行的过程是指完成了所需工作而满足过程域的特定目标的过程。</p>
+<p>已执行与已管理之间的关键区别在于过程得到管理的程度。已管理的过程得到了计划（该计划可以是一份更全面的计划的一部分），并且过程的执行依据计划得到了管理。当实际结果与执行情况显著偏离计划时，会采取纠正措施。已管理的过程能达成该计划的目标，并得到了制度化以实现执行上的一致。</p>
+<p>已管理与已定义之间的关键区别在于过程描述、标准与规程的适用范围。对于已管理的过程，其过程描述、标准与规程适用于特定的 项目、组或组织级功能。因此，同一组织内的两个项目，其已管理的过程可能并不相同。</p>
+<p>另一项关键区别在于，相比已管理的过程，已定义的过程描述更为详细， 执行更为严格。这一区别意味着改进信息更容易被理解、分析并使用。最后，已定义过程的管理建立在更为深入的理解之上，包括在过程活动的相互关系方面的理解，以及在过程、过程工作产品与过程服务的详细度量项方面的理解。</p>
+<p><strong>说人话就是已执行就是把工作做完了; 已管理在这个基础之上关注了管理的三大要素：时间、质量、成本; 而已定义则是各方面都更加熟练的管理，翻车几率更小</strong></p>
+</blockquote>
+<h2 id="过程之间的关系">过程之间的关系</h2>
+<blockquote>
+<p>GG1 就相当于所有的 SG 的总和。</p>
+<p>达成过程域的 GG1，就等于说你达成了该过程域的特定目标。</p>
+<p>达成过程域的 GG2，就等于说你管理了与该过程域相关联的过程的执行。过程就如同任何项目或 支持活动那样得到了计划与监督。</p>
+<p>达成过程域的 GG3，就等于说存在组织级标准过程，能够对其进行裁剪(按标准原样执行也是一种裁剪)得到你将要使用的过程。</p>
+</blockquote>
+<h2 id="通用目标与通用实践-1">通用目标与通用实践</h2>
+<h3 id="gg1-达成特定目标">GG1 达成特定目标</h3>
+<blockquote>
+<p>过程域的特定目标得到过程的支持，过程的支持通过将可识别的输入工作产品转换为可识别的输出工作产品来实现。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>通用实践</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GP 1.1 执行特定实践</td>
+<td><strong>执行过程域的特定实践，以开发工作产品并提供服务来达成过程域的特定目标。</strong>本通用实践的目的在于产生工作产品与交付服务，这些产品与服务是实施（即执行）过程所期望得到的。这些实践能够以非正式方式完成，而不用遵循文档化的过程描述或计划。执行这些实践的严格程度取决于管理与实施该项工作的个人，并可能有很大的差异。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gg2-制度化为已管理的过程">GG2 制度化为已管理的过程</h3>
+<blockquote>
+<p>过程得到制度化为已管理的过程。</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>通用实践</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GP 2.1 建立组织级方针</td>
+<td><strong>建立并维护组织级方针，以计划并执行过程。</strong>本通用实践的目的在于定义对过程的组织级期望，并实现这些期望对组织中受影响的人员的可视化。一般来说，高层管理人员负责建立并沟通组织 的指导原则、指示与期望。并非所有来自高层管理人员的指示都带有“方针”的标签。存在适当的组织级指示是本通用实践所期望的，无论其被称作什么，或通过什么手段进行传达。</td>
+</tr>
+<tr class="even">
+<td>GP 2.2 计划过程</td>
+<td><strong>建立并维护计划，以执行过程。</strong>本通用实践的目的在于确定需要什么来执行过程并达成已建立的目标，以准备执行过程的计划，准备过程的描述，并获得相关干系人对计划的同意。</td>
+</tr>
+<tr class="odd">
+<td>GP 2.3 提供资源</td>
+<td><strong>提供充分的资源，以执行过程、开发工作产品并提供过程的服务。</strong>本通用实践的目的在于确保计划所定义的、执行过程所必需的资源在需要时可用。资源包括充分的资金、适当的实体设施、有技能的人员以及适当的工具等。 对于术语“充分的”，其解释取决于诸多因素，并且可能随着时间而变化。资源不充分可以通过增加资源或者减少需求、约束与承诺等手段来解决。</td>
+</tr>
+<tr class="even">
+<td>GP 2.4 分派职责</td>
+<td><strong>分派职责与职权，以执行过程、开发工作产品并提供过程的服务。</strong>本通用实践的目的在于确保在过程的整个生命期中都存在执行过程与达成所规定结果的责任。所分派的人员必须拥有执行所分派职责的适当职权。职责的分派可以使用详细的岗位描述来进行，或使用如过程执行计划那样的活文档来进行。职责的动态分派是实施本通用实践的另一种合理方式，只要在过程的整个生命期中都能够确保职责的分派与接受。<strong>子实践</strong>1. 分派执行过程的总体职责与职权。2. 分派执行过程的特定任务的职责与职权。3. 确定人员理解并接受分派给他们的职责与职权。</td>
+</tr>
+<tr class="odd">
+<td>GP 2.5 培训人员</td>
+<td><strong>必要时，培训过程的执行或支持人员。</strong>本通用实践的目的在于确保人员拥有执行或支持过程所需要的技能与专长。为将要执行工作的人员提供适当的培训。为那些与执行工作的人员有交互的人员提供概要培训使其了解情况。提供培训的方法的实例有：自学；自主培训；自定进度的程序化教学；正式的在岗培训（on-the-job training）；辅导；以及正式的课堂培训等。培训建立起对过程的共同理解，并传授执行过程所需的技能与知识，从而支持过程的成功执行。</td>
+</tr>
+<tr class="even">
+<td>GP 2.6 控制工作产品</td>
+<td><strong>将所选择的过程工作产品置于适当的控制级别。</strong>本通用实践的目的在于建立并维护所选择的过程工作产品（或其描述）在其使用寿命内的完整性。所选择的工作产品在执行过程的计划中进行明确识别，同时明确说明适当的控制级别。不同的控制级别适用于不同的工作产品与不同的时间点。对有些工作产品来说，进行版本控制可能已经足够，这样就可以了解在过去或现在的任何给定时间点所使用工作产品的版本，并且变更的纳入是受控的。版本控制 往往处于工作产品所有者（可能是个人、小组或团队）的单独控制之下。有时，将工作产品置于正式的或者是有基线的配置管理之下会很重要。此类控制包含了在预先确定的节点定义与建立基线。这些基线得到了正式评审与批准，并作为进一步开发所指定的工作产品的基础。参阅“配置管理”过程域以进一步了解如何使用配置识别、配置控制、配置状态记录与报告以及配置审计来建立并维护工作产品的完整性。介于版本控制与正式配置管理之间的其它控制级别也是可能的。所识别的工作产品可能在不同时间点被置于各种不同的控制级别之下。</td>
+</tr>
+<tr class="odd">
+<td>GP 2.7 识别相关干系人，并使之参与</td>
+<td><strong>识别过程的相关干系人，并使之按计划参与。</strong>本通用实践的目的在于建立并维护在执行过程时所期望的相关干系人的参与。<strong>子实践</strong>1. 对与过程相关的干系人及其适当的参与进行识别。可从过程活动的输入提供者、输出使用者和活动执行者之中识别相关干系人。一旦识别出相关干系人，就要对他们参与过程活动的适当级别进行计划。2. 在适当的情况下，与项目计划人员或其他计划人员分享这些识别结果。3. 使相关干系人按计划参与。</td>
+</tr>
+<tr class="even">
+<td>GP 2.8 监督并控制过程</td>
+<td><strong>对照执行过程的计划，监督并控制过程，并采取适当的纠正措施。</strong>本通用实践的目的在于对过程进行日常的直接监督与控制。通过维护对过程适当的可视性，必要时就能够采取适当的纠正措施。对过程进行监督与控制可能涉及到对过程或其产生的工作产品的适当属性进行度量。</td>
+</tr>
+<tr class="odd">
+<td>GP 2.9 客观评价遵守程度</td>
+<td><strong>对照过程描述、标准与规程，对过程与所选工作产品的遵守程度进行客观评价，并处理不符合的情况。</strong>本通用实践的目的在于提供可信的保证，确保过程与所选的工作产品按照 计划得到了实施，并且遵守过程描述、标准与规程。评价遵守程度的工作通常由不直接负责管理或执行过程活动的人员来从事。很多情况下，对遵守程度的评价都由过程外部或项目外部的组织内人 员来进行，或者由组织外人员来完成。因此，即使在过程处于压力之下的时候（例如：工作落后于进度时，工作超出预算时），仍然能够取得对遵守程度的可信保证。</td>
+</tr>
+<tr class="even">
+<td>GP 2.10 与上级管理层一起进行状态评审</td>
+<td><strong>与上级管理层一起对过程的活动、状态与结果进行评审，并解决问题。</strong>本通用实践的目的在于为上级管理层提供对过程的适当可视性。上级管理层包括组织内那些高于过程直接负责人的管理层级别。特别需要说明的是，上级管理层可以包括高层管理人员。参与这些评审的管理人员 是那些为过程提供方针与总体指导的人员，而并非那些直接对过程执行日常监督与控制的人员。不同的管理人员对过程信息有不同需要。这些评审有助于确保在计划与执行过程时能够做出有信息依据的决策。因此，所期望的是这些评审既有定期进行的，也有事件驱动型的。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gg3-制度化为已定义的过程">GG3 制度化为已定义的过程</h3>
+<blockquote>
+<p>过程得到制度化为已定义的过程</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>通用实践</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GP 3.1 建立已定义的过程</td>
+<td><strong>建立并维护已定义过程的描述。</strong>本通用实践的目的在于建立并维护从组织的标准过程集中裁剪得到的过 程描述，以应对具体实例的需要。组织应该具备覆盖过程域的标准过程， 同时拥有裁剪这些标准过程的指南，以满足项目或组织级功能的需要。具备了已定义的过程，就能降低在全组织范围内执行过程方面的差异性，从而能够有效地分享过程资产、数据与经验总结。</td>
+</tr>
+<tr class="even">
+<td>GP 3.2 收集与过程相关的经验</td>
+<td><strong>收集源于过程的计划与执行的、与过程相关的经验，以支持组织过程与过程资产未来的使用与改进。</strong>本通用实践的目的在于收集过程相关的经验，包括源于过程的计划与执行的信息与产物。过程相关的经验实例有工作产品、度量项、度量结果、经验教训与过程改进建议。对信息与产物进行收集，这样它们能够被包含在组织级过程资产中，使那些（或那些将要）计划与执行相同或相似过程的人员可以使用。信息与产物被存储在组织的度量库与组织的过程资产库中。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="过程域">过程域</h1>
+<h2 id="过程域的定义">过程域的定义</h2>
+<blockquote>
+<p>某个领域中的一系列相关实践，如果共同实施，则可以满足一系列目标，这些目标对于该领域的改进至关重要</p>
+</blockquote>
+<hr />
+<h1 id="术语表">术语表</h1>
+<hr />
+<hr />
+<h1 id="ppt-中问题整理">PPT 中问题整理</h1>
+]]></content>
+      <tags>
+        <tag>lecture</tag>
       </tags>
   </entry>
   <entry>
