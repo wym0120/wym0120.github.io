@@ -3,28 +3,145 @@
   <entry>
     <title>[课堂笔记] 软件过程改进</title>
     <url>/2021/04/12/cmmi/</url>
-    <content><![CDATA[
+    <content><![CDATA[<h1 id="cmmi-模型概述">CMMI 模型概述</h1>
+<h2 id="过程改进概念">过程改进概念</h2>
+<h3 id="过程的定义">过程的定义</h3>
+<blockquote>
+<ul>
+<li><strong>IEEE: Sequence of steps performed for a given purpose</strong></li>
+<li><strong>PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a specified end result</strong></li>
+<li><strong>CMMI GLOSSARY: A set of interrelated activities, which transform in puts into outputs, to achieve a given purpose</strong></li>
+</ul>
+</blockquote>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413091924.png" /> <strong>如上图所示，将这三个重要方面结合到一起的是组织中所使用的过程。</strong></p>
+<hr />
+<h2 id="连续式表示法与阶段式表示法">连续式表示法与阶段式表示法</h2>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413092723.png" /></p>
+<blockquote>
+<p>CMMI 支持两种使用级别的改进路径。一条路径使组织能够逐步改进其选定的单个过程域（或一组过程域）所对应的过程。另一条路径使组织能够以增量方式应对层次相继的过程域集合来改进相关的过程集。连续式表示法的关注点在于由能力等级度量的过程域能力，而阶段式表示法的关注点在于由成熟度级别度量的总体成熟度。</p>
+<p>随着组织达成某一成熟度级别中一系列过程域的通用目标和特定目标，组织在提升组织级成熟度的同时也收获了过程改进带来的收益。 由于每一成熟度级别都为下一级别打下必要的基础，因此，<strong>在成熟度级别上的跳级尝试往往会导致反效果。</strong></p>
+<p><strong>同时</strong>，需要认识到的是，过程改进活动应该关注于以组织的业务环境为背景的组织需要上，并认识到更高的成熟度级别中的过程域可以应对组织或项目的当前的与未来的需要。<strong>例如虽然过程组并非成熟度级别 2 级组织的必要特征，但是它可以成为组织达成成熟度级别 2 级途径中的有用部分。</strong></p>
+<p>大多数组织对其所选的过程域，至少会选择能力等级 1 级作为目标，这要求达成所有选定过程域的特定目标。然而，将目标定于高于能力等级 1 级的组织会通过实施通用目标与通用实践，来专注于组织内所选过程的制度化。适用于每个过程域的通用目标也已预设完成。通用目标 2 适用于成熟度级别 2 级，通用目标 3 适用于成熟度级别 3 级到 5 级。</p>
+</blockquote>
+<hr />
+<h2 id="等价阶段式定级">等价阶段式定级</h2>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413165108.png" /></p>
+<h2 id="关于-cmmi-模型的一系列理解">关于 CMMI 模型的一系列理解</h2>
+<blockquote>
+<p>能力成熟度模型（Capability Maturity Model，CMM），包括 CMMI，都是对现实世界的简化表述。CMMI 开发模型是一个参考模型，涵盖了开发产品与服务的活动。CMMI 开发模型并不规定项目或组织必须遵循特定的过程顺序，或每天必须开发出一定数量的产品，或必须达成特定的绩效指标。模型所规定的是 项目或组织应该具备应对开发相关实践的过程。项目或组织可将其过程映射至本模型中的过程域，以确定这些过程是否具备。</p>
+</blockquote>
+<h3 id="为什么要有标准流程">为什么要有标准流程</h3>
+<blockquote>
+<p>标准流程并不是教条主义，而是为了让项目小组更好地识别其他团队的优秀做法，促进共享。</p>
+</blockquote>
+<h2 id="关于-cmmi-模型的一系列知识点">关于 CMMI 模型的一系列知识点</h2>
+<ol type="1">
+<li>CMMIv1.2分为哪三个集群</li>
+</ol>
+<blockquote>
+<ul>
+<li>面向开发的CMMI（CMMI-DEV）</li>
+<li>面向采购的CMMI（CMMI-ACQ）</li>
+<li>面向服务的CMMI（CMMI-SVC）</li>
+</ul>
+</blockquote>
+<ol type="1">
+<li>CMMI来源于那三个模型 ，研究机构</li>
+</ol>
+<blockquote>
+<ul>
+<li>软件工程 sw-cmm</li>
+<li>系统工程 EIA/IS</li>
+<li>集成化产品和过程开发 IPD-CMM</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="过程域之间的关系">过程域之间的关系</h2>
+<h3 id="过程管理类">过程管理类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094344.png" /></p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094416.png" /></p>
+<h3 id="项目管理类">项目管理类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094441.png" /></p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094504.png" /></p>
+<h3 id="工程类">工程类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /></p>
+<h3 id="支持类">支持类</h3>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094548.png" /></p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094612.png" /></p>
+<hr />
+<h1 id="术语表">术语表</h1>
 ]]></content>
       <tags>
         <tag>lecture</tag>
       </tags>
   </entry>
   <entry>
-    <title>Citrine: Providing Intelligent Copy-and-Paste</title>
-    <url>/2020/09/25/paper/copy-and-paste-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
+    <title>mobileperf</title>
+    <url>/2020/06/30/source%20code/mobileperf/</url>
+    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
+<h2 id="硬件配置差">硬件配置差</h2>
+<ol type="1">
+<li>压测时间长 72小时左右</li>
+<li>需要同时测的app比较多</li>
+</ol>
+<h2 id="优势">优势</h2>
+<ol type="1">
+<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
+<li>pc端占用资源极少，移动端主要是系统调用</li>
+</ol>
+<h1 id="源码分析">源码分析</h1>
+<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
+<table>
+<thead>
+<tr class="header">
+<th>模块</th>
+<th>和操作系统交互</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>连接</td>
+<td>adb usb &gt; adb wifi</td>
+</tr>
+<tr class="even">
+<td>CPU</td>
+<td>top指令</td>
+</tr>
+<tr class="odd">
+<td>内存</td>
+<td>dumpsys meminfo</td>
+</tr>
+<tr class="even">
+<td>FPS</td>
+<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
+</tr>
+<tr class="odd">
+<td>网络流</td>
+<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
+</tr>
+<tr class="even">
+<td>电量</td>
+<td>dumpsys batteryproperties/dumpsys battery（after）</td>
+</tr>
+<tr class="odd">
+<td>进程数统计</td>
+<td>ls -lt /proc/pid/task</td>
+</tr>
+<tr class="even">
+<td>其他</td>
+<td>monkey logcat</td>
+</tr>
+</tbody>
+</table>
+<h1 id="问题">问题</h1>
+<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
 ]]></content>
       <categories>
-        <category>paper</category>
+        <category>code</category>
       </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
   </entry>
   <entry>
     <title>GUI-report</title>
@@ -239,72 +356,21 @@
       </categories>
   </entry>
   <entry>
-    <title>mobileperf</title>
-    <url>/2020/06/30/source%20code/mobileperf/</url>
-    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
-<h2 id="硬件配置差">硬件配置差</h2>
-<ol type="1">
-<li>压测时间长 72小时左右</li>
-<li>需要同时测的app比较多</li>
-</ol>
-<h2 id="优势">优势</h2>
-<ol type="1">
-<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
-<li>pc端占用资源极少，移动端主要是系统调用</li>
-</ol>
-<h1 id="源码分析">源码分析</h1>
-<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
-<table>
-<thead>
-<tr class="header">
-<th>模块</th>
-<th>和操作系统交互</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>连接</td>
-<td>adb usb &gt; adb wifi</td>
-</tr>
-<tr class="even">
-<td>CPU</td>
-<td>top指令</td>
-</tr>
-<tr class="odd">
-<td>内存</td>
-<td>dumpsys meminfo</td>
-</tr>
-<tr class="even">
-<td>FPS</td>
-<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
-</tr>
-<tr class="odd">
-<td>网络流</td>
-<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
-</tr>
-<tr class="even">
-<td>电量</td>
-<td>dumpsys batteryproperties/dumpsys battery（after）</td>
-</tr>
-<tr class="odd">
-<td>进程数统计</td>
-<td>ls -lt /proc/pid/task</td>
-</tr>
-<tr class="even">
-<td>其他</td>
-<td>monkey logcat</td>
-</tr>
-</tbody>
-</table>
-<h1 id="问题">问题</h1>
-<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
+    <title>Citrine: Providing Intelligent Copy-and-Paste</title>
+    <url>/2020/09/25/paper/copy-and-paste-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>paper</category>
       </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
   </entry>
   <entry>
     <title>[课堂笔记] 程序设计语言的形式语义</title>
@@ -981,48 +1047,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
-    <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
-</blockquote>
-<p>keywords: model-checking</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<ol type="1">
-<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
-<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
-<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
-</ol>
-<h3 id="evalution">Evalution</h3>
-<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
-<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
-<h3 id="details">Details</h3>
-<h4 id="什么是model-checking">什么是model checking</h4>
-<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
-<h4 id="缩减状态空间">缩减状态空间</h4>
-<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
-<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
-<blockquote>
-<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
-</blockquote>
-<h4 id="优化探索策略">优化探索策略</h4>
-<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
-<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
-<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
-<h4 id="todo">todo</h4>
-<p>算法的直觉还是没能很好的get，再讨论一下</p>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1075,6 +1099,48 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
+    <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
+</blockquote>
+<p>keywords: model-checking</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<ol type="1">
+<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
+<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
+<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
+</ol>
+<h3 id="evalution">Evalution</h3>
+<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
+<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
+<h3 id="details">Details</h3>
+<h4 id="什么是model-checking">什么是model checking</h4>
+<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
+<h4 id="缩减状态空间">缩减状态空间</h4>
+<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
+<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
+<blockquote>
+<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
+</blockquote>
+<h4 id="优化探索策略">优化探索策略</h4>
+<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
+<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
+<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
+<h4 id="todo">todo</h4>
+<p>算法的直觉还是没能很好的get，再讨论一下</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
     <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1094,8 +1160,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A study of developer work habits</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
+    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1114,8 +1180,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
+    <title>[ISER] [SEP] A study of developer work habits</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
