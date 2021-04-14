@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">4.</span> <span class="nav-text">Details</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -341,21 +341,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
+        <h3 id="abstract">Abstract</h3>
 <blockquote>
 <p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
 </blockquote>
 <blockquote>
-<p>The cornerstone of our approach is inferring programmer “beliefs” that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to “tmlock(1)” implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to “spin_lock” followed once by a call to “spin_tmlock” implies that the programmer may have paired these calls by coincidence.</p>
+<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
 </blockquote>
 <blockquote>
-<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule “templates” to a system  for example, finding all functions that fit the rule template “&lt;a&gt; must be paired with &lt; b&gt;.” We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
+<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
 </blockquote>
-<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
-<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
-<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。</p>
-<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
-<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
+<h3 id="details">Details</h3>
 
     </div>
 
