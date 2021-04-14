@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094548.png">
 <meta property="og:image" content="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094612.png">
 <meta property="article:published_time" content="2021-04-12T15:24:08.000Z">
-<meta property="article:modified_time" content="2021-04-14T15:05:24.529Z">
+<meta property="article:modified_time" content="2021-04-14T15:47:26.062Z">
 <meta property="article:author" content="MinguW">
 <meta property="article:tag" content="lecture">
 <meta name="twitter:card" content="summary">
@@ -335,7 +335,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-14 23:05:24" itemprop="dateModified" datetime="2021-04-14T23:05:24+08:00">2021-04-14</time>
+                <time title="Modified: 2021-04-14 23:47:26" itemprop="dateModified" datetime="2021-04-14T23:47:26+08:00">2021-04-14</time>
               </span>
 
           
@@ -764,7 +764,19 @@
 <hr />
 <h2 id="项目管理类">项目管理类</h2>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094441.png" /></p>
+<blockquote>
+<p>要理解这部分最好先看工程类和支持类过程域都有哪些东西。 从 PP 讲起， PP 主要是和工程类的进行交互，例如 RD ，首先知道需要客户想要什么，然后 PP 会告诉工程类的过程域让他们做什么，告诉支持类的需要什么样的度量，告诉 PMC 需要监督什么。</p>
+<p>接着是 PMC，PMC 从 MA 和 PPQA 那里拿到了真实的过程执行状态和评价，它会根据这个结果来进行纠偏。这个纠偏包括了项目内部的(反馈给工程类过程域)，也包括了对供方的纠偏。</p>
+<p>这里的供方举例比较好理解，例如项目开发需要 IDE，需要购买服务器测试，而这些服务、产品的提供者就是供方，SAM 可能在大项目大组织中比较重要，在小规模的时候作用似乎不明显。</p>
+<p>REQM 的存在是为了保护程序员的身心健康，虽然说敏捷中是拥抱变化的，但其实没有人真的愿意一直面对不停变更的需求。</p>
+</blockquote>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094504.png" /></p>
+<blockquote>
+<p>从前面低等级的过程域里可以看到一个项目已经基本被管理起来了，内部是比较协调的。但是除了内部的不稳定因素，项目外也伴随巨大的风险，比如客户的需求变更。因此 RSKM 提出了进一步的需求（3级建立在2级基础之上，前面过程域2级居多）。RSKM 是比较有预见性的，结合敏捷里学过的知识，很多实践其实也和敏捷有关，例如让客户陪你一起受苦，尽早把原型做出来给他们看。</p>
+<p>但是风险管理这件事情也不能随便就制定下来，它还需要其他的过程域的一些支持，例如 IPM。</p>
+<p>IPM 是在尝试在一个项目中对标准的过程进行裁剪，说人话就是让过程符合自己组织和项目的特点，它是从已经执行的过程中吸取教训以及总结好的经验。IPM 知道在这个项目中哪些因素是风险。所以它是 RSKM 的一个输入。IPM 这个过程域的执行也会同时反馈出一些经验、产出一些数据给其他的过程域，处于一个比较中心的位置。（个人觉得可以重点复习一下这里）</p>
+<p>而随着成熟度的进一步提高，QPM 能够通过量化的方式优化 IPM 所做的事情，例如图中可以看到的“风险暴露值”。QPM 的实现也能让 IPM 的输入来源更多，这意味着得到的结果可以更加精准。</p>
+</blockquote>
 <h3 id="lv2项目监督与控制pmc">Lv2项目监督与控制(PMC)</h3>
 <blockquote>
 <p><strong>目的</strong>: 提供对项目进展的了解，以便在项目绩效显著偏离计划时可采取适当的纠正措施。</p>
@@ -941,13 +953,16 @@
 </ul>
 </blockquote>
 <ol type="1">
-<li><p>OPP 和 QPM 的关联 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QPM 确保了 OPP建立的基线能够被完成，QPM 的项目目标基于 OPP 中构建出的组织级的质量与过程性能，QPM 可以根据项目的特点来对这些目标进行调整</span><br></pre></td></tr></table></figure></p></li>
+<li><p>OPP 和 QPM 的关联 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QPM 确保了 OPP 建立的基线能够被完成，QPM 的项目目标基于 OPP 中构建出的组织级的质量与过程性能，QPM 可以根据项目的特点来对这些目标进行调整</span><br></pre></td></tr></table></figure></p></li>
 <li><p>QPM SP1.2 和之前过程定义的区别 （和 IPM 的区别） <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Lv2 Lv3的过程域主要定义的是步骤，而 QPM 中需要用到一些统计的量化的手段来定义这个过程。这些手段用来告诉执行者需要做到什么程度。QPM 通过为项目评价备选过程或子过程， 并选择那些最可能达成质量与性能目标的过程或子过程</span><br></pre></td></tr></table></figure></p></li>
-<li><p>QPM 和 OPM 的关系 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">简单的从成熟度级别上看，QPM 是4级，而 OPM 是5级，说明至少 OPM 一定程度上依赖 QPM。QPM 关注的是项目，而 OPM 关注的是组织，显然后者的范围更大。文档中的描述“本过程域适用于管理项目。应用这些概念来管理其他组与职能有助于将组 织绩效的不同方面关联起来，从而提供一个基础，来平衡并协调存在竞争 的优先级关系，以应对更广泛的业务目标集合。” 说人话就是把组织的每个项目都量化管理好了，那么也就有可能在组织的层面把量化管理能力提高上去，达成 OPM 的目标。</span><br></pre></td></tr></table></figure></p></li>
+<li><p>QPM 和 OPM 的关系 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">简单的从成熟度级别上看，QPM 是4级，而 OPM 是5级，说明至少 OPM 一定程度上依赖 QPM。QPM 关注的是项目，而 OPM 关注的是组织，显然后者的范围更大。文档中的描述“本过程域适用于管理项目。应用这些概念来管理其他组与职能有助于将组 织绩效的不同方面关联起来，从而提供一个基础，来平衡并协调存在竞争 的优先级关系，以应对更广泛的业务目标集合。” </span><br><span class="line"></span><br><span class="line">说人话就是把组织的每个项目都量化管理好了，那么也就有可能在组织的层面把量化管理能力提高上去，达成 OPM 的目标。</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <hr />
 <h2 id="工程类">工程类</h2>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /></p>
+<blockquote>
+<p>工程类的非常好理解，就是日常开发所经历的流程，这里不赘述了。</p>
+</blockquote>
 <h3 id="lv3需求开发-rd">Lv3需求开发 (RD)</h3>
 <blockquote>
 <p><strong>目的</strong>: 挖掘、分析并 建立客户需求、产品需求与产品组件需求。</p>
@@ -1076,10 +1091,16 @@
 <hr />
 <h2 id="支持类">支持类</h2>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094548.png" /></p>
+<blockquote>
+<p>支持类的普遍比较好理解，MA 为所有的东西规定了度量和分析的准则，是高成熟度过程域量化的前提。PPQA 则是提供了对过程执行的客观评价和度量，提供了改进的建议和基础。是后续OPD OPF 等过程域的基础。而 CM 管理了配置项的变动，让复杂的过程执行得到控制，不会因为版本或不一致的问题带来巨大的灾难，保证了其他过程域的正常执行。</p>
+</blockquote>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094612.png" /></p>
+<blockquote>
+<p>CAR 是5级成熟度的过程域，它建立在其他所有的过程域都能够良好执行的基础上。CAR 其实贯穿于组织和项目的始终，只是在不同成熟度的时候它的能力也有所不同。具体来说就是从只能排除具体原因到排除真正根源上的原因，它为组织的过程改进提供了方向和思路。而 DAR 是一个3级成熟度过程域，3 级是一个比较有特点的级别，在它之前是已管理，也就是说不管做的怎么样，反正先把项目做出来。而 3 级要求已定义，则是建立各种规章制度。比如 DAR 解决的问题就是到底该如何做决定，整个组织是遵循同一个标准做决策的。最直接的体现就是后续高成熟度的过程域都是带有预见性质的，也就是说需要在某些时刻作出正确且一致认可的决定。</p>
+</blockquote>
 <h3 id="lv2度量与分析ma">Lv2度量与分析(MA)</h3>
 <blockquote>
-<p><strong>目的</strong>: 开发并保持 用于支持管理信息需要的度量能力。</p>
+<p><strong>目的</strong>: 开发并保持用于支持管理信息需要的度量能力。</p>
 <p><strong>概要</strong></p>
 <ul>
 <li>SG 1 使度量与分析活动协调一致

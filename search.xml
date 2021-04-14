@@ -18,6 +18,23 @@
       </categories>
   </entry>
   <entry>
+    <title>GUI-report</title>
+    <url>/2020/07/02/report/GUI-report/</url>
+    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
+<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
+<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
+<h2 id="overall-performance">overall performance</h2>
+<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+]]></content>
+      <categories>
+        <category>report</category>
+      </categories>
+      <tags>
+        <tag>gui</tag>
+        <tag>mobile</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[MIT Lecture] How to Speak</title>
     <url>/2020/10/21/report/MIT-how-to-speck/</url>
     <content><![CDATA[<h3 id="如何开始一个talk">如何开始一个talk</h3>
@@ -60,23 +77,6 @@
       <categories>
         <category>report</category>
       </categories>
-  </entry>
-  <entry>
-    <title>GUI-report</title>
-    <url>/2020/07/02/report/GUI-report/</url>
-    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
-<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
-<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
-<h2 id="overall-performance">overall performance</h2>
-<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
-      <tags>
-        <tag>gui</tag>
-        <tag>mobile</tag>
-      </tags>
   </entry>
   <entry>
     <title>How to write and publish technical papers in English</title>
@@ -622,6 +622,30 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[Lecture Notes] Software Architecture</title>
+    <url>/2020/12/17/lecture/software-architecture/SA-notes/</url>
+    <content><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>科学和工程的本质区别：是否有人的参与。工程的本质上是改变这个世界</p>
+<p>软件架构两个定义之间的区别与联系：SEI和IEEE的定义基本相同，IEEE更为宽泛，而多的定义是与外部环境的交互以及设计演进的指导原则。</p>
+<p>为什么在设计当中需要抽象？</p>
+<p>Use Case 会把四个视图结合起来</p>
+<h2 id="chapter1">chapter1</h2>
+<p>正确的设计顺序： constarins -&gt; quality attributes -&gt; functionalty attributes</p>
+<h3 id="quality-attributes-and-tactics">Quality Attributes And Tactics</h3>
+<h4 id="availability">Availability</h4>
+<p>描述 availability -&gt; 使用时间</p>
+<p>------------------------------------------------&gt; timeline ↑ ↑ ↑ ↑ failure detect correct restart Mean time between failures : restart - failure 高可用性：上面的三段时间都尽可能的小 -&gt; 缩短这些时间都可以提高可用性</p>
+<h5 id="缩短检测时间">缩短检测时间：</h5>
+<p>什么情况下使用ping/echo，什么情况下使用heartbeat? &gt; ping echo是双向的，heartbeat是单向的 &gt; 尽管heartbeat带宽更小，但是需要一直占用着资源，多用于长时间始终保持连接的，实时的监控 &gt; ping是只有需要的时候才去ping，不会始终占用着资源</p>
+<p>volting:用三个detect技术来保持一致，这些detect可以用同样的实现也可以是不同的实现</p>
+<h5 id="缩短恢复时间">缩短恢复时间</h5>
+<p>假设有两台机器，一台是primary / secondary Active redundancy / passive redundancy / spare active : 两个都在运行，随时可以切换，两台都进行同样的工作，只是忽略备用的输出 passive : 备用机器定期同步，开着但是不会进行相同的工作 spare : 定期打primary的快照，down了之后在secondary上恢复 这三个时间会逐渐变长（本质是资源换时间） #### Reliability</p>
+]]></content>
+      <tags>
+        <tag>lecture notes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[课堂笔记] 高级软件设计</title>
     <url>/2020/11/12/lecture/software-design/SD-notes/</url>
     <content><![CDATA[<h2 id="基本概念">基本概念</h2>
@@ -740,197 +764,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[Lecture Notes] Software Architecture</title>
-    <url>/2020/12/17/lecture/software-architecture/SA-notes/</url>
-    <content><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>科学和工程的本质区别：是否有人的参与。工程的本质上是改变这个世界</p>
-<p>软件架构两个定义之间的区别与联系：SEI和IEEE的定义基本相同，IEEE更为宽泛，而多的定义是与外部环境的交互以及设计演进的指导原则。</p>
-<p>为什么在设计当中需要抽象？</p>
-<p>Use Case 会把四个视图结合起来</p>
-<h2 id="chapter1">chapter1</h2>
-<p>正确的设计顺序： constarins -&gt; quality attributes -&gt; functionalty attributes</p>
-<h3 id="quality-attributes-and-tactics">Quality Attributes And Tactics</h3>
-<h4 id="availability">Availability</h4>
-<p>描述 availability -&gt; 使用时间</p>
-<p>------------------------------------------------&gt; timeline ↑ ↑ ↑ ↑ failure detect correct restart Mean time between failures : restart - failure 高可用性：上面的三段时间都尽可能的小 -&gt; 缩短这些时间都可以提高可用性</p>
-<h5 id="缩短检测时间">缩短检测时间：</h5>
-<p>什么情况下使用ping/echo，什么情况下使用heartbeat? &gt; ping echo是双向的，heartbeat是单向的 &gt; 尽管heartbeat带宽更小，但是需要一直占用着资源，多用于长时间始终保持连接的，实时的监控 &gt; ping是只有需要的时候才去ping，不会始终占用着资源</p>
-<p>volting:用三个detect技术来保持一致，这些detect可以用同样的实现也可以是不同的实现</p>
-<h5 id="缩短恢复时间">缩短恢复时间</h5>
-<p>假设有两台机器，一台是primary / secondary Active redundancy / passive redundancy / spare active : 两个都在运行，随时可以切换，两台都进行同样的工作，只是忽略备用的输出 passive : 备用机器定期同步，开着但是不会进行相同的工作 spare : 定期打primary的快照，down了之后在secondary上恢复 这三个时间会逐渐变长（本质是资源换时间） #### Reliability</p>
-]]></content>
-      <tags>
-        <tag>lecture notes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] Learning from Mistakes — A Comprehensive Study on Real World Concurrency Bug Characteristics</title>
-    <url>/2020/08/04/paper/ISER/Empirical%20Software%20Engineering/emse-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>The reality of multi-core hardware has made concurrent programs pervasive. Unfortunately, writing correct concurrent programs is difficult. Addressing this challenge requires advances in multiple directions, including concurrency bug detection, concurrent pro gram testing, concurrent programming model design, etc. Design ing effective techniques in all these directions will significantly benefit from a deep understanding of real world concurrency bug characteristics.</p>
-</blockquote>
-<blockquote>
-<p>This paper provides the first (to the best of our knowledge) comprehensive real world concurrency bug characteristic study. Specifically, we have carefully examined concurrency bug patterns, manifestation, and fix strategies of 105 randomly selected real worldconcurrency bugs from 4 representative server and client opensource applications (MySQL, Apache, Mozilla and OpenOffice).Our study reveals several interesting findings and provides useful guidance for concurrency bug detection, testing, and concurrentprogramming language design.</p>
-</blockquote>
-<blockquote>
-<p>Some of our findings are as follows: (1) Around one third ofthe examined non-deadlock concurrency bugs are caused by violation to programmers’ order intentions, which may not be easilyexpressed via synchronization primitives like locks and transactional memories; (2) Around 34% of the examined non-deadlockconcurrency bugs involve multiple variables, which are not welladdressed by existing bug detection tools; (3) About 92% of theexamined concurrency bugs can be reliably triggered by enforcingcertain orders among no more than 4 memory accesses. This indicates that testing concurrent programs can target at exploring possible orders among every small groups of memory accesses, insteadof among all memory accesses; (4) About 73% of the examinednon-deadlock concurrency bugs were not fixed by simply addingor changing locks, and many of the fixes were not correct at thefirst try, indicating the difficulty of reasoning concurrent executionby programmers.</p>
-</blockquote>
-<p>keywords: concurrent program, concurrency bug, bug characteristics</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<p>成熟且庞大的开源项目，具备不同的并发的需求 MySQL Apache Mozilla OpenOffice</p>
-<p>从bug database中根据关键词选取至少包含一个关键词的bug并从中抽取约500个比较详尽的（包含了引起bug的原因、源码、如何解决bug）信息，并且这些bug都是由于开发人员引起的。</p>
-<p>最终获取到了105个并发bug ### Details #### BUG pattern 研究 产生原因：(1)编码时违反原子性，多个线程访问了同一个变量 (2)对线程之间的执行先后顺序存在错误的假设</p>
-<h4 id="bug-mainfestation-研究">BUG mainfestation 研究</h4>
-<h4 id="可能影响可信度的因素">可能影响可信度的因素</h4>
-<ul>
-<li>随机选取的bug，不够全面</li>
-<li>选择的应用不一定具备足够的代表性</li>
-</ul>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
-    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
-</blockquote>
-<p>keywords: integer overflow, integer wraparound, undefined behavior</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] On the Naturalness of Software</title>
-    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
-</blockquote>
-<blockquote>
-<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
-</blockquote>
-<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] Where Do Developers Log? An Empirical Study on Logging Practices in Industry</title>
-    <url>/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>System logs are widely used in various tasks of software system management. It is crucial to avoid logging too little or toomuch. To achieve so, developers need to make informed decisions on where to log and what to log in their logging practices during development. However, there exists no work on studying such logging practices in industry or helping developers makeinformed decisions. To fill this significant gap, in this paper, wesystematically study the logging practices of developers in industry, with focus on where developers log. We obtain six valuable findings by conducting source code analysis on twolarge industrial systems (2.5M and 10.4M LOC, respectively) at Microsoft. We further validate these findings via aquestionnaire survey with 54 experienced developers in Microsoft. Inaddition, our study demonstrates the high accuracy of up to 90% F-Scorein predicting where to log.</p>
-</blockquote>
-<p>keywords: Logging practice, automatic logging, developer survey</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-<h4 id="研究主要关心的问题">研究主要关心的问题</h4>
-<p>RQ1: 被log的代码片段主要有哪些分类 手动分类的结果：</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>类别</th>
-<th>特征</th>
-<th>开发者们认为的常见程度</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Assertion-check logging</td>
-<td>The logging statement is triggered by an Assert statement.</td>
-<td>50%</td>
-</tr>
-<tr class="even">
-<td>Return-value-check logging</td>
-<td>The logging statement is contained in a clause following a branch statement (e.g., if, if-else, switch), while one or more function return values are checked in the branchcondition. In addition, the logging statement is not enclosed by any catch block within the cl</td>
-<td>63%</td>
-</tr>
-<tr class="odd">
-<td>Exception logging</td>
-<td>The logging statement is contained either in a catch block or right before a throw statement.</td>
-<td>80%</td>
-</tr>
-<tr class="even">
-<td>Logic-branch logging</td>
-<td>The logging statement is contained in a clause following a branch statement (e.g., if, if-else, switch), while the branch con- dition does not contain any check on a functionreturn value</td>
-<td>67%</td>
-</tr>
-<tr class="odd">
-<td>Observing-point logging</td>
-<td>All the other situations that exclude the above categories</td>
-<td>81%</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>总的来说可以归纳成两个分类，一种是用来记录意料之外的异常情况，一种是用来记录关键的执行点。而巧合的是在对开发者进行的调查中，Exception logging 和 Observing-point logging 也被认为是最常见的两种 log</p>
-</blockquote>
-<p>通过工具自动分类的结果：</p>
-<p>RQ2: 代码会因为哪些原因被log</p>
-<p>RQ3: 是否存在某种途径能够自动决定log的位置</p>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [EMSE] Why we refactor? Confessions of GitHub contributors</title>
-    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] Symbolic execution and program testing</title>
     <url>/2020/07/17/paper/ISER/Formal%20Methods/fm-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1014,26 +847,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
-</blockquote>
-<p>keywords: Veritesting, Symbolic Execution, Verification</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1066,6 +879,193 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
+</blockquote>
+<p>keywords: Veritesting, Symbolic Execution, Verification</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] Learning from Mistakes — A Comprehensive Study on Real World Concurrency Bug Characteristics</title>
+    <url>/2020/08/04/paper/ISER/Empirical%20Software%20Engineering/emse-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>The reality of multi-core hardware has made concurrent programs pervasive. Unfortunately, writing correct concurrent programs is difficult. Addressing this challenge requires advances in multiple directions, including concurrency bug detection, concurrent pro gram testing, concurrent programming model design, etc. Design ing effective techniques in all these directions will significantly benefit from a deep understanding of real world concurrency bug characteristics.</p>
+</blockquote>
+<blockquote>
+<p>This paper provides the first (to the best of our knowledge) comprehensive real world concurrency bug characteristic study. Specifically, we have carefully examined concurrency bug patterns, manifestation, and fix strategies of 105 randomly selected real worldconcurrency bugs from 4 representative server and client opensource applications (MySQL, Apache, Mozilla and OpenOffice).Our study reveals several interesting findings and provides useful guidance for concurrency bug detection, testing, and concurrentprogramming language design.</p>
+</blockquote>
+<blockquote>
+<p>Some of our findings are as follows: (1) Around one third ofthe examined non-deadlock concurrency bugs are caused by violation to programmers’ order intentions, which may not be easilyexpressed via synchronization primitives like locks and transactional memories; (2) Around 34% of the examined non-deadlockconcurrency bugs involve multiple variables, which are not welladdressed by existing bug detection tools; (3) About 92% of theexamined concurrency bugs can be reliably triggered by enforcingcertain orders among no more than 4 memory accesses. This indicates that testing concurrent programs can target at exploring possible orders among every small groups of memory accesses, insteadof among all memory accesses; (4) About 73% of the examinednon-deadlock concurrency bugs were not fixed by simply addingor changing locks, and many of the fixes were not correct at thefirst try, indicating the difficulty of reasoning concurrent executionby programmers.</p>
+</blockquote>
+<p>keywords: concurrent program, concurrency bug, bug characteristics</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<p>成熟且庞大的开源项目，具备不同的并发的需求 MySQL Apache Mozilla OpenOffice</p>
+<p>从bug database中根据关键词选取至少包含一个关键词的bug并从中抽取约500个比较详尽的（包含了引起bug的原因、源码、如何解决bug）信息，并且这些bug都是由于开发人员引起的。</p>
+<p>最终获取到了105个并发bug ### Details #### BUG pattern 研究 产生原因：(1)编码时违反原子性，多个线程访问了同一个变量 (2)对线程之间的执行先后顺序存在错误的假设</p>
+<h4 id="bug-mainfestation-研究">BUG mainfestation 研究</h4>
+<h4 id="可能影响可信度的因素">可能影响可信度的因素</h4>
+<ul>
+<li>随机选取的bug，不够全面</li>
+<li>选择的应用不一定具备足够的代表性</li>
+</ul>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
+    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
+</blockquote>
+<p>keywords: integer overflow, integer wraparound, undefined behavior</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] Where Do Developers Log? An Empirical Study on Logging Practices in Industry</title>
+    <url>/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>System logs are widely used in various tasks of software system management. It is crucial to avoid logging too little or toomuch. To achieve so, developers need to make informed decisions on where to log and what to log in their logging practices during development. However, there exists no work on studying such logging practices in industry or helping developers makeinformed decisions. To fill this significant gap, in this paper, wesystematically study the logging practices of developers in industry, with focus on where developers log. We obtain six valuable findings by conducting source code analysis on twolarge industrial systems (2.5M and 10.4M LOC, respectively) at Microsoft. We further validate these findings via aquestionnaire survey with 54 experienced developers in Microsoft. Inaddition, our study demonstrates the high accuracy of up to 90% F-Scorein predicting where to log.</p>
+</blockquote>
+<p>keywords: Logging practice, automatic logging, developer survey</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+<h4 id="研究主要关心的问题">研究主要关心的问题</h4>
+<p>RQ1: 被log的代码片段主要有哪些分类 手动分类的结果：</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>类别</th>
+<th>特征</th>
+<th>开发者们认为的常见程度</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Assertion-check logging</td>
+<td>The logging statement is triggered by an Assert statement.</td>
+<td>50%</td>
+</tr>
+<tr class="even">
+<td>Return-value-check logging</td>
+<td>The logging statement is contained in a clause following a branch statement (e.g., if, if-else, switch), while one or more function return values are checked in the branchcondition. In addition, the logging statement is not enclosed by any catch block within the cl</td>
+<td>63%</td>
+</tr>
+<tr class="odd">
+<td>Exception logging</td>
+<td>The logging statement is contained either in a catch block or right before a throw statement.</td>
+<td>80%</td>
+</tr>
+<tr class="even">
+<td>Logic-branch logging</td>
+<td>The logging statement is contained in a clause following a branch statement (e.g., if, if-else, switch), while the branch con- dition does not contain any check on a functionreturn value</td>
+<td>67%</td>
+</tr>
+<tr class="odd">
+<td>Observing-point logging</td>
+<td>All the other situations that exclude the above categories</td>
+<td>81%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>总的来说可以归纳成两个分类，一种是用来记录意料之外的异常情况，一种是用来记录关键的执行点。而巧合的是在对开发者进行的调查中，Exception logging 和 Observing-point logging 也被认为是最常见的两种 log</p>
+</blockquote>
+<p>通过工具自动分类的结果：</p>
+<p>RQ2: 代码会因为哪些原因被log</p>
+<p>RQ3: 是否存在某种途径能够自动决定log的位置</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] On the Naturalness of Software</title>
+    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
+</blockquote>
+<blockquote>
+<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
+</blockquote>
+<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] Why we refactor? Confessions of GitHub contributors</title>
+    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
     <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1085,8 +1085,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A study of developer work habits</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
+    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1125,26 +1125,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
     <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1165,53 +1145,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>One of the most expensive and time-consuming components of the debugging process is locating the errors or faults. To locate faults, developers must identify statements involved in failures and select suspicious statements that might contain faults. This paper presents a new technique that uses visualization to assist with these tasks. The technique uses color to visually map the participation of each program statement in the out ome of the execution of the program with a test suite, onsisting of both passed and failed test cases. Based on this visual mapping, a user can inspe t the statements in the program, identify statements involved in failures, and locate potentially faulty statements. The paper also describes a prototype tool that implements our technique along with a set of empirical studies that use the tool for evaluation of the technique. The empirical studies show that, for the subject we studied, the technique can be eeffective in helping a user locate faults in a program.</p>
-</blockquote>
-<p>keywords: software visualization,fault localization,debugging,testing</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
-</blockquote>
-<blockquote>
-<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
-</blockquote>
-<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] A technique for cheap recovery</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
+    <title>[ISER] [SEP] A study of developer work habits</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1226,27 +1161,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Ten years of implementation and experience</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
+        <tag>Software Engineering Process</tag>
       </tags>
   </entry>
   <entry>
@@ -1348,6 +1263,91 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </categories>
       <tags>
         <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
+</blockquote>
+<blockquote>
+<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
+</blockquote>
+<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] A technique for cheap recovery</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>One of the most expensive and time-consuming components of the debugging process is locating the errors or faults. To locate faults, developers must identify statements involved in failures and select suspicious statements that might contain faults. This paper presents a new technique that uses visualization to assist with these tasks. The technique uses color to visually map the participation of each program statement in the out ome of the execution of the program with a test suite, onsisting of both passed and failed test cases. Based on this visual mapping, a user can inspe t the statements in the program, identify statements involved in failures, and locate potentially faulty statements. The paper also describes a prototype tool that implements our technique along with a set of empirical studies that use the tool for evaluation of the technique. The empirical studies show that, for the subject we studied, the technique can be eeffective in helping a user locate faults in a program.</p>
+</blockquote>
+<p>keywords: software visualization,fault localization,debugging,testing</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Ten years of implementation and experience</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
       </tags>
   </entry>
   <entry>
@@ -1966,7 +1966,19 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <hr />
 <h2 id="项目管理类">项目管理类</h2>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094441.png" /></p>
+<blockquote>
+<p>要理解这部分最好先看工程类和支持类过程域都有哪些东西。 从 PP 讲起， PP 主要是和工程类的进行交互，例如 RD ，首先知道需要客户想要什么，然后 PP 会告诉工程类的过程域让他们做什么，告诉支持类的需要什么样的度量，告诉 PMC 需要监督什么。</p>
+<p>接着是 PMC，PMC 从 MA 和 PPQA 那里拿到了真实的过程执行状态和评价，它会根据这个结果来进行纠偏。这个纠偏包括了项目内部的(反馈给工程类过程域)，也包括了对供方的纠偏。</p>
+<p>这里的供方举例比较好理解，例如项目开发需要 IDE，需要购买服务器测试，而这些服务、产品的提供者就是供方，SAM 可能在大项目大组织中比较重要，在小规模的时候作用似乎不明显。</p>
+<p>REQM 的存在是为了保护程序员的身心健康，虽然说敏捷中是拥抱变化的，但其实没有人真的愿意一直面对不停变更的需求。</p>
+</blockquote>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094504.png" /></p>
+<blockquote>
+<p>从前面低等级的过程域里可以看到一个项目已经基本被管理起来了，内部是比较协调的。但是除了内部的不稳定因素，项目外也伴随巨大的风险，比如客户的需求变更。因此 RSKM 提出了进一步的需求（3级建立在2级基础之上，前面过程域2级居多）。RSKM 是比较有预见性的，结合敏捷里学过的知识，很多实践其实也和敏捷有关，例如让客户陪你一起受苦，尽早把原型做出来给他们看。</p>
+<p>但是风险管理这件事情也不能随便就制定下来，它还需要其他的过程域的一些支持，例如 IPM。</p>
+<p>IPM 是在尝试在一个项目中对标准的过程进行裁剪，说人话就是让过程符合自己组织和项目的特点，它是从已经执行的过程中吸取教训以及总结好的经验。IPM 知道在这个项目中哪些因素是风险。所以它是 RSKM 的一个输入。IPM 这个过程域的执行也会同时反馈出一些经验、产出一些数据给其他的过程域，处于一个比较中心的位置。（个人觉得可以重点复习一下这里）</p>
+<p>而随着成熟度的进一步提高，QPM 能够通过量化的方式优化 IPM 所做的事情，例如图中可以看到的“风险暴露值”。QPM 的实现也能让 IPM 的输入来源更多，这意味着得到的结果可以更加精准。</p>
+</blockquote>
 <h3 id="lv2项目监督与控制pmc">Lv2项目监督与控制(PMC)</h3>
 <blockquote>
 <p><strong>目的</strong>: 提供对项目进展的了解，以便在项目绩效显著偏离计划时可采取适当的纠正措施。</p>
@@ -2143,13 +2155,16 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 </ul>
 </blockquote>
 <ol type="1">
-<li><p>OPP 和 QPM 的关联 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QPM 确保了 OPP建立的基线能够被完成，QPM 的项目目标基于 OPP 中构建出的组织级的质量与过程性能，QPM 可以根据项目的特点来对这些目标进行调整</span><br></pre></td></tr></table></figure></p></li>
+<li><p>OPP 和 QPM 的关联 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QPM 确保了 OPP 建立的基线能够被完成，QPM 的项目目标基于 OPP 中构建出的组织级的质量与过程性能，QPM 可以根据项目的特点来对这些目标进行调整</span><br></pre></td></tr></table></figure></p></li>
 <li><p>QPM SP1.2 和之前过程定义的区别 （和 IPM 的区别） <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Lv2 Lv3的过程域主要定义的是步骤，而 QPM 中需要用到一些统计的量化的手段来定义这个过程。这些手段用来告诉执行者需要做到什么程度。QPM 通过为项目评价备选过程或子过程， 并选择那些最可能达成质量与性能目标的过程或子过程</span><br></pre></td></tr></table></figure></p></li>
-<li><p>QPM 和 OPM 的关系 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">简单的从成熟度级别上看，QPM 是4级，而 OPM 是5级，说明至少 OPM 一定程度上依赖 QPM。QPM 关注的是项目，而 OPM 关注的是组织，显然后者的范围更大。文档中的描述“本过程域适用于管理项目。应用这些概念来管理其他组与职能有助于将组 织绩效的不同方面关联起来，从而提供一个基础，来平衡并协调存在竞争 的优先级关系，以应对更广泛的业务目标集合。” 说人话就是把组织的每个项目都量化管理好了，那么也就有可能在组织的层面把量化管理能力提高上去，达成 OPM 的目标。</span><br></pre></td></tr></table></figure></p></li>
+<li><p>QPM 和 OPM 的关系 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">简单的从成熟度级别上看，QPM 是4级，而 OPM 是5级，说明至少 OPM 一定程度上依赖 QPM。QPM 关注的是项目，而 OPM 关注的是组织，显然后者的范围更大。文档中的描述“本过程域适用于管理项目。应用这些概念来管理其他组与职能有助于将组 织绩效的不同方面关联起来，从而提供一个基础，来平衡并协调存在竞争 的优先级关系，以应对更广泛的业务目标集合。” </span><br><span class="line"></span><br><span class="line">说人话就是把组织的每个项目都量化管理好了，那么也就有可能在组织的层面把量化管理能力提高上去，达成 OPM 的目标。</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <hr />
 <h2 id="工程类">工程类</h2>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /></p>
+<blockquote>
+<p>工程类的非常好理解，就是日常开发所经历的流程，这里不赘述了。</p>
+</blockquote>
 <h3 id="lv3需求开发-rd">Lv3需求开发 (RD)</h3>
 <blockquote>
 <p><strong>目的</strong>: 挖掘、分析并 建立客户需求、产品需求与产品组件需求。</p>
@@ -2278,10 +2293,16 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <hr />
 <h2 id="支持类">支持类</h2>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094548.png" /></p>
+<blockquote>
+<p>支持类的普遍比较好理解，MA 为所有的东西规定了度量和分析的准则，是高成熟度过程域量化的前提。PPQA 则是提供了对过程执行的客观评价和度量，提供了改进的建议和基础。是后续OPD OPF 等过程域的基础。而 CM 管理了配置项的变动，让复杂的过程执行得到控制，不会因为版本或不一致的问题带来巨大的灾难，保证了其他过程域的正常执行。</p>
+</blockquote>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094612.png" /></p>
+<blockquote>
+<p>CAR 是5级成熟度的过程域，它建立在其他所有的过程域都能够良好执行的基础上。CAR 其实贯穿于组织和项目的始终，只是在不同成熟度的时候它的能力也有所不同。具体来说就是从只能排除具体原因到排除真正根源上的原因，它为组织的过程改进提供了方向和思路。而 DAR 是一个3级成熟度过程域，3 级是一个比较有特点的级别，在它之前是已管理，也就是说不管做的怎么样，反正先把项目做出来。而 3 级要求已定义，则是建立各种规章制度。比如 DAR 解决的问题就是到底该如何做决定，整个组织是遵循同一个标准做决策的。最直接的体现就是后续高成熟度的过程域都是带有预见性质的，也就是说需要在某些时刻作出正确且一致认可的决定。</p>
+</blockquote>
 <h3 id="lv2度量与分析ma">Lv2度量与分析(MA)</h3>
 <blockquote>
-<p><strong>目的</strong>: 开发并保持 用于支持管理信息需要的度量能力。</p>
+<p><strong>目的</strong>: 开发并保持用于支持管理信息需要的度量能力。</p>
 <p><strong>概要</strong></p>
 <ul>
 <li>SG 1 使度量与分析活动协调一致
