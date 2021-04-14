@@ -1,74 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>mobileperf</title>
-    <url>/2020/06/30/source%20code/mobileperf/</url>
-    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
-<h2 id="硬件配置差">硬件配置差</h2>
-<ol type="1">
-<li>压测时间长 72小时左右</li>
-<li>需要同时测的app比较多</li>
-</ol>
-<h2 id="优势">优势</h2>
-<ol type="1">
-<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
-<li>pc端占用资源极少，移动端主要是系统调用</li>
-</ol>
-<h1 id="源码分析">源码分析</h1>
-<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
-<table>
-<thead>
-<tr class="header">
-<th>模块</th>
-<th>和操作系统交互</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>连接</td>
-<td>adb usb &gt; adb wifi</td>
-</tr>
-<tr class="even">
-<td>CPU</td>
-<td>top指令</td>
-</tr>
-<tr class="odd">
-<td>内存</td>
-<td>dumpsys meminfo</td>
-</tr>
-<tr class="even">
-<td>FPS</td>
-<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
-</tr>
-<tr class="odd">
-<td>网络流</td>
-<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
-</tr>
-<tr class="even">
-<td>电量</td>
-<td>dumpsys batteryproperties/dumpsys battery（after）</td>
-</tr>
-<tr class="odd">
-<td>进程数统计</td>
-<td>ls -lt /proc/pid/task</td>
-</tr>
-<tr class="even">
-<td>其他</td>
-<td>monkey logcat</td>
-</tr>
-</tbody>
-</table>
-<h1 id="问题">问题</h1>
-<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Citrine: Providing Intelligent Copy-and-Paste</title>
     <url>/2020/09/25/paper/copy-and-paste-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -84,23 +16,6 @@
       <categories>
         <category>paper</category>
       </categories>
-  </entry>
-  <entry>
-    <title>GUI-report</title>
-    <url>/2020/07/02/report/GUI-report/</url>
-    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
-<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
-<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
-<h2 id="overall-performance">overall performance</h2>
-<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
-      <tags>
-        <tag>gui</tag>
-        <tag>mobile</tag>
-      </tags>
   </entry>
   <entry>
     <title>[MIT Lecture] How to Speak</title>
@@ -145,6 +60,23 @@
       <categories>
         <category>report</category>
       </categories>
+  </entry>
+  <entry>
+    <title>GUI-report</title>
+    <url>/2020/07/02/report/GUI-report/</url>
+    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
+<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
+<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
+<h2 id="overall-performance">overall performance</h2>
+<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+]]></content>
+      <categories>
+        <category>report</category>
+      </categories>
+      <tags>
+        <tag>gui</tag>
+        <tag>mobile</tag>
+      </tags>
   </entry>
   <entry>
     <title>How to write and publish technical papers in English</title>
@@ -296,6 +228,144 @@
       <categories>
         <category>report</category>
       </categories>
+  </entry>
+  <entry>
+    <title>mobileperf</title>
+    <url>/2020/06/30/source%20code/mobileperf/</url>
+    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
+<h2 id="硬件配置差">硬件配置差</h2>
+<ol type="1">
+<li>压测时间长 72小时左右</li>
+<li>需要同时测的app比较多</li>
+</ol>
+<h2 id="优势">优势</h2>
+<ol type="1">
+<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
+<li>pc端占用资源极少，移动端主要是系统调用</li>
+</ol>
+<h1 id="源码分析">源码分析</h1>
+<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
+<table>
+<thead>
+<tr class="header">
+<th>模块</th>
+<th>和操作系统交互</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>连接</td>
+<td>adb usb &gt; adb wifi</td>
+</tr>
+<tr class="even">
+<td>CPU</td>
+<td>top指令</td>
+</tr>
+<tr class="odd">
+<td>内存</td>
+<td>dumpsys meminfo</td>
+</tr>
+<tr class="even">
+<td>FPS</td>
+<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
+</tr>
+<tr class="odd">
+<td>网络流</td>
+<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
+</tr>
+<tr class="even">
+<td>电量</td>
+<td>dumpsys batteryproperties/dumpsys battery（after）</td>
+</tr>
+<tr class="odd">
+<td>进程数统计</td>
+<td>ls -lt /proc/pid/task</td>
+</tr>
+<tr class="even">
+<td>其他</td>
+<td>monkey logcat</td>
+</tr>
+</tbody>
+</table>
+<h1 id="问题">问题</h1>
+<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
+]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts</title>
+    <url>/2020/07/05/paper/mobile/icse20%20Multiple-Entry/</url>
+    <content><![CDATA[<h2 id="总体评价">总体评价</h2>
+<p>做的不怎么样，应该会被reject。因为soundness不够，并且覆盖率甚至不如APE（APE是sound的）</p>
+<h3 id="单入口想要测试充分的固有缺陷">单入口想要测试充分的固有缺陷：</h3>
+<ol type="1">
+<li>有些activity因为复杂手势或者复杂的逻辑操作而无法达到，每个activity距离默认的入口的距离不同，测试的exploration对于不同的activity是不同的，这就导致了越难发现的activity越难被测充分</li>
+<li>有的测试方法能够找到activity之间的数据依赖但是不知道什么因素能够对后面的activity造成影响，可能达到这个activity的时候并不是一个完整的能够引发bug的上下文环境。并且这个上下文环境甚至可能是来自于app外部的 (1.Furthermore, because of the infinite test space of GUI programs, it is difficult to launch activities under complete contexts using SET 2. ...XXX has different behaviors depending on its Activity Launching Contexts (ALCs), which is generated by previous event operations or received from outside (e.g., another app))</li>
+<li>即使达到了某个activity，也无法知道到底是否覆盖完全了（当然，这个问题本身也是不可判定的）</li>
+</ol>
+<h3 id="多入口试图如何解决问题">多入口试图如何解决问题：</h3>
+<ol type="1">
+<li>找到什么才是最能够影响某个activity的启动结果的因素，然后尽可能测试这个因素 -&gt; ICC（inter-component communication）最为重要 &gt; 其余因素还有设备配置、activity栈以及全局数据。设备配置直接报告，activity栈能够在空栈的情况下使用Faxla策略，在非空情况下使用Faxex策略。而全局数据，如果能够探索到全局设置相关的activity，在多轮的测试中会修改它</li>
+<li>试图直接启动某个activity，然后生成它需要的ICC并测试</li>
+<li>动态的维护每个activity的explore weight使得能够触发更多transition的activity能够被更多的测试到，并且让一些意外crash掉的activity也能够被覆盖到（毕竟不能crash了发现了一个bug就丢掉，可能这个crash的节点是后面更多crash节点的entry）</li>
+</ol>
+<h3 id="整个工作的一些限制">整个工作的一些限制</h3>
+<ul>
+<li>focus在启动环节，是以activity来进行划分，对于某个activity中的一些例如button的点击应该是完全没有纳入测试范围的</li>
+<li>在basic attribute基本只用到了string相关API而不能够使用其他JDK的库更不用说第三方库</li>
+</ul>
+<h3 id="how-to">how-to：</h3>
+<ol type="1">
+<li>如何产生多入口：把原本只能通过EA(exported activity 能够被外部app启动)达到的IA（internal activity）修改成为EA，只需要把andorid：exported设置为true或者修改manifest中的intent filter</li>
+<li>如何动态修改权重：通过多轮测试，Faxex策略基于Faxla的结果，并结合了activity之间的transition &gt; 因为静态分析的一些技术限制，transition可能不够精准，因此Faxex中也会动态地发现更多可到达的状态</li>
+<li>ALM如何建立：最主要依赖于“跳转都是与string相关操作”这一假设，例如if-else中使用一个对string的比较，根据比较结果决定是否跳转或do something，这个假设的局限性就在于当遇到与string不相关的操作时就不能work</li>
+<li>dummy activity：运行时构造出来的虚拟的入口用来访问一些需要权限的无法通过adb直接启动的activity</li>
+</ol>
+<h3 id="evaluation">Evaluation</h3>
+<ol type="1">
+<li>RQ1: ALC构造的效果</li>
+</ol>
+<ul>
+<li>自己构造了一些测试用例</li>
+</ul>
+<ol start="2" type="1">
+<li>RQ2: activity启动的效果</li>
+</ol>
+<ul>
+<li>baseline : Monkey Ape IntentFuzzer</li>
+<li>最终整个Fax覆盖率达到96.4%，成功启动了60%的activity</li>
+</ul>
+<ol start="3" type="1">
+<li>RQ3: 是否提高了代码覆盖度</li>
+</ol>
+<ul>
+<li>略低于IntentFuzzer的覆盖率，但不知道这个是一个怎么样的baseline</li>
+</ul>
+<ol start="4" type="1">
+<li>RQ4: Fax是否能找到了更多的bug</li>
+</ol>
+<ul>
+<li>确实找到了bug，但是没有baseline</li>
+</ul>
+<p>整个evaluation都不行，并且它自己一个fuzz interface的work去和默认入口执行的比较这本身就不fair</p>
+<h3 id="没找到答案的问题">没找到答案的问题：</h3>
+<ol type="1">
+<li>如何确认一个activity是“global setting related”</li>
+</ol>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>mobile</tag>
+        <tag>testing</tag>
+        <tag>icse</tag>
+      </tags>
   </entry>
   <entry>
     <title>[课堂笔记] 程序设计语言的形式语义</title>
@@ -552,30 +622,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[Lecture Notes] Software Architecture</title>
-    <url>/2020/12/17/lecture/software-architecture/SA-notes/</url>
-    <content><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>科学和工程的本质区别：是否有人的参与。工程的本质上是改变这个世界</p>
-<p>软件架构两个定义之间的区别与联系：SEI和IEEE的定义基本相同，IEEE更为宽泛，而多的定义是与外部环境的交互以及设计演进的指导原则。</p>
-<p>为什么在设计当中需要抽象？</p>
-<p>Use Case 会把四个视图结合起来</p>
-<h2 id="chapter1">chapter1</h2>
-<p>正确的设计顺序： constarins -&gt; quality attributes -&gt; functionalty attributes</p>
-<h3 id="quality-attributes-and-tactics">Quality Attributes And Tactics</h3>
-<h4 id="availability">Availability</h4>
-<p>描述 availability -&gt; 使用时间</p>
-<p>------------------------------------------------&gt; timeline ↑ ↑ ↑ ↑ failure detect correct restart Mean time between failures : restart - failure 高可用性：上面的三段时间都尽可能的小 -&gt; 缩短这些时间都可以提高可用性</p>
-<h5 id="缩短检测时间">缩短检测时间：</h5>
-<p>什么情况下使用ping/echo，什么情况下使用heartbeat? &gt; ping echo是双向的，heartbeat是单向的 &gt; 尽管heartbeat带宽更小，但是需要一直占用着资源，多用于长时间始终保持连接的，实时的监控 &gt; ping是只有需要的时候才去ping，不会始终占用着资源</p>
-<p>volting:用三个detect技术来保持一致，这些detect可以用同样的实现也可以是不同的实现</p>
-<h5 id="缩短恢复时间">缩短恢复时间</h5>
-<p>假设有两台机器，一台是primary / secondary Active redundancy / passive redundancy / spare active : 两个都在运行，随时可以切换，两台都进行同样的工作，只是忽略备用的输出 passive : 备用机器定期同步，开着但是不会进行相同的工作 spare : 定期打primary的快照，down了之后在secondary上恢复 这三个时间会逐渐变长（本质是资源换时间） #### Reliability</p>
-]]></content>
-      <tags>
-        <tag>lecture notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[课堂笔记] 高级软件设计</title>
     <url>/2020/11/12/lecture/software-design/SD-notes/</url>
     <content><![CDATA[<h2 id="基本概念">基本概念</h2>
@@ -694,73 +740,27 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>Multiple-Entry Testing of Android Applications by Constructing Activity Launching Contexts</title>
-    <url>/2020/07/05/paper/mobile/icse20%20Multiple-Entry/</url>
-    <content><![CDATA[<h2 id="总体评价">总体评价</h2>
-<p>做的不怎么样，应该会被reject。因为soundness不够，并且覆盖率甚至不如APE（APE是sound的）</p>
-<h3 id="单入口想要测试充分的固有缺陷">单入口想要测试充分的固有缺陷：</h3>
-<ol type="1">
-<li>有些activity因为复杂手势或者复杂的逻辑操作而无法达到，每个activity距离默认的入口的距离不同，测试的exploration对于不同的activity是不同的，这就导致了越难发现的activity越难被测充分</li>
-<li>有的测试方法能够找到activity之间的数据依赖但是不知道什么因素能够对后面的activity造成影响，可能达到这个activity的时候并不是一个完整的能够引发bug的上下文环境。并且这个上下文环境甚至可能是来自于app外部的 (1.Furthermore, because of the infinite test space of GUI programs, it is difficult to launch activities under complete contexts using SET 2. ...XXX has different behaviors depending on its Activity Launching Contexts (ALCs), which is generated by previous event operations or received from outside (e.g., another app))</li>
-<li>即使达到了某个activity，也无法知道到底是否覆盖完全了（当然，这个问题本身也是不可判定的）</li>
-</ol>
-<h3 id="多入口试图如何解决问题">多入口试图如何解决问题：</h3>
-<ol type="1">
-<li>找到什么才是最能够影响某个activity的启动结果的因素，然后尽可能测试这个因素 -&gt; ICC（inter-component communication）最为重要 &gt; 其余因素还有设备配置、activity栈以及全局数据。设备配置直接报告，activity栈能够在空栈的情况下使用Faxla策略，在非空情况下使用Faxex策略。而全局数据，如果能够探索到全局设置相关的activity，在多轮的测试中会修改它</li>
-<li>试图直接启动某个activity，然后生成它需要的ICC并测试</li>
-<li>动态的维护每个activity的explore weight使得能够触发更多transition的activity能够被更多的测试到，并且让一些意外crash掉的activity也能够被覆盖到（毕竟不能crash了发现了一个bug就丢掉，可能这个crash的节点是后面更多crash节点的entry）</li>
-</ol>
-<h3 id="整个工作的一些限制">整个工作的一些限制</h3>
-<ul>
-<li>focus在启动环节，是以activity来进行划分，对于某个activity中的一些例如button的点击应该是完全没有纳入测试范围的</li>
-<li>在basic attribute基本只用到了string相关API而不能够使用其他JDK的库更不用说第三方库</li>
-</ul>
-<h3 id="how-to">how-to：</h3>
-<ol type="1">
-<li>如何产生多入口：把原本只能通过EA(exported activity 能够被外部app启动)达到的IA（internal activity）修改成为EA，只需要把andorid：exported设置为true或者修改manifest中的intent filter</li>
-<li>如何动态修改权重：通过多轮测试，Faxex策略基于Faxla的结果，并结合了activity之间的transition &gt; 因为静态分析的一些技术限制，transition可能不够精准，因此Faxex中也会动态地发现更多可到达的状态</li>
-<li>ALM如何建立：最主要依赖于“跳转都是与string相关操作”这一假设，例如if-else中使用一个对string的比较，根据比较结果决定是否跳转或do something，这个假设的局限性就在于当遇到与string不相关的操作时就不能work</li>
-<li>dummy activity：运行时构造出来的虚拟的入口用来访问一些需要权限的无法通过adb直接启动的activity</li>
-</ol>
-<h3 id="evaluation">Evaluation</h3>
-<ol type="1">
-<li>RQ1: ALC构造的效果</li>
-</ol>
-<ul>
-<li>自己构造了一些测试用例</li>
-</ul>
-<ol start="2" type="1">
-<li>RQ2: activity启动的效果</li>
-</ol>
-<ul>
-<li>baseline : Monkey Ape IntentFuzzer</li>
-<li>最终整个Fax覆盖率达到96.4%，成功启动了60%的activity</li>
-</ul>
-<ol start="3" type="1">
-<li>RQ3: 是否提高了代码覆盖度</li>
-</ol>
-<ul>
-<li>略低于IntentFuzzer的覆盖率，但不知道这个是一个怎么样的baseline</li>
-</ul>
-<ol start="4" type="1">
-<li>RQ4: Fax是否能找到了更多的bug</li>
-</ol>
-<ul>
-<li>确实找到了bug，但是没有baseline</li>
-</ul>
-<p>整个evaluation都不行，并且它自己一个fuzz interface的work去和默认入口执行的比较这本身就不fair</p>
-<h3 id="没找到答案的问题">没找到答案的问题：</h3>
-<ol type="1">
-<li>如何确认一个activity是“global setting related”</li>
-</ol>
+    <title>[Lecture Notes] Software Architecture</title>
+    <url>/2020/12/17/lecture/software-architecture/SA-notes/</url>
+    <content><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>科学和工程的本质区别：是否有人的参与。工程的本质上是改变这个世界</p>
+<p>软件架构两个定义之间的区别与联系：SEI和IEEE的定义基本相同，IEEE更为宽泛，而多的定义是与外部环境的交互以及设计演进的指导原则。</p>
+<p>为什么在设计当中需要抽象？</p>
+<p>Use Case 会把四个视图结合起来</p>
+<h2 id="chapter1">chapter1</h2>
+<p>正确的设计顺序： constarins -&gt; quality attributes -&gt; functionalty attributes</p>
+<h3 id="quality-attributes-and-tactics">Quality Attributes And Tactics</h3>
+<h4 id="availability">Availability</h4>
+<p>描述 availability -&gt; 使用时间</p>
+<p>------------------------------------------------&gt; timeline ↑ ↑ ↑ ↑ failure detect correct restart Mean time between failures : restart - failure 高可用性：上面的三段时间都尽可能的小 -&gt; 缩短这些时间都可以提高可用性</p>
+<h5 id="缩短检测时间">缩短检测时间：</h5>
+<p>什么情况下使用ping/echo，什么情况下使用heartbeat? &gt; ping echo是双向的，heartbeat是单向的 &gt; 尽管heartbeat带宽更小，但是需要一直占用着资源，多用于长时间始终保持连接的，实时的监控 &gt; ping是只有需要的时候才去ping，不会始终占用着资源</p>
+<p>volting:用三个detect技术来保持一致，这些detect可以用同样的实现也可以是不同的实现</p>
+<h5 id="缩短恢复时间">缩短恢复时间</h5>
+<p>假设有两台机器，一台是primary / secondary Active redundancy / passive redundancy / spare active : 两个都在运行，随时可以切换，两台都进行同样的工作，只是忽略备用的输出 passive : 备用机器定期同步，开着但是不会进行相同的工作 spare : 定期打primary的快照，down了之后在secondary上恢复 这三个时间会逐渐变长（本质是资源换时间） #### Reliability</p>
 ]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
       <tags>
-        <tag>mobile</tag>
-        <tag>testing</tag>
-        <tag>icse</tag>
+        <tag>lecture notes</tag>
       </tags>
   </entry>
   <entry>
@@ -931,105 +931,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
-    <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Models of programming and debugging suggest many causes of errors, and many classifications of error types exist. Yet, there has been no attempt to link causes of errors to these classifications, nor is there a common vocabulary for reasoning about such causal links. This makes it difficult to compare the abilities of programming styles, languages, and environments to prevent errors. To address this issue, this paper presents a model of programming errors based on past studies of errors. The model was evaluated with two observational of Alice, an event-based programming system, revealing that most errors were due to attentional and strategic problems in implementing algorithms, language constructs, and uses of libraries. In general, the model can support theoretical, design, and educational programming research.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] A study of developer work habits</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] Symbolic execution and program testing</title>
     <url>/2020/07/17/paper/ISER/Formal%20Methods/fm-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1113,6 +1014,26 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
+</blockquote>
+<p>keywords: Veritesting, Symbolic Execution, Verification</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1145,13 +1066,12 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
+    <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
+    <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-<p>We present MergePoint, a new binary-only symbolic execution system for large-scale testing of commodity off-the-shelf(COTS) software. MergePoint introduces veritesting, a newtechnique that employs static symbolic execution to amplifythe effect of dynamic symbolic execution. Veritesting allowsMergePoint to find twice as many bugs, explore orders of magnitude more paths, and achieve higher code coverage thanprevious dynamic symbolic execution systems. MergePointis currently running daily on a 100 node cluster analyzing33,248 Linux binaries; has generated more than 15 billionSMT queries, 200 million test cases, 2,347,420 crashes, andfound 11,687 bugs in 4,379 distinct applications.</p>
+<p>Models of programming and debugging suggest many causes of errors, and many classifications of error types exist. Yet, there has been no attempt to link causes of errors to these classifications, nor is there a common vocabulary for reasoning about such causal links. This makes it difficult to compare the abilities of programming styles, languages, and environments to prevent errors. To address this issue, this paper presents a model of programming errors based on past studies of errors. The model was evaluated with two observational of Alice, an event-based programming system, revealing that most errors were due to attentional and strategic problems in implementing algorithms, language constructs, and uses of libraries. In general, the model can support theoretical, design, and educational programming research.</p>
 </blockquote>
-<p>keywords: Veritesting, Symbolic Execution, Verification</p>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <h3 id="evalution">Evalution</h3>
@@ -1161,7 +1081,87 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Formal Methods</tag>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] A study of developer work habits</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
       </tags>
   </entry>
   <entry>
@@ -1993,6 +1993,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <ol type="1">
 <li><p>项目监控点选择的原则？原因 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A.重要的里程碑       </span><br><span class="line">原因:项目阶段重要的完成标志，通过才能证明这一阶段任务完成，才能满足干系人的期望</span><br><span class="line">B. 时间间隔比较合理  </span><br><span class="line">原因:假如时间太长不能在合适的时期对偏差进行纠偏行动，会延误项目进展，时间太短不起作用，没法监控到项目的具体指标</span><br></pre></td></tr></table></figure></p></li>
 <li><p>SG2中的相关实践约定，需要采取纠偏措施的问题来源 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">来自于项目监控过程域，PPQA收集问题:项目监控、验证、确认；项目监控过程域中的问题列表管理</span><br></pre></td></tr></table></figure></p></li>
+<li><p>纠偏行动的先决条件 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">有偏离问题列表，在偏差界限达到15%或20%时，进行纠正</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h3 id="lv2项目计划pp">Lv2项目计划(PP)</h3>
 <blockquote>
@@ -2031,9 +2032,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">产品计划的制订是由上往下制订，由下往上修改的过程</span><br></pre></td></tr></table></figure></p></li>
 <li><p>一般的估算方法有哪几个？区别 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1)Delphi(德尔菲)估计，PERT Sizing 估算</span><br><span class="line">2)区别:Delphi适用于项目资金多的时候，项目前期做估计(大项目)</span><br><span class="line">PERT Sizing适用于时间短，资金少的时候，适用于后期比较明朗，紧迫的项目或项目中后期的重估计的时候(小项目)</span><br><span class="line">两种方法比较:PERT Sizing估算花的时间短，资金用的少，精确度不高。Delphi成本高，时间长，精确度高。</span><br></pre></td></tr></table></figure></p></li>
 <li><p>什么是承诺管理？承诺的分类 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">承诺管理是对干系人承诺进行管理、保证，并兑现干系人的承诺。分为3类:结盟和协议、促进合作、允许变更</span><br></pre></td></tr></table></figure></p></li>
-<li><p>CMMI 在 SP1.1 估计项目范围中要求建立工作分解结构，必须包含哪些内容？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">产品包、管理的任务、外包的、重用的、采购的组件</span><br></pre></td></tr></table></figure></p></li>
 <li><p>PP中“建立”和“维护”两个活动的解释？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">建立:把项目文档写好并发布出去</span><br><span class="line">维护:项目实施过程中，发现项目的进展和计划发生偏差的时候进行调整</span><br></pre></td></tr></table></figure></p></li>
-<li><p>纠偏行动的先决条件 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">有偏离问题列表，在偏差界限达到15%或20% 时，进行纠正</span><br></pre></td></tr></table></figure></p></li>
+<li><p>估算目标: 不是尽可能客观描述代码行/工作量（永远不可能实现估算），而是得到一个数字<strong>数字对不对不重要，重要的是大家认可</strong></p></li>
 </ol>
 <h3 id="lv2需求管理reqm">Lv2需求管理(REQM)</h3>
 <blockquote>
@@ -2076,14 +2076,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 </ul></li>
 </ul>
 </blockquote>
-<ol type="1">
-<li>确定组件获取方式的意义在于什么 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在于获得最适合企业，选择能够满足质量、成本、进度三方面要求的最优产品列表</span><br></pre></td></tr></table></figure></li>
-<li>建立供方协定---哪些协议是具有法力效力的 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">任务书，合作开发协议，合同</span><br></pre></td></tr></table></figure></li>
-<li>SP2、5为什么比CMM的SG2多了一个产品转化？产品转换的意义在于什么 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)硬件和软件。硬件需要安装到项目环境，并且调试；软件、组件等需要集成到项目环境中去</span><br><span class="line">(2)意义在于能够更好的和项目融合</span><br></pre></td></tr></table></figure></li>
-<li>和供应商建立长期合作关系在哪里有约定？SP2、1意义是什么 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">对于组织来讲，项目是一次性的，但是合作是长久的，帮助供方改善过程实际上是对组织本身过程的改善</span><br></pre></td></tr></table></figure></li>
-<li>跟踪选择的供方过程应该是怎样的 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">提供各种报告，根据报告评价供方产品如何，来评审。</span><br></pre></td></tr></table></figure></li>
-<li>评价供方工作产品SP 2.3中有哪些方式可以利用 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">演示产品、评审产品、进行组件的测试</span><br></pre></td></tr></table></figure></li>
-</ol>
 <h3 id="lv3风险管理rskm">Lv3风险管理(RSKM)</h3>
 <blockquote>
 <p><strong>目的</strong>: 在项目潜在的问题发生前对其进行识别，以便在整个产品或项目生命期中，计划并在需要时启动风险的处理行动，从而降低这些潜在问题对达成目标产生的不利影响。</p>
@@ -2236,8 +2228,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 </ul>
 </blockquote>
 <ol type="1">
-<li><p>假设你是产品集成的负责人，拒绝那些不合格的产品组件。定义哪些验收标准？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">确保产品组件已经进入配置库里面</span><br><span class="line">待集成的产品组件必须经过单元测试（部分集成测试），提供测试报告</span><br><span class="line">完整的接口描述文档</span><br><span class="line">和生命周期有关的过程证据（质量角度考虑）:评审报告、QA检查报告</span><br></pre></td></tr></table></figure></p></li>
-<li><p>最佳实践:在做集成之前，必须要做一个就绪检查</p></li>
+<li>假设你是产品集成的负责人，拒绝那些不合格的产品组件。定义哪些验收标准 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 确保产品组件已经进入配置库里面</span><br><span class="line">2. 待集成的产品组件必须经过单元测试（部分集成测试），提供测试报告</span><br><span class="line">3. 完整的接口描述文档</span><br><span class="line">4. 和生命周期有关的过程证据（质量角度考虑）例如评审报告、QA检查报告</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="lv3确认val">Lv3确认(VAL)</h3>
 <blockquote>
@@ -2314,9 +2305,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <li><p>度量分析的作用体现在哪些方面？(从项目和组织两个角度分析) <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">项目组:提供了信息，为管理者提供决策信息，(告诉管理者项目所处在什么阶段，将来应该进行相应的项目管理决策。)</span><br><span class="line">组织:为组织及过程改进，提供决策信息。(要知道组织过程处于什么阶段，将来的改进方向)</span><br></pre></td></tr></table></figure></p></li>
 <li><p>度量的目的要支持质量的目标 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">与产品质量有关:测试覆盖率、缺陷数量；一次性测试通过率；关键重要特性合格率；</span><br><span class="line">与成本有关:开发成本、维护成本、管理成本、现场服务时间；</span><br><span class="line">与产品交付有关:准时交付率；交付完整性、产品错发次数；延期交付率；一次准时交付率；</span><br><span class="line">与客户有关:顾客满意率；客户投诉次数；处理投诉时间；</span><br><span class="line">与人员及设备有关:员工满意率；设备利用率；设备完好率；设备故障率；培训效果；</span><br></pre></td></tr></table></figure></p></li>
 <li><p>如何满足度量的可追踪性(哪些工作产品可以满足) <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用度量数据库，例如项目度量表</span><br></pre></td></tr></table></figure></p></li>
-<li><p>SP 1.3要求确保在数据收集中收集正确的数据 如何保证？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">由 scm负责收集，规定好收集数据源，由QA进行验证，进行完整性检查</span><br></pre></td></tr></table></figure></p></li>
-<li><p>SP 1.4通过什么文档来实现 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">度量数据分析方法指南、度量规格说明</span><br></pre></td></tr></table></figure></p></li>
-<li><p>估算目标: 不是尽可能客观描述代码行/工作量（永远不可能实现估算），而是得到一个数字<strong>数字对不对不重要，重要的是大家认可</strong></p></li>
 </ol>
 <h3 id="lv2配置管理cm">Lv2配置管理(CM)</h3>
 <blockquote>
@@ -2349,7 +2337,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <li><p>配置管理员的主要职责 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">制定配置管理计划；</span><br><span class="line">识别配置项；</span><br><span class="line">定义基线；</span><br><span class="line">定义配置库结构；</span><br><span class="line">管理、备份配置库；</span><br><span class="line">控制变更；</span><br><span class="line">生成配置管理状态报告；</span><br><span class="line">对项目成员进行配置管理培训</span><br></pre></td></tr></table></figure></p></li>
 <li><p>配置项标示的规则，什么情况下改写Vx.y.z中的x和y？什么说情况下改写z？规则是怎样的 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">级别不同，修改不同。处于开发阶段只能改z，如果过了评审则由配置管理员改x，y。如果是比较小的变更处在一条基线上的话只改y，如果进行大规模的变更的话改x</span><br></pre></td></tr></table></figure></p></li>
 <li><p>配置管理系统的等级？三个概念库如何体现配置库的等级？配置库需要注意什么 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">通过对不同库的配置项设置不同权限体现</span><br><span class="line">三个概念库:开发库，基线库，产品库。</span><br><span class="line">开发库:由项目组内部人员进行控制，可以随意的根据自己的需要进行修改，不需要变更申请。</span><br><span class="line">基线库:由项目的配置人员进行变更，要通过变更控制流程进行修改。</span><br><span class="line">产品库:由公司的配置管理员进行修改，发布的必须由公司的配置管理员进行发布。</span><br><span class="line"></span><br><span class="line">注意点：</span><br><span class="line">配置库应该包括采购的组件</span><br><span class="line">配置库中只需要保存关键性版本不需要全部版本保存</span><br></pre></td></tr></table></figure></p></li>
-<li><p>基线是什么? 基线下发布的产品有什么特点 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)基线是一组配置项(CI)的集合:</span><br><span class="line">(2)经过了正式的评审和批准</span><br><span class="line">是进一步工作的基础</span><br><span class="line">变更必须经过正式的变更控制程序</span><br></pre></td></tr></table></figure></p></li>
+<li><p>基线的定义和特点 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">经过正式评审并取得共识的规格说明与工作产品的集合，该集 合成为之后进一步开发的基础，并且只能通过变更控制规程才 能进行变更。</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h3 id="lv2过程与产品质量保证ppqa">Lv2过程与产品质量保证(PPQA)</h3>
 <blockquote>
@@ -2372,7 +2360,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <li><p>软件项目质量的分类 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">内部、外部、使用质量，过程和产品，但绝不是绝对的过程和绝对的产品，过程质量影响产品质量，产品质量取决于过程质量，互相影响。</span><br></pre></td></tr></table></figure></p></li>
 <li><p>QA行使的角色 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">三类:警察、医生和老师 简要说明QA工作在项目全过程的三种角色体现</span><br><span class="line">老师的角色在项目前期，QA辅助项目经理制定项目计划，包括根据质量体系中的标准过程裁剪得到项目定义的过程，帮助项目进行估算，设定质量目标等；对项目成员进行过程和规范的培训以及在过程中进行指导等。</span><br><span class="line">警察的角色在项目过程中，QA有选择性地参加项目的技术评审，定期对项目的工作产品和过程进行审计和评审。</span><br><span class="line">医生的角色在项目过程中，QA也可以承担收集、统计、分析度量数据的工作，用于支持管理决策。</span><br></pre></td></tr></table></figure></p></li>
 <li><p>解释 PPQA QA SQA NC QC <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PPQA:产品过程质量保证过程域</span><br><span class="line">QA:质量保证专员，质量保证学科</span><br><span class="line">SQA:软件的质量保证专员，软件质量保证</span><br><span class="line">NC:不符合项</span><br><span class="line">QC:质量控制</span><br></pre></td></tr></table></figure></p></li>
-<li><p>QA和QC差别？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QA 是质量保证，QC是质量控制 </span><br><span class="line">质量控制是质量保证的重要手段，质量控制是质量保证的一个部分，但是质量控制是发现问题的时候要去纠正的重要手段。</span><br></pre></td></tr></table></figure></p></li>
+<li><p>QA 和 QC差别？ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QA 是质量保证，QC是质量控制 </span><br><span class="line">质量控制是质量保证的重要手段，质量控制是质量保证的一个部分，但是质量控制是发现问题的时候要去纠正的重要手段。</span><br></pre></td></tr></table></figure></p></li>
 <li><p>执行PPQA的工具方法 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">评审、审计、checklist、因果图、饼图</span><br></pre></td></tr></table></figure></p></li>
 <li><p>简述评审一般过程、审计一般过程 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)评审一般过程:</span><br><span class="line">1.前期准备:提前发资料，提前预审并提出问题!</span><br><span class="line">2.执行评审，怎么执行:采用检查单,不迟到，要签到。跑题不要太远</span><br><span class="line">3.评审过程怎么进行:进行度量、统计效率</span><br><span class="line">4.评审结束:记录表现</span><br><span class="line">(2)执行过程审计一般过程</span><br><span class="line">准备:选PA，检查单，计划，评审</span><br><span class="line">执行:审计，初步沟通，建议</span><br><span class="line">评审和审计活动以检查工作产品和访谈作为主要工作来源，估算过程，进行访谈，访谈步骤，检查文档结果</span><br><span class="line">后期:最终报告，跟踪NC，提供建议</span><br></pre></td></tr></table></figure></p></li>
 <li><p>QA人员以及PPQA过程的质量保证如何实现 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QA要形成质量记录，由QA的经理来进行审查</span><br><span class="line">PPQA过程也要形成记录</span><br></pre></td></tr></table></figure></p></li>
