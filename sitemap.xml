@@ -23,14 +23,14 @@
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/categories/index.html</loc>
+    <loc>https://wym0120.github.io/tags/index.html</loc>
     
     <lastmod>2021-04-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/tags/index.html</loc>
+    <loc>https://wym0120.github.io/categories/index.html</loc>
     
     <lastmod>2021-04-12</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</loc>
+    <loc>https://wym0120.github.io/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</loc>
     
     <lastmod>2021-04-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</loc>
+    <loc>https://wym0120.github.io/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</loc>
     
     <lastmod>2021-04-12</lastmod>
     
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/2020/07/05/lecture/os/os-lecture-notes/</loc>
+    <loc>https://wym0120.github.io/2020/07/03/lecture/jvm/jvm-test/</loc>
     
     <lastmod>2021-04-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/2020/07/03/lecture/jvm/jvm-test/</loc>
+    <loc>https://wym0120.github.io/2020/07/05/lecture/os/os-lecture-notes/</loc>
     
     <lastmod>2021-04-12</lastmod>
     
@@ -354,21 +354,14 @@
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/tags/testing/</loc>
-    <lastmod>2021-04-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wym0120.github.io/tags/icse/</loc>
-    <lastmod>2021-04-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wym0120.github.io/tags/lecture-notes/</loc>
+    <lastmod>2021-04-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wym0120.github.io/tags/jvm/</loc>
     <lastmod>2021-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -382,7 +375,14 @@
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/tags/jvm/</loc>
+    <loc>https://wym0120.github.io/tags/testing/</loc>
+    <lastmod>2021-04-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wym0120.github.io/tags/icse/</loc>
     <lastmod>2021-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,14 +433,14 @@
 
   
   <url>
-    <loc>https://wym0120.github.io/categories/paper/</loc>
+    <loc>https://wym0120.github.io/categories/code/</loc>
     <lastmod>2021-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/categories/code/</loc>
+    <loc>https://wym0120.github.io/categories/paper/</loc>
     <lastmod>2021-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -461,14 +461,14 @@
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/categories/os/</loc>
+    <loc>https://wym0120.github.io/categories/jvm/</loc>
     <lastmod>2021-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://wym0120.github.io/categories/jvm/</loc>
+    <loc>https://wym0120.github.io/categories/os/</loc>
     <lastmod>2021-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
