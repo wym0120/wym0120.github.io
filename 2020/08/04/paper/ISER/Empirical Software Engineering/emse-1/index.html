@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bug-pattern-%E7%A0%94%E7%A9%B6"><span class="nav-number">5.1.</span> <span class="nav-text"> BUG pattern 研究</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bug-mainfestation-%E7%A0%94%E7%A9%B6"><span class="nav-number">5.2.</span> <span class="nav-text"> BUG mainfestation 研究</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%83%BD%E5%BD%B1%E5%93%8D%E5%8F%AF%E4%BF%A1%E5%BA%A6%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="nav-number">5.3.</span> <span class="nav-text"> 可能影响可信度的因素</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text">Evalution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bug-mainfestation-%E7%A0%94%E7%A9%B6"><span class="nav-number">4.1.</span> <span class="nav-text">BUG mainfestation 研究</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%83%BD%E5%BD%B1%E5%93%8D%E5%8F%AF%E4%BF%A1%E5%BA%A6%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="nav-number">4.2.</span> <span class="nav-text">可能影响可信度的因素</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,7 +348,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
+        <h3 id="abstract">Abstract</h3>
 <blockquote>
 <p>The reality of multi-core hardware has made concurrent programs pervasive. Unfortunately, writing correct concurrent programs is difficult. Addressing this challenge requires advances in multiple directions, including concurrency bug detection, concurrent pro gram testing, concurrent programming model design, etc. Design ing effective techniques in all these directions will significantly benefit from a deep understanding of real world concurrency bug characteristics.</p>
 </blockquote>
@@ -359,17 +359,14 @@
 <p>Some of our findings are as follows: (1) Around one third ofthe examined non-deadlock concurrency bugs are caused by violation to programmers’ order intentions, which may not be easilyexpressed via synchronization primitives like locks and transactional memories; (2) Around 34% of the examined non-deadlockconcurrency bugs involve multiple variables, which are not welladdressed by existing bug detection tools; (3) About 92% of theexamined concurrency bugs can be reliably triggered by enforcingcertain orders among no more than 4 memory accesses. This indicates that testing concurrent programs can target at exploring possible orders among every small groups of memory accesses, insteadof among all memory accesses; (4) About 73% of the examinednon-deadlock concurrency bugs were not fixed by simply addingor changing locks, and many of the fixes were not correct at thefirst try, indicating the difficulty of reasoning concurrent executionby programmers.</p>
 </blockquote>
 <p>keywords: concurrent program, concurrency bug, bug characteristics</p>
-<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
-<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
-<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
 <p>成熟且庞大的开源项目，具备不同的并发的需求 MySQL Apache Mozilla OpenOffice</p>
 <p>从bug database中根据关键词选取至少包含一个关键词的bug并从中抽取约500个比较详尽的（包含了引起bug的原因、源码、如何解决bug）信息，并且这些bug都是由于开发人员引起的。</p>
-<p>最终获取到了105个并发bug</p>
-<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
-<h4 id="bug-pattern-研究"><a class="markdownIt-Anchor" href="#bug-pattern-研究"></a> BUG pattern 研究</h4>
-<p>产生原因：(1)编码时违反原子性，多个线程访问了同一个变量 (2)对线程之间的执行先后顺序存在错误的假设</p>
-<h4 id="bug-mainfestation-研究"><a class="markdownIt-Anchor" href="#bug-mainfestation-研究"></a> BUG mainfestation 研究</h4>
-<h4 id="可能影响可信度的因素"><a class="markdownIt-Anchor" href="#可能影响可信度的因素"></a> 可能影响可信度的因素</h4>
+<p>最终获取到了105个并发bug ### Details #### BUG pattern 研究 产生原因：(1)编码时违反原子性，多个线程访问了同一个变量 (2)对线程之间的执行先后顺序存在错误的假设</p>
+<h4 id="bug-mainfestation-研究">BUG mainfestation 研究</h4>
+<h4 id="可能影响可信度的因素">可能影响可信度的因素</h4>
 <ul>
 <li>随机选取的bug，不够全面</li>
 <li>选择的应用不一定具备足够的代表性</li>
