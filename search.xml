@@ -1,74 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>mobileperf</title>
-    <url>/2020/06/30/source%20code/mobileperf/</url>
-    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
-<h2 id="硬件配置差">硬件配置差</h2>
-<ol type="1">
-<li>压测时间长 72小时左右</li>
-<li>需要同时测的app比较多</li>
-</ol>
-<h2 id="优势">优势</h2>
-<ol type="1">
-<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
-<li>pc端占用资源极少，移动端主要是系统调用</li>
-</ol>
-<h1 id="源码分析">源码分析</h1>
-<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
-<table>
-<thead>
-<tr class="header">
-<th>模块</th>
-<th>和操作系统交互</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>连接</td>
-<td>adb usb &gt; adb wifi</td>
-</tr>
-<tr class="even">
-<td>CPU</td>
-<td>top指令</td>
-</tr>
-<tr class="odd">
-<td>内存</td>
-<td>dumpsys meminfo</td>
-</tr>
-<tr class="even">
-<td>FPS</td>
-<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
-</tr>
-<tr class="odd">
-<td>网络流</td>
-<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
-</tr>
-<tr class="even">
-<td>电量</td>
-<td>dumpsys batteryproperties/dumpsys battery（after）</td>
-</tr>
-<tr class="odd">
-<td>进程数统计</td>
-<td>ls -lt /proc/pid/task</td>
-</tr>
-<tr class="even">
-<td>其他</td>
-<td>monkey logcat</td>
-</tr>
-</tbody>
-</table>
-<h1 id="问题">问题</h1>
-<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Citrine: Providing Intelligent Copy-and-Paste</title>
     <url>/2020/09/25/paper/copy-and-paste-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -298,6 +230,80 @@
       </categories>
   </entry>
   <entry>
+    <title>mobileperf</title>
+    <url>/2020/06/30/source%20code/mobileperf/</url>
+    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
+<h2 id="硬件配置差">硬件配置差</h2>
+<ol type="1">
+<li>压测时间长 72小时左右</li>
+<li>需要同时测的app比较多</li>
+</ol>
+<h2 id="优势">优势</h2>
+<ol type="1">
+<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
+<li>pc端占用资源极少，移动端主要是系统调用</li>
+</ol>
+<h1 id="源码分析">源码分析</h1>
+<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
+<table>
+<thead>
+<tr class="header">
+<th>模块</th>
+<th>和操作系统交互</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>连接</td>
+<td>adb usb &gt; adb wifi</td>
+</tr>
+<tr class="even">
+<td>CPU</td>
+<td>top指令</td>
+</tr>
+<tr class="odd">
+<td>内存</td>
+<td>dumpsys meminfo</td>
+</tr>
+<tr class="even">
+<td>FPS</td>
+<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
+</tr>
+<tr class="odd">
+<td>网络流</td>
+<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
+</tr>
+<tr class="even">
+<td>电量</td>
+<td>dumpsys batteryproperties/dumpsys battery（after）</td>
+</tr>
+<tr class="odd">
+<td>进程数统计</td>
+<td>ls -lt /proc/pid/task</td>
+</tr>
+<tr class="even">
+<td>其他</td>
+<td>monkey logcat</td>
+</tr>
+</tbody>
+</table>
+<h1 id="问题">问题</h1>
+<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
+]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Types and Programming Languages notes</title>
+    <url>/2020/09/25/lecture/fspl/tpl-notes/</url>
+    <content><![CDATA[<h2 id="ch3-untyped-arithmetic-expressions">ch3 Untyped Arithmetic Expressions</h2>
+]]></content>
+  </entry>
+  <entry>
     <title>[课堂笔记] 程序设计语言的形式语义</title>
     <url>/2020/09/10/lecture/fspl/fspl-notes/</url>
     <content><![CDATA[<h3 id="introduction">Introduction</h3>
@@ -346,12 +352,6 @@
       <tags>
         <tag>lecture notes</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Types and Programming Languages notes</title>
-    <url>/2020/09/25/lecture/fspl/tpl-notes/</url>
-    <content><![CDATA[<h2 id="ch3-untyped-arithmetic-expressions">ch3 Untyped Arithmetic Expressions</h2>
-]]></content>
   </entry>
   <entry>
     <title>[课堂笔记] 软件工程研究入门</title>
@@ -931,6 +931,192 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
+</blockquote>
+<blockquote>
+<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
+</blockquote>
+<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>One of the most expensive and time-consuming components of the debugging process is locating the errors or faults. To locate faults, developers must identify statements involved in failures and select suspicious statements that might contain faults. This paper presents a new technique that uses visualization to assist with these tasks. The technique uses color to visually map the participation of each program statement in the out ome of the execution of the program with a test suite, onsisting of both passed and failed test cases. Based on this visual mapping, a user can inspe t the statements in the program, identify statements involved in failures, and locate potentially faulty statements. The paper also describes a prototype tool that implements our technique along with a set of empirical studies that use the tool for evaluation of the technique. The empirical studies show that, for the subject we studied, the technique can be eeffective in helping a user locate faults in a program.</p>
+</blockquote>
+<p>keywords: software visualization,fault localization,debugging,testing</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] A technique for cheap recovery</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Ten years of implementation and experience</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
+</blockquote>
+<blockquote>
+<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
+</blockquote>
+<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
+    <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
+</blockquote>
+<blockquote>
+<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
+</blockquote>
+<blockquote>
+<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
+</blockquote>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] AddressSanitizer: A fast address sanity checker</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Memory access bugs, including buffer overflows and uses of freed heap memory, remain a serious problem for programming languages like C and C++. Many memory error detectors exist, but most of them are either slow or detect a limited set of bugs, or both.</p>
+</blockquote>
+<blockquote>
+<p>This paper presents AddressSanitizer, a new memory error detector. Our tool finds out-of-bounds accesses to heap, stack, and global objects, as well as use-after-free bugs. It employs a specialized memory allocator and code instrumentation that is simple enough to be implemented in any compiler, binary translation system, or even in hardware.</p>
+</blockquote>
+<blockquote>
+<p>AddressSanitizer achieves efficiency without sacrificing comprehensiveness. Its average slowdown is just 73% yet it accurately detects bugs at the point of occurrence. It has found over 300 previously unknown bugs in the Chromium browser and many bugs in other software.</p>
+</blockquote>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>目前检测边界溢出和访问已释放问题的工具要么不够快要么开销太大（好简单粗暴</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] A lightweight, general system for finding serious storage system errors</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Storage systems such as file systems, databases, and RAID systems have a simple, basic contract: you give them data, they do not lose or corrupt it. Often they store the only copy, making its irrevocable loss almost arbitrarily bad. Unfortunately, their code is exceptionally hard to get right, since it must correctly recover from any crash at any program point, no matter how their state was smeared across volatile and persistent memory.</p>
+</blockquote>
+<blockquote>
+<p>This paper describes EXPLODE, a system that makes it easy to systematically check real storage systems for errors. It takes user-written, potentially system-specific checkers and uses them to drive a storage system into tricky corner cases, including crash recovery errors. EXPLODE uses a novel adaptation of ideas from model checking, a comprehensive, heavyweight formal verification technique, that makes its checking more systematic (and hopefully more effective) than a pure testing approach while being just as lightweight.</p>
+</blockquote>
+<blockquote>
+<p>EXPLODE is effective. It found serious bugs in a broad range of real storage systems (without requiring source code): three version control systems, Berkeley DB, an NFS implementation, ten file systems, a RAID system, and the popular VMware GSX virtual machine. We found bugs in every system we checked, 36 bugs in total, typically with little effort.</p>
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>文件系统中会有各种各样的机制来预防崩溃，而如果这些机制中也出现了bug，那会是十分严重的。但是目前已有的工作检测文件系统中的bug的方法还是非常的原始和低效的，因此就开发了一个新的工具（严重缺乏操作系统关于文件系统的知识，很多地方没看懂） ### Evalution</p>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [FM] Symbolic execution and program testing</title>
     <url>/2020/07/17/paper/ISER/Formal%20Methods/fm-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -963,38 +1149,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <ol type="1">
 <li>剩下一个floyd prove没看</li>
 </ol>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h4 id="contribution">Contribution</h4>
-<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
-<h3 id="motivation">Motivation</h3>
-<ul>
-<li>以往工具在大型项目上表现不佳
-<ul>
-<li>路径爆炸</li>
-<li>与环境交互处理方式不当 ### Evalution</li>
-</ul></li>
-</ul>
-<h3 id="details">Details</h3>
-<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
-<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
-<h3 id="todo">todo</h3>
-<p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
 ]]></content>
       <categories>
         <category>paper</category>
@@ -1037,6 +1191,38 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
 <h4 id="todo">todo</h4>
 <p>算法的直觉还是没能很好的get，再讨论一下</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h4 id="contribution">Contribution</h4>
+<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
+<h3 id="motivation">Motivation</h3>
+<ul>
+<li>以往工具在大型项目上表现不佳
+<ul>
+<li>路径爆炸</li>
+<li>与环境交互处理方式不当 ### Evalution</li>
+</ul></li>
+</ul>
+<h3 id="details">Details</h3>
+<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
+<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
+<h3 id="todo">todo</h3>
+<p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
 ]]></content>
       <categories>
         <category>paper</category>
@@ -1162,192 +1348,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </categories>
       <tags>
         <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>One of the most expensive and time-consuming components of the debugging process is locating the errors or faults. To locate faults, developers must identify statements involved in failures and select suspicious statements that might contain faults. This paper presents a new technique that uses visualization to assist with these tasks. The technique uses color to visually map the participation of each program statement in the out ome of the execution of the program with a test suite, onsisting of both passed and failed test cases. Based on this visual mapping, a user can inspe t the statements in the program, identify statements involved in failures, and locate potentially faulty statements. The paper also describes a prototype tool that implements our technique along with a set of empirical studies that use the tool for evaluation of the technique. The empirical studies show that, for the subject we studied, the technique can be eeffective in helping a user locate faults in a program.</p>
-</blockquote>
-<p>keywords: software visualization,fault localization,debugging,testing</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
-</blockquote>
-<blockquote>
-<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
-</blockquote>
-<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] A technique for cheap recovery</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Ten years of implementation and experience</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
-    <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
-</blockquote>
-<blockquote>
-<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
-</blockquote>
-<blockquote>
-<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
-</blockquote>
-<blockquote>
-<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
-</blockquote>
-<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] A lightweight, general system for finding serious storage system errors</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Storage systems such as file systems, databases, and RAID systems have a simple, basic contract: you give them data, they do not lose or corrupt it. Often they store the only copy, making its irrevocable loss almost arbitrarily bad. Unfortunately, their code is exceptionally hard to get right, since it must correctly recover from any crash at any program point, no matter how their state was smeared across volatile and persistent memory.</p>
-</blockquote>
-<blockquote>
-<p>This paper describes EXPLODE, a system that makes it easy to systematically check real storage systems for errors. It takes user-written, potentially system-specific checkers and uses them to drive a storage system into tricky corner cases, including crash recovery errors. EXPLODE uses a novel adaptation of ideas from model checking, a comprehensive, heavyweight formal verification technique, that makes its checking more systematic (and hopefully more effective) than a pure testing approach while being just as lightweight.</p>
-</blockquote>
-<blockquote>
-<p>EXPLODE is effective. It found serious bugs in a broad range of real storage systems (without requiring source code): three version control systems, Berkeley DB, an NFS implementation, ten file systems, a RAID system, and the popular VMware GSX virtual machine. We found bugs in every system we checked, 36 bugs in total, typically with little effort.</p>
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>文件系统中会有各种各样的机制来预防崩溃，而如果这些机制中也出现了bug，那会是十分严重的。但是目前已有的工作检测文件系统中的bug的方法还是非常的原始和低效的，因此就开发了一个新的工具（严重缺乏操作系统关于文件系统的知识，很多地方没看懂） ### Evalution</p>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] AddressSanitizer: A fast address sanity checker</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Memory access bugs, including buffer overflows and uses of freed heap memory, remain a serious problem for programming languages like C and C++. Many memory error detectors exist, but most of them are either slow or detect a limited set of bugs, or both.</p>
-</blockquote>
-<blockquote>
-<p>This paper presents AddressSanitizer, a new memory error detector. Our tool finds out-of-bounds accesses to heap, stack, and global objects, as well as use-after-free bugs. It employs a specialized memory allocator and code instrumentation that is simple enough to be implemented in any compiler, binary translation system, or even in hardware.</p>
-</blockquote>
-<blockquote>
-<p>AddressSanitizer achieves efficiency without sacrificing comprehensiveness. Its average slowdown is just 73% yet it accurately detects bugs at the point of occurrence. It has found over 300 previously unknown bugs in the Chromium browser and many bugs in other software.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>目前检测边界溢出和访问已释放问题的工具要么不够快要么开销太大（好简单粗暴</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -2158,7 +2158,33 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 </ol>
 <hr />
 <h2 id="工程类">工程类</h2>
-<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /> ### Lv3需求开发 (RD) &gt; <strong>目的</strong>: &gt; &gt; <strong>概要</strong> &gt; &gt; - SG 1 开发客户需求 &gt; - SP 1.1 挖掘需要 &gt; - SP 1.2 将干系人的需要转换为客户需求 &gt; - SG 2 开发产品需求 &gt; - SP 2.1 建立产品与产品组件需求 &gt; - SP 2.2 分配产品组件需求 &gt; - SP 2.3 识别接口需求 &gt; - SG 3 分析并确认需求 &gt; - SP 3.1 建立操作概念与场景 &gt; - SP 3.2 建立必需的功能与质量属性的定义 &gt; - SP 3.3 分析需求 &gt; - SP 3.4 分析需求以达到平衡 &gt; - SP 3.5 确认需求</p>
+<p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413094525.png" /></p>
+<h3 id="lv3需求开发-rd">Lv3需求开发 (RD)</h3>
+<blockquote>
+<p><strong>目的</strong>: 挖掘、分析并 建立客户需求、产品需求与产品组件需求。</p>
+<p><strong>概要</strong></p>
+<ul>
+<li>SG 1 开发客户需求
+<ul>
+<li>SP 1.1 挖掘需要</li>
+<li>SP 1.2 将干系人的需要转换为客户需求</li>
+</ul></li>
+<li>SG 2 开发产品需求
+<ul>
+<li>SP 2.1 建立产品与产品组件需求</li>
+<li>SP 2.2 分配产品组件需求</li>
+<li>SP 2.3 识别接口需求</li>
+</ul></li>
+<li>SG 3 分析并确认需求
+<ul>
+<li>SP 3.1 建立操作概念与场景</li>
+<li>SP 3.2 建立必需的功能与质量属性的定义</li>
+<li>SP 3.3 分析需求</li>
+<li>SP 3.4 分析需求以达到平衡</li>
+<li>SP 3.5 确认需求</li>
+</ul></li>
+</ul>
+</blockquote>
 <h3 id="lv3技术解决方案ts">Lv3技术解决方案(TS)</h3>
 <blockquote>
 <p><strong>目的</strong>: 选择、设计并实现对需求的解决方案。解决方案、设计与实现包括单独的或以适当形式组合的产品、产品组件以及与产品相关的生命周期过程。</p>
