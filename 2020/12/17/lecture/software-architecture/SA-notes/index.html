@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter1"><span class="nav-number">2.</span> <span class="nav-text">chapter1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#quality-attributes-and-tactics"><span class="nav-number">2.1.</span> <span class="nav-text">Quality Attributes And Tactics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#availability"><span class="nav-number">2.1.1.</span> <span class="nav-text">Availability</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%A9%E7%9F%AD%E6%A3%80%E6%B5%8B%E6%97%B6%E9%97%B4"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">缩短检测时间：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%A9%E7%9F%AD%E6%81%A2%E5%A4%8D%E6%97%B6%E9%97%B4"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">缩短恢复时间</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text"> Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter1"><span class="nav-number">2.</span> <span class="nav-text"> chapter1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#quality-attributes-and-tactics"><span class="nav-number">2.1.</span> <span class="nav-text"> Quality Attributes And Tactics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#availability"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Availability</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%A9%E7%9F%AD%E6%A3%80%E6%B5%8B%E6%97%B6%E9%97%B4"><span class="nav-number">2.1.1.1.</span> <span class="nav-text"> 缩短检测时间：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%A9%E7%9F%AD%E6%81%A2%E5%A4%8D%E6%97%B6%E9%97%B4"><span class="nav-number">2.1.1.2.</span> <span class="nav-text"> 缩短恢复时间</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reliability"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Reliability</span></a></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -339,22 +339,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="introduction">Introduction</h2>
+        <h2 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h2>
 <p>科学和工程的本质区别：是否有人的参与。工程的本质上是改变这个世界</p>
 <p>软件架构两个定义之间的区别与联系：SEI和IEEE的定义基本相同，IEEE更为宽泛，而多的定义是与外部环境的交互以及设计演进的指导原则。</p>
 <p>为什么在设计当中需要抽象？</p>
 <p>Use Case 会把四个视图结合起来</p>
-<h2 id="chapter1">chapter1</h2>
+<h2 id="chapter1"><a class="markdownIt-Anchor" href="#chapter1"></a> chapter1</h2>
 <p>正确的设计顺序： constarins -&gt; quality attributes -&gt; functionalty attributes</p>
-<h3 id="quality-attributes-and-tactics">Quality Attributes And Tactics</h3>
-<h4 id="availability">Availability</h4>
+<h3 id="quality-attributes-and-tactics"><a class="markdownIt-Anchor" href="#quality-attributes-and-tactics"></a> Quality Attributes And Tactics</h3>
+<h4 id="availability"><a class="markdownIt-Anchor" href="#availability"></a> Availability</h4>
 <p>描述 availability -&gt; 使用时间</p>
-<p>------------------------------------------------&gt; timeline ↑ ↑ ↑ ↑ failure detect correct restart Mean time between failures : restart - failure 高可用性：上面的三段时间都尽可能的小 -&gt; 缩短这些时间都可以提高可用性</p>
-<h5 id="缩短检测时间">缩短检测时间：</h5>
-<p>什么情况下使用ping/echo，什么情况下使用heartbeat? &gt; ping echo是双向的，heartbeat是单向的 &gt; 尽管heartbeat带宽更小，但是需要一直占用着资源，多用于长时间始终保持连接的，实时的监控 &gt; ping是只有需要的时候才去ping，不会始终占用着资源</p>
+<p>------------------------------------------------&gt; timeline<br />
+↑              ↑           ↑          ↑<br />
+failure       detect     correct    restart<br />
+Mean time between failures : restart - failure<br />
+高可用性：上面的三段时间都尽可能的小 -&gt; 缩短这些时间都可以提高可用性</p>
+<h5 id="缩短检测时间"><a class="markdownIt-Anchor" href="#缩短检测时间"></a> 缩短检测时间：</h5>
+<p>什么情况下使用ping/echo，什么情况下使用heartbeat?</p>
+<blockquote>
+<p>ping echo是双向的，heartbeat是单向的<br />
+尽管heartbeat带宽更小，但是需要一直占用着资源，多用于长时间始终保持连接的，实时的监控<br />
+ping是只有需要的时候才去ping，不会始终占用着资源</p>
+</blockquote>
 <p>volting:用三个detect技术来保持一致，这些detect可以用同样的实现也可以是不同的实现</p>
-<h5 id="缩短恢复时间">缩短恢复时间</h5>
-<p>假设有两台机器，一台是primary / secondary Active redundancy / passive redundancy / spare active : 两个都在运行，随时可以切换，两台都进行同样的工作，只是忽略备用的输出 passive : 备用机器定期同步，开着但是不会进行相同的工作 spare : 定期打primary的快照，down了之后在secondary上恢复 这三个时间会逐渐变长（本质是资源换时间） #### Reliability</p>
+<h5 id="缩短恢复时间"><a class="markdownIt-Anchor" href="#缩短恢复时间"></a> 缩短恢复时间</h5>
+<p>假设有两台机器，一台是primary / secondary<br />
+Active redundancy / passive redundancy / spare<br />
+active : 两个都在运行，随时可以切换，两台都进行同样的工作，只是忽略备用的输出<br />
+passive : 备用机器定期同步，开着但是不会进行相同的工作<br />
+spare : 定期打primary的快照，down了之后在secondary上恢复<br />
+这三个时间会逐渐变长（本质是资源换时间）</p>
+<h4 id="reliability"><a class="markdownIt-Anchor" href="#reliability"></a> Reliability</h4>
 
     </div>
 

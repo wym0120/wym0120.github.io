@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9C%BA%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">需求场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%B7%AE"><span class="nav-number">1.1.</span> <span class="nav-text">硬件配置差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.</span> <span class="nav-text">优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9C%BA%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text"> 需求场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%B7%AE"><span class="nav-number">1.1.</span> <span class="nav-text"> 硬件配置差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.</span> <span class="nav-text"> 优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text"> 源码分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text"> 问题</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,63 +348,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="需求场景">需求场景</h1>
-<h2 id="硬件配置差">硬件配置差</h2>
-<ol type="1">
+        <h1 id="需求场景"><a class="markdownIt-Anchor" href="#需求场景"></a> 需求场景</h1>
+<h2 id="硬件配置差"><a class="markdownIt-Anchor" href="#硬件配置差"></a> 硬件配置差</h2>
+<ol>
 <li>压测时间长 72小时左右</li>
 <li>需要同时测的app比较多</li>
 </ol>
-<h2 id="优势">优势</h2>
-<ol type="1">
+<h2 id="优势"><a class="markdownIt-Anchor" href="#优势"></a> 优势</h2>
+<ol>
 <li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
 <li>pc端占用资源极少，移动端主要是系统调用</li>
 </ol>
-<h1 id="源码分析">源码分析</h1>
-<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
+<h1 id="源码分析"><a class="markdownIt-Anchor" href="#源码分析"></a> 源码分析</h1>
+<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图<br />
+博客地址(<a target="_blank" rel="noopener" href="https://testerhome.com/topics/23449">https://testerhome.com/topics/23449</a>)</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>模块</th>
 <th>和操作系统交互</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>连接</td>
 <td>adb usb &gt; adb wifi</td>
 </tr>
-<tr class="even">
+<tr>
 <td>CPU</td>
 <td>top指令</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>内存</td>
 <td>dumpsys meminfo</td>
 </tr>
-<tr class="even">
+<tr>
 <td>FPS</td>
 <td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>网络流</td>
 <td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
 </tr>
-<tr class="even">
+<tr>
 <td>电量</td>
 <td>dumpsys batteryproperties/dumpsys battery（after）</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>进程数统计</td>
 <td>ls -lt /proc/pid/task</td>
 </tr>
-<tr class="even">
+<tr>
 <td>其他</td>
 <td>monkey logcat</td>
 </tr>
 </tbody>
 </table>
-<h1 id="问题">问题</h1>
-<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
+<h1 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h1>
+<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？</p>
+<blockquote>
+<p>讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题<br />
+这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
+</blockquote>
 
     </div>
 
