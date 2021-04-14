@@ -775,5 +775,230 @@ PPQA过程也要形成记录
 ---
 
 # PPT 中问题整理
+1. Requirements Management
+```
+Which of the following examples of requirements traceability are adequate?
 
-![](https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210414101131.png)
+1. Customer requirements to system requirements and vice versa, but no other traceability
+
+2. System requirements to software and hardware requirements and vice versa, but no other traceability
+
+3. Software and hardware requirements to design components and test cases and vice versa, but no other traceability
+```
+
+> 此处系统需求等同于产品需求，软、硬件需求等同于产品组件需求。
+> 和项目的上下文、粒度综合起来看，没有标准答案
+
+2. Project Planing
+```
+PASS is planning their resources. What project resources should be included?
+
+• Tools
+• Budget and funding
+• Staff
+• Project plans
+• Facilities
+```
+
+> 项目计划不是资源，其余都是。因为资源需要被安排到计划中
+
+3. Project Management and Control
+```
+Project Problems
+1) People are not showing up at peer review meetings.
+2) Actual costs continually exceed planned costs.
+3) People are delinquent on their action items.
+4) Management does not know PASS status.
+5) People are not meeting schedules.
+
+PMC SPs
+a) SP 1.1 Monitor Project Planning Parameters
+b) SP 1.2 Monitor Commitments
+c) SP 1.5 Monitor Stakeholder Involvement
+d) SP 1.6 Conduct Progress Reviews
+e) SP 2.3 Manage Corrective Action
+```
+
+> 1-c 2-a 3-e 4-d 5-b
+
+4. Risk Management
+```
+1. PASS identified risks associated with their suppliers.
+2. Risks were grouped by likelihood of occurrence and impact.
+3. PASS identified risks associated with innovative technology.
+4. Impact can be high, medium, or low.
+5. At the risk management meeting, the status of some risks were changed to retired, mitigated, or closed.
+
+a) Risk source
+b) Risk category
+c) Risk parameter
+```
+
+> 13-a 2-b 45-c
+
+5. Supplier Agreement Management
+```
+PASS uses a supplier for motion sensors. Match PASS sample activities to SAM SPs.
+
+Sample Activities
+1) PASS wrote a contract with DetectEx.
+2) Supplier motion sensors were sent to integration and testing.
+3) A trade study conducted by PASS selected DetectEx for motion sensors.
+4) The motion sensors passed acceptance criteria.
+5) COTS were used for the keypad; sensors were secured from suppliers; and the controller consists of re-used PASS in-house software.
+
+SAM SPs
+a) SP 1.1 Determine Acquisition Type
+b) SP 1.2 Select Suppliers
+c) SP 1.3 Establish Supplier Agreements
+d) SP 2.2 Accept the Acquired Product
+e) SP 2.3 Ensure Transition of Products
+```
+
+> 1-c 2-e 3-b 4-d 5-a
+
+6. Configuration Management
+```
+Which CM SPs could have prevented the problem?
+
+PASS delivered updated software to SaveAll. SaveAll wanted to know what changed, but PASS wasn’t sure because change request records were incomplete.
+
+1. SP 1.1 Identify Configuration Items
+2. SP 1.2 Establish a Configuration Management System
+3. SP 1.3 Create or Release Baselines
+4. SP 2.1 Track Change Requests
+5. SP 2.2 Control Configuration Items
+6. SP 3.1 Establish Configuration Management Records
+7. SP 3.2 Perform Configuration Audits
+```
+
+> 全都是
+
+7. Process and Product Quality Assurance
+```
+Which are process evaluations? Which are product evaluations?
+1. QA attends a peer review and mentions there should be an attendance sheet.
+2. QA watches the engineers assemble a security system and notices a component was put in the wrong place.
+3. QA reviews the requirements and notices a missing requirement.
+4. QA reviews the design and notices some engineering drawings are missing.
+5. QA notices that the test group does not always fill out problem reports.
+```
+
+> 正确答案是1，2，3，4，5，过程和产品都是有可能的 
+
+8. Verification
+```
+Which of the following are adequate for verification procedures and criteria?
+
+1. Peer review criteria that says, “Ensure products are complete, consistent, and correct.”
+2. Checklists for peer reviews
+3. A test procedure that lists test steps and how to judge whether each test step passed or failed
+4. A procedure on how to do the verification process
+5. A procedure on how to do peer reviews
+```
+
+> 没有一个标准答案，主要是依据项目的情况来看的。例如第二点，对一个大的项目，有很多专家来进行评审，一个检查表反而可能产生疏漏
+
+9. Validation
+```
+Which are verification and which are validation?
+
+1. PASS conducts a formal design review with SaveAll.
+2. PASS has a peer review with the systems engineers, software engineers, and QA.
+3. PASS demonstrates a prototype to SaveAll to get their feedback.
+4. PASS formally tests the product prior to delivery with both SaveAll and QA witnessing the test.
+5. PASS integrates the components and tests the system.
+```
+
+> 都有可能。5在大多数情况下是VER，如果考虑环境因素VAL
+
+10. Organizational Process Focus
+```
+Which of the following show incorporating experiences?
+
+1. PASS Process Group (PG) updates a policy based on feedback from projects at a monthly meeting.
+2. PASS PG notices a process step was poorly written and corrects it.
+3. PASS PG looks at how projects are using the templates and updates the templates.
+4. PASS PG improves the standard processes after analyzing appraisal metrics.
+5. PASS PG updates a process because of information found on the internet.
+```
+
+> 属于：1 3 4
+> 
+> 不属于：2 5
+>
+> 2：如果是因为项目团队用了觉得写的不清晰：属于。大部分情况：不属于
+> 
+> 3：根据别人使用的结果做修正、更新
+
+11. Integrated Project Management
+```
+Which PASS scenarios align with IPM?
+
+1. All PASS projects follow the standard process exactly as is.
+2. Projects can use their own processes and trace them to the PASS standard process.
+3. PASS provides a standard process and rules for tailoring.
+4. Once projects tailor the PASS standard process, it is called the projects’ standard process.
+5. If the customer says eliminate QA, but the standard process requires QA with no tailoring, it’s okay for PASS projects to tailor out QA to satisfy the customer.
+```
+
+> 234
+> 
+> 1 是可以定制化的
+> 
+> 5 某个SP中规定必须要有QA，所以QA必须有
+
+12. Organizational Process Definition
+```
+Match sample artifacts with OPD SPs.
+
+Sample Artifacts
+
+1) Instructions for when a process step can be deleted or modified
+2) Website for tools, templates, project examples, etc.
+3) Standard software that comes with all company computers
+4) Spiral lifecycle description
+5) Requirements process
+
+OPD SPs
+
+a) SP 1.1 Establish Standard Processes
+b) SP 1.2 Establish Lifecycle Model Descriptions
+c) SP 1.3 Establish Tailoring Criteria and Guidelines
+d) SP 1.5 Establish the Organization’s Process Assets Library
+e) SP 1.6 Establish Work Environment Standards
+```
+
+> 1-c 2-d 3-e 4-b 5-a
+
+13. Organizational Training
+```
+Match sample artifacts with OT SPs.
+
+Sample Artifacts
+
+1) Training classrooms
+2) Plan for 3-5 years in the future
+3) Analysis of course evaluations
+4) Plan that states PASS, not projects, will provide risk tool training
+5) Plan for the next year
+
+OT SPs
+
+a) SP 1.1 Establish Strategic Training Needs
+b) SP 1.2 Determine Which Training Needs are the Responsibility of the Organization
+c) SP 1.3 Establish an Organizational Training Tactical Plan
+d) SP 1.4 Establish a Training Capability
+e) SP 2.3 Assess Training Effectiveness
+```
+
+> 1-d 2-a 3-e 4-b 5-c
+
+14. 
+```
+量化的过程性能目标包括了质量，然而，为强调质量在CMMI产品套件中的重要性，在CMMI中使用“质量与过程性能目标”一词。在哪个地方也出现了其实不是并列关系，实际上是包含关系，仅仅是因为比较重要，所以拿出来说的情况
+```
+
+> VER SG2 SG3：SG3包含SG2
+> 
+> VER 中同行评审只是VER的一种手段，应该和VER平级，但是太过重要所以放到了标准流程里面
