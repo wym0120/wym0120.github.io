@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text">Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E4%B8%BB%E8%A6%81%E5%85%B3%E5%BF%83%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text">研究主要关心的问题</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E4%B8%BB%E8%A6%81%E5%85%B3%E5%BF%83%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text"> 研究主要关心的问题</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,52 +348,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract">Abstract</h3>
+        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <blockquote>
 <p>System logs are widely used in various tasks of software system management. It is crucial to avoid logging too little or toomuch. To achieve so, developers need to make informed decisions on where to log and what to log in their logging practices during development. However, there exists no work on studying such logging practices in industry or helping developers makeinformed decisions. To fill this significant gap, in this paper, wesystematically study the logging practices of developers in industry, with focus on where developers log. We obtain six valuable findings by conducting source code analysis on twolarge industrial systems (2.5M and 10.4M LOC, respectively) at Microsoft. We further validate these findings via aquestionnaire survey with 54 experienced developers in Microsoft. Inaddition, our study demonstrates the high accuracy of up to 90% F-Scorein predicting where to log.</p>
 </blockquote>
 <p>keywords: Logging practice, automatic logging, developer survey</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-<h4 id="研究主要关心的问题">研究主要关心的问题</h4>
-<p>RQ1: 被log的代码片段主要有哪些分类 手动分类的结果：</p>
+<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
+<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
+<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
+<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
+<h4 id="研究主要关心的问题"><a class="markdownIt-Anchor" href="#研究主要关心的问题"></a> 研究主要关心的问题</h4>
+<p>RQ1: 被log的代码片段主要有哪些分类<br />
+手动分类的结果：</p>
 <table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>类别</th>
 <th>特征</th>
 <th>开发者们认为的常见程度</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Assertion-check logging</td>
 <td>The logging statement is triggered by an Assert statement.</td>
 <td>50%</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Return-value-check logging</td>
 <td>The logging statement is contained in a clause following a branch statement (e.g., if, if-else, switch), while one or more function return values are checked in the branchcondition. In addition, the logging statement is not enclosed by any catch block within the cl</td>
 <td>63%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Exception logging</td>
 <td>The logging statement is contained either in a catch block or right before a throw statement.</td>
 <td>80%</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Logic-branch logging</td>
 <td>The logging statement is contained in a clause following a branch statement (e.g., if, if-else, switch), while the branch con- dition does not contain any check on a functionreturn value</td>
 <td>67%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Observing-point logging</td>
 <td>All the other situations that exclude the above categories</td>
 <td>81%</td>

@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">4.</span> <span class="nav-text">Details</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,7 +348,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract">Abstract</h3>
+        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <blockquote>
 <p>Storage systems such as file systems, databases, and RAID systems have a simple, basic contract: you give them data, they do not lose or corrupt it. Often they store the only copy, making its irrevocable loss almost arbitrarily bad. Unfortunately, their code is exceptionally hard to get right, since it must correctly recover from any crash at any program point, no matter how their state was smeared across volatile and persistent memory.</p>
 </blockquote>
@@ -356,13 +356,19 @@
 <p>This paper describes EXPLODE, a system that makes it easy to systematically check real storage systems for errors. It takes user-written, potentially system-specific checkers and uses them to drive a storage system into tricky corner cases, including crash recovery errors. EXPLODE uses a novel adaptation of ideas from model checking, a comprehensive, heavyweight formal verification technique, that makes its checking more systematic (and hopefully more effective) than a pure testing approach while being just as lightweight.</p>
 </blockquote>
 <blockquote>
-<p>EXPLODE is effective. It found serious bugs in a broad range of real storage systems (without requiring source code): three version control systems, Berkeley DB, an NFS implementation, ten file systems, a RAID system, and the popular VMware GSX virtual machine. We found bugs in every system we checked, 36 bugs in total, typically with little effort.</p>
+<p>EXPLODE is effective. It found serious bugs in a broad range<br />
+of real storage systems (without requiring source code): three<br />
+version control systems, Berkeley DB, an NFS implementation,<br />
+ten file systems, a RAID system, and the popular VMware GSX<br />
+virtual machine. We found bugs in every system we checked,<br />
+36 bugs in total, typically with little effort.</p>
 </blockquote>
 <p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>文件系统中会有各种各样的机制来预防崩溃，而如果这些机制中也出现了bug，那会是十分严重的。但是目前已有的工作检测文件系统中的bug的方法还是非常的原始和低效的，因此就开发了一个新的工具（严重缺乏操作系统关于文件系统的知识，很多地方没看懂） ### Evalution</p>
-<h3 id="details">Details</h3>
+<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
+<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
+<p>文件系统中会有各种各样的机制来预防崩溃，而如果这些机制中也出现了bug，那会是十分严重的。但是目前已有的工作检测文件系统中的bug的方法还是非常的原始和低效的，因此就开发了一个新的工具（严重缺乏操作系统关于文件系统的知识，很多地方没看懂）</p>
+<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
+<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
 
     </div>
 
