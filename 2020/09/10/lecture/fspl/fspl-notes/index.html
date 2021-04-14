@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coq"><span class="nav-number">2.</span> <span class="nav-text">coq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-calculus"><span class="nav-number">3.</span> <span class="nav-text">lambda calculus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#simply-typed-lambda-calculus"><span class="nav-number">4.</span> <span class="nav-text">Simply-Typed Lambda calculus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curry-howard-isomorphism"><span class="nav-number">5.</span> <span class="nav-text">Curry-Howard Isomorphism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operational-semantics"><span class="nav-number">6.</span> <span class="nav-text">Operational Semantics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#contextual-semantics"><span class="nav-number">7.</span> <span class="nav-text">contextual semantics</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text"> Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coq"><span class="nav-number">2.</span> <span class="nav-text"> coq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-calculus"><span class="nav-number">3.</span> <span class="nav-text"> lambda calculus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#simply-typed-lambda-calculus"><span class="nav-number">4.</span> <span class="nav-text"> Simply-Typed Lambda calculus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curry-howard-isomorphism"><span class="nav-number">5.</span> <span class="nav-text"> Curry-Howard Isomorphism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operational-semantics"><span class="nav-number">6.</span> <span class="nav-text"> Operational Semantics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#contextual-semantics"><span class="nav-number">7.</span> <span class="nav-text"> contextual semantics</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,44 +348,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="introduction">Introduction</h3>
+        <h3 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h3>
 <ul>
 <li>PL的核心：构建抽象，以程序语言为中心去解决计算问题</li>
 <li>PL能做到的是什么
 <ul>
 <li>用形式化的方式去描述语言的结构和程序的作用</li>
 <li>用一种更严格的方法的方法去证明程序的正确性 more than testing</li>
-</ul></li>
 </ul>
-<p>如何定义语言的行为 operational / denotational / axiomatic semantics(操作 / 指称 / 公理语义)</p>
-<p>数学基础 1. lambda 演算 - functional programming 函数式 - imperative programming 命令式 - declarative programming 声明式</p>
-<h3 id="coq">coq</h3>
+</li>
+</ul>
+<p>如何定义语言的行为<br />
+operational / denotational / axiomatic semantics(操作 / 指称 / 公理语义)</p>
+<p>数学基础</p>
+<ol>
+<li>lambda 演算</li>
+</ol>
+<ul>
+<li>functional programming 函数式</li>
+<li>imperative programming 命令式</li>
+<li>declarative programming 声明式</li>
+</ul>
+<h3 id="coq"><a class="markdownIt-Anchor" href="#coq"></a> coq</h3>
 <p>inductive data type</p>
-<p>constructor 是用来构造的而不是计算的 &gt; Think about standard decimal numerals: the numeral [1] is not a computation; it's a piece of data. When we write [111] to mean the number one hundred and eleven, we are using [1] three times, to write down a concrete representation of a number.</p>
+<p>constructor 是用来构造的而不是计算的</p>
+<blockquote>
+<p>Think about standard decimal numerals: the numeral [1] is not a computation; it’s a piece of data. When we write [111] to mean the number one hundred and eleven, we are using [1] three times, to write down a concrete representation of a number.</p>
+</blockquote>
 <p>如果对一个函数的传参不完整那么它还是一个函数，直到所有的参数都被获取到才会变成值</p>
-<h3 id="lambda-calculus">lambda calculus</h3>
-<p>一般一个lambda的程序就叫做一个term（项）或者叫做lambda表达式 todo：BNF范式</p>
-<p>pure lambda calculus：(Terms) M,N ::= x | lambdax.M | M N 1. x: 默认用xyz等小写变量来表示程序变量 2. lambdax.M ： lambda抽象，例如 int f (int x)return x -&gt; lambdax.x 3. M N :lambda应用，例如 int f(int x){return x} ; f(3) -&gt; (lambdax.x) 3 4. 本身不接受3作为一个参数，但是可以用 | n扩展语义，还可以引入一些整数计算</p>
-<p>表达式简化： 每一个lambda尽可能管到最右边 函数应用是左结合的 一个lambda abstraction中只有一个参数</p>
-<p>自由变量，不能随意改名 约束变量，可以改名</p>
-<p>求解约束变量的集合 bv(x) = empty bv(lambdax.M) = {x} ∪ bv(M) bv(M N) = bv(M) ∪ bv(N)</p>
-<p>substitution (lambdax.M)[N/M] = lambdax.M 原因 （lambdax.M）N -&gt; M[N/x] 这里直接的lambdax.M相当于 (lambdax.(lambdax.M))[N/x]，N代换的是前面的隐藏的x （相当于代换了形参，但是形参又是可以随便换名字的所以相当于什么都不做）</p>
-<p>"-&gt;"这个代表这 term x term 上的一个relation 合流性定理：选择一个 <strong><em>特定</em></strong> 的M' 并且选择 <strong><em>特定</em></strong> 的策略使得M1，M2都能通过0至多步到达它</p>
-<p>两种化简的策略： normal order reduction：总是选择最左最外的（out-most）redex去做reduction，也就是最优先选择化简function body applicative order reduction：总是选择最左最内的（inner-most）redex去做reduction，也就是最优先选择化简参数。相比于normal order可能效率更低因为参数不一定会被使用到</p>
+<h3 id="lambda-calculus"><a class="markdownIt-Anchor" href="#lambda-calculus"></a> lambda calculus</h3>
+<p>一般一个lambda的程序就叫做一个term（项）或者叫做lambda表达式<br />
+todo：BNF范式</p>
+<p>pure lambda calculus：(Terms) M,N ::= x | lambdax.M | M N</p>
+<ol>
+<li>x: 默认用xyz等小写变量来表示程序变量</li>
+<li>lambdax.M ： lambda抽象，例如 int f (int x)return x -&gt; lambdax.x</li>
+<li>M N :lambda应用，例如 int f(int x){return x} ; f(3) -&gt; (lambdax.x) 3</li>
+<li>本身不接受3作为一个参数，但是可以用 | n扩展语义，还可以引入一些整数计算</li>
+</ol>
+<p>表达式简化： 每一个lambda尽可能管到最右边<br />
+函数应用是左结合的<br />
+一个lambda abstraction中只有一个参数</p>
+<p>自由变量，不能随意改名<br />
+约束变量，可以改名</p>
+<p>求解约束变量的集合<br />
+bv(x) = empty<br />
+bv(lambdax.M) = {x} ∪ bv(M)<br />
+bv(M N) = bv(M) ∪ bv(N)</p>
+<p>substitution<br />
+(lambdax.M)[N/M] = lambdax.M<br />
+原因 （lambdax.M）N -&gt; M[N/x]<br />
+这里直接的lambdax.M相当于 (lambdax.(lambdax.M))[N/x]，N代换的是前面的隐藏的x<br />
+（相当于代换了形参，但是形参又是可以随便换名字的所以相当于什么都不做）</p>
+<p>&quot;-&gt;&quot;这个代表这 term x term 上的一个relation<br />
+合流性定理：选择一个 <em><strong>特定</strong></em> 的M’ 并且选择 <em><strong>特定</strong></em> 的策略使得M1，M2都能通过0至多步到达它</p>
+<p>两种化简的策略：<br />
+normal order reduction：总是选择最左最外的（out-most）redex去做reduction，也就是最优先选择化简function body<br />
+applicative order reduction：总是选择最左最内的（inner-most）redex去做reduction，也就是最优先选择化简参数。相比于normal order可能效率更低因为参数不一定会被使用到</p>
 <hr />
-<h3 id="simply-typed-lambda-calculus">Simply-Typed Lambda calculus</h3>
-<p>一竖一横 <span class="math inline">\(\vdash\)</span> 表示是否能推出来 一竖两横 <span class="math inline">\(\models\)</span> 表示含义</p>
-<p>Value v::constants | <span class="math inline">\(\lambda x.M\)</span> | &lt;v...v&gt; | left v | right v Value无法继续做reduction, Value 也是具备类型的</p>
-<h3 id="curry-howard-isomorphism">Curry-Howard Isomorphism</h3>
-<p>"命题就是类型，证明就是程序"</p>
-<p>如何知道一个类型是非空的，即这个集合中至少存在一个term满足该类型？ 根据Curry-Howard同构来替换 Example可以从后往前看，“如果我们要证明这个，那么我们应该首先获得这个前提...”</p>
+<h3 id="simply-typed-lambda-calculus"><a class="markdownIt-Anchor" href="#simply-typed-lambda-calculus"></a> Simply-Typed Lambda calculus</h3>
+<p>一竖一横 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⊢</mo></mrow><annotation encoding="application/x-tex">\vdash</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mrel">⊢</span></span></span></span> 表示是否能推出来<br />
+一竖两横 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⊨</mo></mrow><annotation encoding="application/x-tex">\models</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.999em;vertical-align:-0.249em;"></span><span class="mrel">⊨</span></span></span></span> 表示含义</p>
+<p>Value v::constants | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">\lambda x.M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span><span class="mord mathdefault">x</span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span> | &lt;v…v&gt; | left v | right v<br />
+Value无法继续做reduction, Value 也是具备类型的</p>
+<h3 id="curry-howard-isomorphism"><a class="markdownIt-Anchor" href="#curry-howard-isomorphism"></a> Curry-Howard Isomorphism</h3>
+<p>“命题就是类型，证明就是程序”</p>
+<p>如何知道一个类型是非空的，即这个集合中至少存在一个term满足该类型？<br />
+根据Curry-Howard同构来替换<br />
+Example可以从后往前看，“如果我们要证明这个，那么我们应该首先获得这个前提…”</p>
 <p>项的定型过程就是命题的证明过程，因此可以把项本身就做一个证明</p>
-<p>STLC只和constructive propositional logic对应 STLC中没有一个closed term能够定型出 𝜌+(𝜌→𝜎)</p>
-<h3 id="operational-semantics">Operational Semantics</h3>
-<p>operational semantics 操作语义：指明了程序该如何运行 denotational semanticcs 指称语义：总是把程序指称到一个域上 axiomatic semantics 公理语义：howel logic</p>
-<p>small-step <span class="math inline">\((c,\sigma)\rightarrow(c&#39;,\sigma)\)</span> big-step <span class="math inline">\((c,\sigma)\implies(c&#39;,\sigma)\)</span></p>
+<p>STLC只和constructive propositional logic对应<br />
+STLC中没有一个closed term能够定型出 𝜌+(𝜌→𝜎)</p>
+<h3 id="operational-semantics"><a class="markdownIt-Anchor" href="#operational-semantics"></a> Operational Semantics</h3>
+<p>operational semantics 操作语义：指明了程序该如何运行<br />
+denotational semanticcs 指称语义：总是把程序指称到一个域上<br />
+axiomatic semantics 公理语义：howel logic</p>
+<p>small-step <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>c</mi><mo separator="true">,</mo><mi>σ</mi><mo stretchy="false">)</mo><mo>→</mo><mo stretchy="false">(</mo><msup><mi>c</mi><mo mathvariant="normal">′</mo></msup><mo separator="true">,</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(c,\sigma)\rightarrow(c&#x27;,\sigma)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mclose">)</span></span></span></span><br />
+big-step <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>c</mi><mo separator="true">,</mo><mi>σ</mi><mo stretchy="false">)</mo><mtext>  </mtext><mo>⟹</mo><mtext>  </mtext><mo stretchy="false">(</mo><msup><mi>c</mi><mo mathvariant="normal">′</mo></msup><mo separator="true">,</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(c,\sigma)\implies(c&#x27;,\sigma)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⟹</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mclose">)</span></span></span></span></p>
 <p>我们认为state是variable到生活中的n的映射，即我们会对这些符号赋予含义</p>
-<h3 id="contextual-semantics">contextual semantics</h3>
+<h3 id="contextual-semantics"><a class="markdownIt-Anchor" href="#contextual-semantics"></a> contextual semantics</h3>
 <p>见pdf标注</p>
 
     </div>

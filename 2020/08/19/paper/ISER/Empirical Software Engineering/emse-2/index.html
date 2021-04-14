@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text">Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text">Details</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,16 +348,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract">Abstract</h3>
+        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <blockquote>
-<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
+<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner-<br />
+abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are<br />
+bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist.<br />
+We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study<br />
+of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses<br />
+of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the<br />
+SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental<br />
+overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors.<br />
+Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations.<br />
+Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and<br />
+GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
 </blockquote>
 <p>keywords: integer overflow, integer wraparound, undefined behavior</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
+<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
+<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
+<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下：</p>
+<ul>
+<li>本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊</li>
+<li>C和C++中对有符号数的规定中包含了UB</li>
+<li>开发者容易误用带符号数和无符号数</li>
+</ul>
+<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
+<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
 
     </div>
 

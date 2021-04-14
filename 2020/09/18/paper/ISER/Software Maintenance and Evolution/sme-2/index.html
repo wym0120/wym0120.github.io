@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text">Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text">Details</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,7 +348,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract">Abstract</h3>
+        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <blockquote>
 <p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
 </blockquote>
@@ -356,11 +356,11 @@
 <p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
 </blockquote>
 <p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
+<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
+<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
 <p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
+<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
+<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
 
     </div>
 
