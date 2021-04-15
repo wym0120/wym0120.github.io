@@ -1162,6 +1162,7 @@ e) SP 2.3 Assess Training Effectiveness
 > VER 中同行评审只是VER的一种手段，应该和VER平级，但是太过重要所以放到了标准流程里面
 
 15. 持续集成 vs 大爆炸集成
+    
 > 大爆炸
 > 
 > 问题：定位错误、查找错误困难
