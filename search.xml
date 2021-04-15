@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mobileperf</title>
+    <url>/2020/06/30/source%20code/mobileperf/</url>
+    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
+<h2 id="硬件配置差">硬件配置差</h2>
+<ol type="1">
+<li>压测时间长 72小时左右</li>
+<li>需要同时测的app比较多</li>
+</ol>
+<h2 id="优势">优势</h2>
+<ol type="1">
+<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
+<li>pc端占用资源极少，移动端主要是系统调用</li>
+</ol>
+<h1 id="源码分析">源码分析</h1>
+<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
+<table>
+<thead>
+<tr class="header">
+<th>模块</th>
+<th>和操作系统交互</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>连接</td>
+<td>adb usb &gt; adb wifi</td>
+</tr>
+<tr class="even">
+<td>CPU</td>
+<td>top指令</td>
+</tr>
+<tr class="odd">
+<td>内存</td>
+<td>dumpsys meminfo</td>
+</tr>
+<tr class="even">
+<td>FPS</td>
+<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
+</tr>
+<tr class="odd">
+<td>网络流</td>
+<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
+</tr>
+<tr class="even">
+<td>电量</td>
+<td>dumpsys batteryproperties/dumpsys battery（after）</td>
+</tr>
+<tr class="odd">
+<td>进程数统计</td>
+<td>ls -lt /proc/pid/task</td>
+</tr>
+<tr class="even">
+<td>其他</td>
+<td>monkey logcat</td>
+</tr>
+</tbody>
+</table>
+<h1 id="问题">问题</h1>
+<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
+]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Citrine: Providing Intelligent Copy-and-Paste</title>
     <url>/2020/09/25/paper/copy-and-paste-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -228,74 +296,6 @@
       <categories>
         <category>report</category>
       </categories>
-  </entry>
-  <entry>
-    <title>mobileperf</title>
-    <url>/2020/06/30/source%20code/mobileperf/</url>
-    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
-<h2 id="硬件配置差">硬件配置差</h2>
-<ol type="1">
-<li>压测时间长 72小时左右</li>
-<li>需要同时测的app比较多</li>
-</ol>
-<h2 id="优势">优势</h2>
-<ol type="1">
-<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
-<li>pc端占用资源极少，移动端主要是系统调用</li>
-</ol>
-<h1 id="源码分析">源码分析</h1>
-<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
-<table>
-<thead>
-<tr class="header">
-<th>模块</th>
-<th>和操作系统交互</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>连接</td>
-<td>adb usb &gt; adb wifi</td>
-</tr>
-<tr class="even">
-<td>CPU</td>
-<td>top指令</td>
-</tr>
-<tr class="odd">
-<td>内存</td>
-<td>dumpsys meminfo</td>
-</tr>
-<tr class="even">
-<td>FPS</td>
-<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
-</tr>
-<tr class="odd">
-<td>网络流</td>
-<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
-</tr>
-<tr class="even">
-<td>电量</td>
-<td>dumpsys batteryproperties/dumpsys battery（after）</td>
-</tr>
-<tr class="odd">
-<td>进程数统计</td>
-<td>ls -lt /proc/pid/task</td>
-</tr>
-<tr class="even">
-<td>其他</td>
-<td>monkey logcat</td>
-</tr>
-</tbody>
-</table>
-<h1 id="问题">问题</h1>
-<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
   </entry>
   <entry>
     <title>[课堂笔记] 程序设计语言的形式语义</title>
@@ -798,27 +798,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
-    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
-</blockquote>
-<p>keywords: integer overflow, integer wraparound, undefined behavior</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [EMSE] On the Naturalness of Software</title>
     <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -911,6 +890,27 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [EMSE] Understanding integer overflow in C/C++</title>
+    <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Integer overflow bugs in C and C++ programs are difficult to track down and may lead to fatal errors or exploitable vulner- abilities. Although a number of tools for finding these bugs exist, the situation is complicated because not all overflows are bugs. Better tools need to be constructed—but a thorough understanding of the issues behind these errors does not yet exist. We developed IOC, a dynamic checking tool for integer overflows, and used it to conduct the first detailed empirical study of the prevalence and patterns of occurrence of integer overflows in C and C++ code. Our results show that intentional uses of wraparound behaviors are more common than is widely believed; for example, there are over 200 distinct locations in the SPEC CINT2000 benchmarks where overflow occurs. Although many overflows are intentional, a large number of accidental overflows also occur. Orthogonal to programmers’ intent, overflows are found in both well-defined and undefined flavors. Applications executing undefined operations can be, and have been, broken by improvements in compiler optimizations. Looking beyond SPEC, we found and reported undefined integer overflows in SQLite, PostgreSQL, SafeInt, GNU MPC and GMP, Firefox, LLVM, Python, BIND, and OpenSSL; many of these have since been fixed.</p>
+</blockquote>
+<p>keywords: integer overflow, integer wraparound, undefined behavior</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>C / C++中并非所有的溢出都是bug，有一些是故意为之的，但是目前没有工具能够检测这一点，原因如下： - 本身对bit和byte级别的操作在C和C++中都是非常常见的，数学计算与位运算的界限模糊 - C和C++中对有符号数的规定中包含了UB - 开发者容易误用带符号数和无符号数</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [EMSE] Why we refactor? Confessions of GitHub contributors</title>
     <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -972,6 +972,38 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h4 id="contribution">Contribution</h4>
+<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
+<h3 id="motivation">Motivation</h3>
+<ul>
+<li>以往工具在大型项目上表现不佳
+<ul>
+<li>路径爆炸</li>
+<li>与环境交互处理方式不当 ### Evalution</li>
+</ul></li>
+</ul>
+<h3 id="details">Details</h3>
+<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
+<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
+<h3 id="todo">todo</h3>
+<p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
     <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1014,35 +1046,22 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
+    <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
+    <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-<p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
+<p>Models of programming and debugging suggest many causes of errors, and many classifications of error types exist. Yet, there has been no attempt to link causes of errors to these classifications, nor is there a common vocabulary for reasoning about such causal links. This makes it difficult to compare the abilities of programming styles, languages, and environments to prevent errors. To address this issue, this paper presents a model of programming errors based on past studies of errors. The model was evaluated with two observational of Alice, an event-based programming system, revealing that most errors were due to attentional and strategic problems in implementing algorithms, language constructs, and uses of libraries. In general, the model can support theoretical, design, and educational programming research.</p>
 </blockquote>
-<p>keywords:</p>
 <h3 id="总体评价">总体评价</h3>
-<h4 id="contribution">Contribution</h4>
-<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
 <h3 id="motivation">Motivation</h3>
-<ul>
-<li>以往工具在大型项目上表现不佳
-<ul>
-<li>路径爆炸</li>
-<li>与环境交互处理方式不当 ### Evalution</li>
-</ul></li>
-</ul>
+<h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
-<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
-<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
-<h3 id="todo">todo</h3>
-<p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
 ]]></content>
       <categories>
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Formal Methods</tag>
+        <tag>Software Engineering Process</tag>
       </tags>
   </entry>
   <entry>
@@ -1063,25 +1082,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </categories>
       <tags>
         <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
-    <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Models of programming and debugging suggest many causes of errors, and many classifications of error types exist. Yet, there has been no attempt to link causes of errors to these classifications, nor is there a common vocabulary for reasoning about such causal links. This makes it difficult to compare the abilities of programming styles, languages, and environments to prevent errors. To address this issue, this paper presents a model of programming errors based on past studies of errors. The model was evaluated with two observational of Alice, an event-based programming system, revealing that most errors were due to attentional and strategic problems in implementing algorithms, language constructs, and uses of libraries. In general, the model can support theoretical, design, and educational programming research.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
       </tags>
   </entry>
   <entry>
@@ -1274,31 +1274,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
-    <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
-</blockquote>
-<blockquote>
-<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
-</blockquote>
-<blockquote>
-<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [STA] A lightweight, general system for finding serious storage system errors</title>
     <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1315,6 +1290,31 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>文件系统中会有各种各样的机制来预防崩溃，而如果这些机制中也出现了bug，那会是十分严重的。但是目前已有的工作检测文件系统中的bug的方法还是非常的原始和低效的，因此就开发了一个新的工具（严重缺乏操作系统关于文件系统的知识，很多地方没看懂） ### Evalution</p>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
+    <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
+</blockquote>
+<blockquote>
+<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
+</blockquote>
+<blockquote>
+<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
+</blockquote>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
 <h3 id="details">Details</h3>
 ]]></content>
       <categories>
