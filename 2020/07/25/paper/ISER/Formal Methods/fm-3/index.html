@@ -220,7 +220,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text">总体评价</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#contribution"><span class="nav-number">2.1.</span> <span class="nav-text">Contribution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">4.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#todo"><span class="nav-number">5.</span> <span class="nav-text">todo</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-number">1.</span> <span class="nav-text"> Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AF%84%E4%BB%B7"><span class="nav-number">2.</span> <span class="nav-text"> 总体评价</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#contribution"><span class="nav-number">2.1.</span> <span class="nav-text"> Contribution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">3.</span> <span class="nav-text"> Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#evalution"><span class="nav-number">4.</span> <span class="nav-text"> Evalution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#details"><span class="nav-number">5.</span> <span class="nav-text"> Details</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#todo"><span class="nav-number">6.</span> <span class="nav-text"> todo</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -348,26 +348,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="abstract">Abstract</h3>
+        <h3 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h3>
 <blockquote>
 <p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
 </blockquote>
 <p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h4 id="contribution">Contribution</h4>
-<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
-<h3 id="motivation">Motivation</h3>
+<h3 id="总体评价"><a class="markdownIt-Anchor" href="#总体评价"></a> 总体评价</h3>
+<h4 id="contribution"><a class="markdownIt-Anchor" href="#contribution"></a> Contribution</h4>
+<p>KLEE的优势：</p>
+<ul>
+<li>适用于大型项目</li>
+<li>简洁的状态表示</li>
+<li>启发式搜索算法获得高代码覆盖率</li>
+<li>简洁直接的与环境交互的方法</li>
+</ul>
+<h3 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h3>
 <ul>
 <li>以往工具在大型项目上表现不佳
 <ul>
 <li>路径爆炸</li>
-<li>与环境交互处理方式不当 ### Evalution</li>
-</ul></li>
+<li>与环境交互处理方式不当</li>
 </ul>
-<h3 id="details">Details</h3>
-<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
-<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
-<h3 id="todo">todo</h3>
+</li>
+</ul>
+<h3 id="evalution"><a class="markdownIt-Anchor" href="#evalution"></a> Evalution</h3>
+<h3 id="details"><a class="markdownIt-Anchor" href="#details"></a> Details</h3>
+<p>运行原理：<br />
+KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
+<p>KLEE的设计<br />
+symbolic process(state) : register file, stack, heap, pc,path condition</p>
+<h3 id="todo"><a class="markdownIt-Anchor" href="#todo"></a> todo</h3>
 <p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
 
     </div>
