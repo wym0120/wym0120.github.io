@@ -1227,7 +1227,7 @@ Which are verification and which are validation?
 5. PASS integrates the components and tests the system.
 ```
 
-> 都有可能。5在大多数情况下是VER，如果考虑环境因素VAL
+> 都有可能。5在大多数情况下是VER，如果考虑环境因素VAL。需要看在哪个阶段，大部分的时候集成了之后还有下一次迭代，这个时候是工作产品，所以是VER。而如果没有下一个迭代直接交给用户这个时候就是交产品，所以是VAL。
 
 10. Organizational Process Focus
 ```
