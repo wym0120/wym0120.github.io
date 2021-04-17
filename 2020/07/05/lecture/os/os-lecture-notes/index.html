@@ -221,7 +221,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text">理论课</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%BE"><span class="nav-number">2.</span> <span class="nav-text">代码课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.</span> <span class="nav-text">应用眼中的操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c4-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.2.</span> <span class="nav-text">C4 系统中的进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c5-%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.3.</span> <span class="nav-text">C5 链接与加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E4%B8%8E%E7%AC%A6%E5%8F%B7%E9%87%8D%E5%AE%9A%E4%BD%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text">静态链接与符号重定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">2.3.2.</span> <span class="nav-text">动态链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%93%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">专题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text"> 理论课</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%BE"><span class="nav-number">2.</span> <span class="nav-text"> 代码课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.</span> <span class="nav-text"> 应用眼中的操作系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c4-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.2.</span> <span class="nav-text"> C4 系统中的进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c5-%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.3.</span> <span class="nav-text"> C5 链接与加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E4%B8%8E%E7%AC%A6%E5%8F%B7%E9%87%8D%E5%AE%9A%E4%BD%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text"> 静态链接与符号重定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">2.3.2.</span> <span class="nav-text"> 动态链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%93%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text"> 专题</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -353,24 +353,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="理论课">理论课</h2>
-<h2 id="代码课">代码课</h2>
-<h3 id="应用眼中的操作系统">应用眼中的操作系统</h3>
-<ol type="1">
+        <h2 id="理论课"><a class="markdownIt-Anchor" href="#理论课"></a> 理论课</h2>
+<h2 id="代码课"><a class="markdownIt-Anchor" href="#代码课"></a> 代码课</h2>
+<h3 id="应用眼中的操作系统"><a class="markdownIt-Anchor" href="#应用眼中的操作系统"></a> 应用眼中的操作系统</h3>
+<ol>
 <li>_start是链接器真正的入口，而不是main，可以通过ld -e main file.o来指定程序入口。一个C程序的第一条指令位于系统内置的链接器中，链接器会先加载libc，然后再加载目标程序</li>
 <li>objdump -S看到的源码里面的@plt代表这段代码是动态链接的</li>
 </ol>
-<h3 id="c4-系统中的进程">C4 系统中的进程</h3>
-<h3 id="c5-链接与加载">C5 链接与加载</h3>
-<h4 id="静态链接与符号重定位">静态链接与符号重定位</h4>
+<h3 id="c4-系统中的进程"><a class="markdownIt-Anchor" href="#c4-系统中的进程"></a> C4 系统中的进程</h3>
+<h3 id="c5-链接与加载"><a class="markdownIt-Anchor" href="#c5-链接与加载"></a> C5 链接与加载</h3>
+<h4 id="静态链接与符号重定位"><a class="markdownIt-Anchor" href="#静态链接与符号重定位"></a> 静态链接与符号重定位</h4>
 <p>ld链接器的本质就是把各种.o文件中的各种段复制到二进制文件中并且进行重定位</p>
-<h4 id="动态链接">动态链接</h4>
-<p>必须的几个条件： - 位置无关代码，全部通过pc相对寻址 - 引用数据或者代码的时候如果这是一个未知的符号，那么必须去查表来获得地址</p>
-<p>查表这个行为就是一个call *libxxx.tab[target]。(在不实现延迟解析的时候) 如果是需要动态加载的程序，那么gdb strati停在的第一条指令其实是在libld中的。并且libld的代码会被映射到程序的地址空间中，由它来按照依赖的倒序依次加载其余的动态库。 在libld加载完target之后，libld会调用_dl_runtime_resolve来重填libxxx.tab[target]这一项</p>
-<p>在ELF文件中实际上这个表就叫做GOT，global offset table，库函数和可执行文件都有GOT。 所以用file查看可执行文件和一个共享库的时候给出的结果都是一个shared object</p>
-<p>GOT 中储存的数据 - GOT[0]: .dynamic 节的地址 - GOT[1]: link map , 用于遍历依赖的动态链接库 - GOT[2]: _dl_runtime_resolve 的地址 , call *GOT[2] 可以完成符号解析 - GOT[i]: 程序所需的动态符号地址 (printf, ...)</p>
+<h4 id="动态链接"><a class="markdownIt-Anchor" href="#动态链接"></a> 动态链接</h4>
+<p>必须的几个条件：</p>
+<ul>
+<li>位置无关代码，全部通过pc相对寻址</li>
+<li>引用数据或者代码的时候如果这是一个未知的符号，那么必须去查表来获得地址</li>
+</ul>
+<p>查表这个行为就是一个call *libxxx.tab[target]。(在不实现延迟解析的时候)<br />
+如果是需要动态加载的程序，那么gdb strati停在的第一条指令其实是在libld中的。并且libld的代码会被映射到程序的地址空间中，由它来按照依赖的倒序依次加载其余的动态库。<br />
+在libld加载完target之后，libld会调用_dl_runtime_resolve来重填libxxx.tab[target]这一项</p>
+<p>在ELF文件中实际上这个表就叫做GOT，global offset table，库函数和可执行文件都有GOT。<br />
+所以用file查看可执行文件和一个共享库的时候给出的结果都是一个shared object</p>
+<p>GOT 中储存的数据</p>
+<ul>
+<li>GOT[0]: .dynamic 节的地址</li>
+<li>GOT[1]: link map , 用于遍历依赖的动态链接库</li>
+<li>GOT[2]: _dl_runtime_resolve 的地址 , call *GOT[2] 可以完成符号解析</li>
+<li>GOT[i]: 程序所需的动态符号地址 (printf, …)</li>
+</ul>
 <p><strong>lazy symbol resolve黑科技看视频回看</strong></p>
-<h2 id="专题">专题</h2>
+<h2 id="专题"><a class="markdownIt-Anchor" href="#专题"></a> 专题</h2>
 
     </div>
 
