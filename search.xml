@@ -1066,91 +1066,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>One of the most expensive and time-consuming components of the debugging process is locating the errors or faults. To locate faults, developers must identify statements involved in failures and select suspicious statements that might contain faults. This paper presents a new technique that uses visualization to assist with these tasks. The technique uses color to visually map the participation of each program statement in the out ome of the execution of the program with a test suite, onsisting of both passed and failed test cases. Based on this visual mapping, a user can inspe t the statements in the program, identify statements involved in failures, and locate potentially faulty statements. The paper also describes a prototype tool that implements our technique along with a set of empirical studies that use the tool for evaluation of the technique. The empirical studies show that, for the subject we studied, the technique can be eeffective in helping a user locate faults in a program.</p>
-</blockquote>
-<p>keywords: software visualization,fault localization,debugging,testing</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] A technique for cheap recovery</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
-</blockquote>
-<blockquote>
-<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
-</blockquote>
-<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] Ten years of implementation and experience</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
     <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1210,6 +1125,26 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
     <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1230,8 +1165,53 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>One of the most expensive and time-consuming components of the debugging process is locating the errors or faults. To locate faults, developers must identify statements involved in failures and select suspicious statements that might contain faults. This paper presents a new technique that uses visualization to assist with these tasks. The technique uses color to visually map the participation of each program statement in the out ome of the execution of the program with a test suite, onsisting of both passed and failed test cases. Based on this visual mapping, a user can inspe t the statements in the program, identify statements involved in failures, and locate potentially faulty statements. The paper also describes a prototype tool that implements our technique along with a set of empirical studies that use the tool for evaluation of the technique. The empirical studies show that, for the subject we studied, the technique can be eeffective in helping a user locate faults in a program.</p>
+</blockquote>
+<p>keywords: software visualization,fault localization,debugging,testing</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Simplifying and isolating failure-inducing input</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Given some test case, a program fails. Which circumstances of the test case are responsible for the particular failure? The Delta Debugging algorithm generalizes and simplifies some failing test case to a minimal test case that still produces the failure; it also isolates the difference between a passing and a failing test case.</p>
+</blockquote>
+<blockquote>
+<p>In a case study, the Mozilla web browser crashed after 95 user actions. Our prototype implementation automatically simplified the input to 3 relevant user actions. Likewise, it simplified 896 lines of HTML to the single line that caused the failure. The case study required 139 automated test runs, or 35 minutes on a 500 MHz PC.</p>
+</blockquote>
+<p>keywords: Terms—automated debugging, debugging aids, testing tools, combinatorial testing, diagnostics, tracing.</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>对于开发者们来说bug report有一个固有的矛盾，他们既希望report能够special且详尽，又希望report能够集中在关键的几个语句上以便定位bug和将类似的问题聚集在一起。这篇文章希望模拟人的思考逻辑通过二分的方法来定位到bug的存在。这篇文章通过ddmin的方法来找到一个最小的能够正好触发bug的集合和一个与它几乎一致但是略微不同的且不能触发bug的集合。来帮助开发者减少debug所消耗的时间。</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] A technique for cheap recovery</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1246,7 +1226,27 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Software Engineering Process</tag>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SME] Ten years of implementation and experience</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
       </tags>
   </entry>
   <entry>
@@ -2643,7 +2643,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <li>Validation <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Which are verification and which are validation?</span><br><span class="line"></span><br><span class="line">1. PASS conducts a formal design review with SaveAll.</span><br><span class="line">2. PASS has a peer review with the systems engineers, software engineers, and QA.</span><br><span class="line">3. PASS demonstrates a prototype to SaveAll to get their feedback.</span><br><span class="line">4. PASS formally tests the product prior to delivery with both SaveAll and QA witnessing the test.</span><br><span class="line">5. PASS integrates the components and tests the system.</span><br></pre></td></tr></table></figure></li>
 </ol>
 <blockquote>
-<p>都有可能。5在大多数情况下是VER，如果考虑环境因素VAL</p>
+<p>都有可能。5在大多数情况下是VER，如果考虑环境因素VAL。需要看在哪个阶段，大部分的时候集成了之后还有下一次迭代，这个时候是工作产品，所以是VER。而如果没有下一个迭代直接交给用户这个时候就是交产品，所以是VAL。</p>
 </blockquote>
 <ol start="10" type="1">
 <li>Organizational Process Focus <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Which of the following show incorporating experiences?</span><br><span class="line"></span><br><span class="line">1. PASS Process Group (PG) updates a policy based on feedback from projects at a monthly meeting.</span><br><span class="line">2. PASS PG notices a process step was poorly written and corrects it.</span><br><span class="line">3. PASS PG looks at how projects are using the templates and updates the templates.</span><br><span class="line">4. PASS PG improves the standard processes after analyzing appraisal metrics.</span><br><span class="line">5. PASS PG updates a process because of information found on the internet.</span><br></pre></td></tr></table></figure></li>
