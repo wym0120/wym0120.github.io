@@ -46,3 +46,21 @@ passive : 备用机器定期同步，开着但是不会进行相同的工作
 spare : 定期打primary的快照，down了之后在secondary上恢复
 这三个时间会逐渐变长（本质是资源换时间）
 #### Reliability
+
+---
+
+## chapter1 Software Architecture in General
+
+## chapter2 Architecture Process
+
+## chapter3 Quality Attributes
+
+## chapter4 Architecture Patterns
+
+## chapter5 Designing Architecture
+
+## chapter6 Documenting Architecture
+
+## chapter7 Evaluating Architecture
+
+## chapter8 Microservices & DDD
