@@ -1,74 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>mobileperf</title>
-    <url>/2020/06/30/source%20code/mobileperf/</url>
-    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
-<h2 id="硬件配置差">硬件配置差</h2>
-<ol type="1">
-<li>压测时间长 72小时左右</li>
-<li>需要同时测的app比较多</li>
-</ol>
-<h2 id="优势">优势</h2>
-<ol type="1">
-<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
-<li>pc端占用资源极少，移动端主要是系统调用</li>
-</ol>
-<h1 id="源码分析">源码分析</h1>
-<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
-<table>
-<thead>
-<tr class="header">
-<th>模块</th>
-<th>和操作系统交互</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>连接</td>
-<td>adb usb &gt; adb wifi</td>
-</tr>
-<tr class="even">
-<td>CPU</td>
-<td>top指令</td>
-</tr>
-<tr class="odd">
-<td>内存</td>
-<td>dumpsys meminfo</td>
-</tr>
-<tr class="even">
-<td>FPS</td>
-<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
-</tr>
-<tr class="odd">
-<td>网络流</td>
-<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
-</tr>
-<tr class="even">
-<td>电量</td>
-<td>dumpsys batteryproperties/dumpsys battery（after）</td>
-</tr>
-<tr class="odd">
-<td>进程数统计</td>
-<td>ls -lt /proc/pid/task</td>
-</tr>
-<tr class="even">
-<td>其他</td>
-<td>monkey logcat</td>
-</tr>
-</tbody>
-</table>
-<h1 id="问题">问题</h1>
-<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Citrine: Providing Intelligent Copy-and-Paste</title>
     <url>/2020/09/25/paper/copy-and-paste-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -84,23 +16,6 @@
       <categories>
         <category>paper</category>
       </categories>
-  </entry>
-  <entry>
-    <title>GUI-report</title>
-    <url>/2020/07/02/report/GUI-report/</url>
-    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
-<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
-<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
-<h2 id="overall-performance">overall performance</h2>
-<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
-      <tags>
-        <tag>gui</tag>
-        <tag>mobile</tag>
-      </tags>
   </entry>
   <entry>
     <title>[MIT Lecture] How to Speak</title>
@@ -145,6 +60,23 @@
       <categories>
         <category>report</category>
       </categories>
+  </entry>
+  <entry>
+    <title>GUI-report</title>
+    <url>/2020/07/02/report/GUI-report/</url>
+    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
+<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
+<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
+<h2 id="overall-performance">overall performance</h2>
+<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+]]></content>
+      <categories>
+        <category>report</category>
+      </categories>
+      <tags>
+        <tag>gui</tag>
+        <tag>mobile</tag>
+      </tags>
   </entry>
   <entry>
     <title>How to write and publish technical papers in English</title>
@@ -298,42 +230,71 @@
       </categories>
   </entry>
   <entry>
-    <title>[课堂笔记] 软件工程研究入门</title>
-    <url>/2020/09/18/lecture/iser/iser-notes/</url>
-    <content><![CDATA[<h3 id="conduct-rigorous-and-scientific-research">Conduct Rigorous And Scientific Research</h3>
-<h4 id="写作中的presentation">写作中的presentation</h4>
-<ul>
-<li>前后用词一致</li>
-<li>类似句子不要换用句式</li>
-<li>并排枚举的时候强制加上逗号</li>
-<li>宾语从句里面也不要省略that，例如Suppose that / We assume that</li>
-</ul>
-<h4 id="research-formulation">Research Formulation</h4>
-<p>整体上来说，做科研和写论文通常是一起进行的。</p>
-<p>关键概念：必须先定义再使用，用数学上可表达或者机器可执行的形式去定义 非关键概念：尽量把它扔掉 在同一篇论文中每个概念都需要一个很明确的指代，而不能经常变换</p>
-<p>Research Problem 需要有明确的定义的问题边界，不要over claim</p>
-<p>Motivating Example 找到一些有区分度的例子——已有工作在这个例子中不能做，而我们的工作可以做</p>
-<p>Inadequacy Of Related Work 只需要展示不同点，而不要去批判</p>
-<p>Insight 最重要的点，为什么我们的工作比相关工作做的更好</p>
-<h4 id="experimentation">Experimentation</h4>
-<p>Experimentation 和 Case Study的区别：实验环节是可以控制变量的，并且是在一个实验室的环境中。case study是无法控制变量的，是在实际生产环境中的结果</p>
-<h5 id="questions-and-subjects">Questions and Subjects</h5>
-<p>问题设置：在<strong><em>什么条件下</em></strong>通过<strong><em>什么途径</em></strong>在什么<strong><em>方面</em></strong>做得好 主体的选择是否具有代表性</p>
-<h5 id="experimentation-design">Experimentation Design</h5>
-<p>Variable Independent variables（factors） ： 类似与函数中的自变量 Dependent variables ：类似于函数中的应变量，是用于衡量实验结果的一些指标 Controlled variables ：由于难以控制因此一些被固定下来的值，但是这些值对实验不会产生决定性的影响</p>
-<h5 id="threats-to-validity">Threats to Validity</h5>
-<ul>
-<li>constuct validity</li>
-<li>internal validity</li>
-<li>external validity</li>
-<li>concluusion validity</li>
-</ul>
-<p>todo：看一下原文</p>
-<h5 id="exercise-and-discussion">Exercise and discussion</h5>
-<p>回答为什么这些threats会影响实验数据<strong><em>但是</em></strong>为什么不会影响结论的正确性</p>
+    <title>mobileperf</title>
+    <url>/2020/06/30/source%20code/mobileperf/</url>
+    <content><![CDATA[<h1 id="需求场景">需求场景</h1>
+<h2 id="硬件配置差">硬件配置差</h2>
+<ol type="1">
+<li>压测时间长 72小时左右</li>
+<li>需要同时测的app比较多</li>
+</ol>
+<h2 id="优势">优势</h2>
+<ol type="1">
+<li>adb方式兼容性强、侵入性小，不需要考虑保活问题</li>
+<li>pc端占用资源极少，移动端主要是系统调用</li>
+</ol>
+<h1 id="源码分析">源码分析</h1>
+<p>原作者在博客里已经把几乎所有的关键点都讲了，实际代码中也并没有更多的技术性的细节，和操作系统的交互基本都是对adb shell的封装和对top等指令的调用，以及生成xlsx、csv文件和绘图 博客地址(https://testerhome.com/topics/23449)</p>
+<table>
+<thead>
+<tr class="header">
+<th>模块</th>
+<th>和操作系统交互</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>连接</td>
+<td>adb usb &gt; adb wifi</td>
+</tr>
+<tr class="even">
+<td>CPU</td>
+<td>top指令</td>
+</tr>
+<tr class="odd">
+<td>内存</td>
+<td>dumpsys meminfo</td>
+</tr>
+<tr class="even">
+<td>FPS</td>
+<td>dumpsys SurfaceFlinger/gfxinfo(after 8)</td>
+</tr>
+<tr class="odd">
+<td>网络流</td>
+<td>/proc/net/xt_qtaguid/stats （TrafficStats的底层实现）</td>
+</tr>
+<tr class="even">
+<td>电量</td>
+<td>dumpsys batteryproperties/dumpsys battery（after）</td>
+</tr>
+<tr class="odd">
+<td>进程数统计</td>
+<td>ls -lt /proc/pid/task</td>
+</tr>
+<tr class="even">
+<td>其他</td>
+<td>monkey logcat</td>
+</tr>
+</tbody>
+</table>
+<h1 id="问题">问题</h1>
+<p>mobileperf只是做了统计，并且不能知道某个时刻到底做了什么事情，这样的一个工具是如何和其他工具结合起来来定位某个时刻的操作？ &gt; 讨论前的想法： 用录制好的测试序列作为测试，同时记录进行的操作与时间点，在监测结束后通过人工/按某个阈值筛选出可疑的范围，复现当时的操作找出性能问题 这样的做法有两个延伸问题：首先，假设在很久之前的某个操作带来了副作用导致在很后面的一个操作发生了性能问题要如何检查出来？其次，阈值的设置在业界实际中是怎么确定出来的？(作者提到的是用的是线上指标)</p>
 ]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
       <tags>
-        <tag>lecture notes</tag>
+        <tag>code</tag>
       </tags>
   </entry>
   <entry>
@@ -391,6 +352,45 @@
     <url>/2020/09/25/lecture/fspl/tpl-notes/</url>
     <content><![CDATA[<h2 id="ch3-untyped-arithmetic-expressions">ch3 Untyped Arithmetic Expressions</h2>
 ]]></content>
+  </entry>
+  <entry>
+    <title>[课堂笔记] 软件工程研究入门</title>
+    <url>/2020/09/18/lecture/iser/iser-notes/</url>
+    <content><![CDATA[<h3 id="conduct-rigorous-and-scientific-research">Conduct Rigorous And Scientific Research</h3>
+<h4 id="写作中的presentation">写作中的presentation</h4>
+<ul>
+<li>前后用词一致</li>
+<li>类似句子不要换用句式</li>
+<li>并排枚举的时候强制加上逗号</li>
+<li>宾语从句里面也不要省略that，例如Suppose that / We assume that</li>
+</ul>
+<h4 id="research-formulation">Research Formulation</h4>
+<p>整体上来说，做科研和写论文通常是一起进行的。</p>
+<p>关键概念：必须先定义再使用，用数学上可表达或者机器可执行的形式去定义 非关键概念：尽量把它扔掉 在同一篇论文中每个概念都需要一个很明确的指代，而不能经常变换</p>
+<p>Research Problem 需要有明确的定义的问题边界，不要over claim</p>
+<p>Motivating Example 找到一些有区分度的例子——已有工作在这个例子中不能做，而我们的工作可以做</p>
+<p>Inadequacy Of Related Work 只需要展示不同点，而不要去批判</p>
+<p>Insight 最重要的点，为什么我们的工作比相关工作做的更好</p>
+<h4 id="experimentation">Experimentation</h4>
+<p>Experimentation 和 Case Study的区别：实验环节是可以控制变量的，并且是在一个实验室的环境中。case study是无法控制变量的，是在实际生产环境中的结果</p>
+<h5 id="questions-and-subjects">Questions and Subjects</h5>
+<p>问题设置：在<strong><em>什么条件下</em></strong>通过<strong><em>什么途径</em></strong>在什么<strong><em>方面</em></strong>做得好 主体的选择是否具有代表性</p>
+<h5 id="experimentation-design">Experimentation Design</h5>
+<p>Variable Independent variables（factors） ： 类似与函数中的自变量 Dependent variables ：类似于函数中的应变量，是用于衡量实验结果的一些指标 Controlled variables ：由于难以控制因此一些被固定下来的值，但是这些值对实验不会产生决定性的影响</p>
+<h5 id="threats-to-validity">Threats to Validity</h5>
+<ul>
+<li>constuct validity</li>
+<li>internal validity</li>
+<li>external validity</li>
+<li>concluusion validity</li>
+</ul>
+<p>todo：看一下原文</p>
+<h5 id="exercise-and-discussion">Exercise and discussion</h5>
+<p>回答为什么这些threats会影响实验数据<strong><em>但是</em></strong>为什么不会影响结论的正确性</p>
+]]></content>
+      <tags>
+        <tag>lecture notes</tag>
+      </tags>
   </entry>
   <entry>
     <title>JVM习题</title>
@@ -828,29 +828,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [EMSE] On the Naturalness of Software</title>
-    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
-</blockquote>
-<blockquote>
-<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
-</blockquote>
-<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [EMSE] Where Do Developers Log? An Empirical Study on Logging Practices in Industry</title>
     <url>/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -920,6 +897,29 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [EMSE] On the Naturalness of Software</title>
+    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
+</blockquote>
+<blockquote>
+<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
+</blockquote>
+<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [EMSE] Why we refactor? Confessions of GitHub contributors</title>
     <url>/2020/08/19/paper/ISER/Empirical%20Software%20Engineering/emse-5/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -937,6 +937,47 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </categories>
       <tags>
         <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [FM] Symbolic execution and program testing</title>
+    <url>/2020/07/17/paper/ISER/Formal%20Methods/fm-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>This paper describes the symbolic execution of programs. Instead of supplying the normal inputs to a program (e.g. numbers) one supplies symbols representing arbitrary values. The execution proceeds as in a normal execution except that values may he symbolic formulas over the input symbols. The difficult, yet interesting issues arise during the symbolic execution of conditional branch type statements. A particular system called EFFIGY which provides symbolic execution for program testing and debugging is also described, it interpretively executes programs written in a simple PL/I style programming language. It includes many standard debugging features, the ability to manage and to prove things about symbolic expressions, a simple program testing manager, and a program verifier. A brief discussion of the relationship between symbolic execution and program proving is also included.</p>
+</blockquote>
+<p>Key Words and Phrases: symbolic execution, program testing, program debugging, program proving, program verification, symbolic interpretation</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<ol type="1">
+<li>不是所有的程序都有一个formal specification（类似于输入、输出、约束条件的集合），但是仍希望能够很好的验证它</li>
+<li>给定的输入测试正确不能说明其余未测试到的地方也正确</li>
+<li>尽可能减少测试成本</li>
+</ol>
+<h3 id="evalution">Evalution</h3>
+<p>无</p>
+<h3 id="details">Details</h3>
+<p>符号执行的天生缺陷 -&gt; 需要使用一个理想模型来进行符号执行 1. 无法考虑实际硬件的情况，例如寄存器个数，寄存器能够存放的数值范围 2. 一些程序的执行树是无穷多的 3. 即便是再简单合适的语言对于if语句的符号执行都需要理论证明，而这个理论证明理论上不可能</p>
+<h4 id="符号执行是什么">符号执行是什么？</h4>
+<p>符号执行是在保证了原有的语义都不被修改的基础上进行扩充，唯一可以引入符号执行的时机是将他们作为程序的输入</p>
+<h4 id="如何定义符号执行">如何定义符号执行？</h4>
+<p>input ：输入{a1,a2,a3...} pc ：path condition 关于输入集合{ai}的boolean表达式，并且绝对不会包含程序的变量。初始值为true q ：具体表达式</p>
+<p>执行：对某一个if语句的一次执行情况进行归纳，而不针对这个if语句 nonforking ：所有的输入都能够要么满足pc，要么不满足pc，不会两者都不满足 forking ：pc和!pc都不满足，需要把当前的if语句的条件加到pc后面更新pc</p>
+<h4 id="符号执行的性质">符号执行的性质</h4>
+<p>可交换：在输入时将ai替换为某个具体的实例进行执行和执行到最后再替换成实例的效果是完全一致的 设执行为E，实例集合为K，符号集合为X，程序为K 则E（P（X））-&gt; 实例化K === P（X）实例化K -&gt; 执行P（K） === E（P（K））</p>
+<h4 id="执行树">执行树</h4>
+<p>对每个forking执行的IF语句划分出true和false两条路径</p>
+<p>性质： - 每个叶节点都存在非符号的测试输入能够到达 - 每一个叶节点代表的pc都和其他pc是独立的，即任意两条之间一定存在一个唯一的节点，在那之后两者分开</p>
+<h4 id="todo">todo</h4>
+<ol type="1">
+<li>剩下一个floyd prove没看</li>
+</ol>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Formal Methods</tag>
       </tags>
   </entry>
   <entry>
@@ -1014,47 +1055,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] Symbolic execution and program testing</title>
-    <url>/2020/07/17/paper/ISER/Formal%20Methods/fm-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>This paper describes the symbolic execution of programs. Instead of supplying the normal inputs to a program (e.g. numbers) one supplies symbols representing arbitrary values. The execution proceeds as in a normal execution except that values may he symbolic formulas over the input symbols. The difficult, yet interesting issues arise during the symbolic execution of conditional branch type statements. A particular system called EFFIGY which provides symbolic execution for program testing and debugging is also described, it interpretively executes programs written in a simple PL/I style programming language. It includes many standard debugging features, the ability to manage and to prove things about symbolic expressions, a simple program testing manager, and a program verifier. A brief discussion of the relationship between symbolic execution and program proving is also included.</p>
-</blockquote>
-<p>Key Words and Phrases: symbolic execution, program testing, program debugging, program proving, program verification, symbolic interpretation</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<ol type="1">
-<li>不是所有的程序都有一个formal specification（类似于输入、输出、约束条件的集合），但是仍希望能够很好的验证它</li>
-<li>给定的输入测试正确不能说明其余未测试到的地方也正确</li>
-<li>尽可能减少测试成本</li>
-</ol>
-<h3 id="evalution">Evalution</h3>
-<p>无</p>
-<h3 id="details">Details</h3>
-<p>符号执行的天生缺陷 -&gt; 需要使用一个理想模型来进行符号执行 1. 无法考虑实际硬件的情况，例如寄存器个数，寄存器能够存放的数值范围 2. 一些程序的执行树是无穷多的 3. 即便是再简单合适的语言对于if语句的符号执行都需要理论证明，而这个理论证明理论上不可能</p>
-<h4 id="符号执行是什么">符号执行是什么？</h4>
-<p>符号执行是在保证了原有的语义都不被修改的基础上进行扩充，唯一可以引入符号执行的时机是将他们作为程序的输入</p>
-<h4 id="如何定义符号执行">如何定义符号执行？</h4>
-<p>input ：输入{a1,a2,a3...} pc ：path condition 关于输入集合{ai}的boolean表达式，并且绝对不会包含程序的变量。初始值为true q ：具体表达式</p>
-<p>执行：对某一个if语句的一次执行情况进行归纳，而不针对这个if语句 nonforking ：所有的输入都能够要么满足pc，要么不满足pc，不会两者都不满足 forking ：pc和!pc都不满足，需要把当前的if语句的条件加到pc后面更新pc</p>
-<h4 id="符号执行的性质">符号执行的性质</h4>
-<p>可交换：在输入时将ai替换为某个具体的实例进行执行和执行到最后再替换成实例的效果是完全一致的 设执行为E，实例集合为K，符号集合为X，程序为K 则E（P（X））-&gt; 实例化K === P（X）实例化K -&gt; 执行P（K） === E（P（K））</p>
-<h4 id="执行树">执行树</h4>
-<p>对每个forking执行的IF语句划分出true和false两条路径</p>
-<p>性质： - 每个叶节点都存在非符号的测试输入能够到达 - 每一个叶节点代表的pc都和其他pc是独立的，即任意两条之间一定存在一个唯一的节点，在那之后两者分开</p>
-<h4 id="todo">todo</h4>
-<ol type="1">
-<li>剩下一个floyd prove没看</li>
-</ol>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1114,8 +1114,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1134,8 +1134,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
 
@@ -1259,6 +1259,30 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
+</blockquote>
+<blockquote>
+<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
+</blockquote>
+<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
     <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1274,30 +1298,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
-</blockquote>
-<blockquote>
-<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
-</blockquote>
-<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
-<h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
       <categories>
@@ -1640,17 +1640,15 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <ol type="1">
 <li>过程的定义</li>
 </ol>
-<blockquote>
 <ul>
-<li><strong>IEEE: Sequence of steps performed for a given purpose</strong></li>
-<li><strong>PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a SP ecified end result</strong></li>
-<li><strong>CMMI GLOSSARY: A set of interrelated activities, which transform inputs into outputs, to achieve a given purpose (These activities can be mapped to one or more practices in CMMI process areas to allow a model to be useful for process improvement and process appraisal.)</strong></li>
+<li>IEEE: Sequence of steps performed for a given purpose</li>
+<li>PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a SP ecified end result</li>
+<li>CMMI GLOSSARY: A set of interrelated activities, which transform inputs into outputs, to achieve a given purpose (These activities can be mapped to one or more practices in CMMI process areas to allow a model to be useful for process improvement and process appraisal.)</li>
 </ul>
-</blockquote>
 <p><img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413091924.png" width="60%"/></p>
 <p><strong>如上图所示，将这三个重要方面结合到一起的是组织中所使用的过程。</strong></p>
 <ol type="1">
-<li><strong>过程改进的好处</strong></li>
+<li>过程改进的好处</li>
 </ol>
 <ul>
 <li>过程使您能够了解正在发生的事情。</li>
@@ -1658,8 +1656,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <li>成功引入适当的技术，技巧和工具的可能性增加。</li>
 <li>人们可以更加充分地发挥潜力，更加有效。</li>
 </ul>
-<ol start="3" type="1">
-<li><strong>软件过程和生命周期模型的区别</strong></li>
+<ol start="2" type="1">
+<li>软件过程和生命周期模型的区别</li>
 </ol>
 <blockquote>
 <p>软件过程和生命周期模型的区别</p>
@@ -1667,8 +1665,8 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>软件过程：为了实现一个或者多个事先定义的目标而建立起来的一组实践的集合。这组实践之间往往有一定的先后顺序，作为一个整体来实现事先定义的一个或者多个目标。一个软件过程既可以覆盖从需 求到交付的完整生命周期, 也可以仅仅包括某些特定开发阶段。</p>
 <p>区别：1、生命周期模型是 对一个软件开发过程的人为划分.同样的软件开发过程, 因为目的不一样, 可能会被划分和 命名成不同的生命周期模型。反过来，同样的生命周期模型，可能软件过程完全不同 2、生命周期模型是软件开发过程的主框架, 是对软件开发过程的一种粗粒度划分。3、生命周期模型中往往只定义管理实践，不包括技术实践</p>
 </blockquote>
-<ol start="4" type="1">
-<li><strong>软件项目管理和软件过程管理在管理对象、实现目标和参考模型三个角度的区别</strong></li>
+<ol start="3" type="1">
+<li>软件项目管理和软件过程管理在管理对象、实现目标和参考模型三个角度的区别</li>
 </ol>
 <blockquote>
 <p>软件项目管理是应用方法、工具、技术以及人员能力来完成软件项目，实现项目目标的过程，其管理的对象是各类软件项目。实现目标：成本、质量、工期（管理三大要素：目标、状态、纠偏）。</p>
@@ -1676,7 +1674,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>软件过程管理：管理对象是软件过程，管理的目的是为了让软件过程在开发 效率、质量等方面有着更好性能绩效.</p>
 <p>参考模型：流水线设计管理。软件项目管理通常关注于一个项目，软件过程管理通常关注不止一个项目。软件项目管理（SCRUM,XP）类似于产品生产管理，软件过程管理（CMMI,SPICE）对应流水线的升级、建设、优化、维护、升级改造。软件过程管理参考模型 CMM/CMMI, SPICE 等软件过程改进参考模型 PDCA，IDEAL，软件过程管理与软件过程改进意思相近。</p>
 </blockquote>
-<ol start="5" type="1">
+<ol start="4" type="1">
 <li>过程改进的底线</li>
 </ol>
 <ul>
