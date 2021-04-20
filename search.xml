@@ -18,6 +18,23 @@
       </categories>
   </entry>
   <entry>
+    <title>GUI-report</title>
+    <url>/2020/07/02/report/GUI-report/</url>
+    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
+<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
+<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
+<h2 id="overall-performance">overall performance</h2>
+<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+]]></content>
+      <categories>
+        <category>report</category>
+      </categories>
+      <tags>
+        <tag>gui</tag>
+        <tag>mobile</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[MIT Lecture] How to Speak</title>
     <url>/2020/10/21/report/MIT-how-to-speck/</url>
     <content><![CDATA[<h3 id="如何开始一个talk">如何开始一个talk</h3>
@@ -62,20 +79,20 @@
       </categories>
   </entry>
   <entry>
-    <title>GUI-report</title>
-    <url>/2020/07/02/report/GUI-report/</url>
-    <content><![CDATA[<h2 id="看清gui-widgets-人工智能如何解决这些问题">看清gui widgets 人工智能如何解决这些问题</h2>
-<p>gui widget detection - 重点之一是判断bounding box - 另一个重点是region分类</p>
-<p>gui widget detection目前的困难： - 数据方面 - nature scene - 图文并茂 - 全景检测 - physical object - 各种各样的组件同种之间差距比较大，没有固定的feature很难区别 - 策略问题 - 目前大多数的策略都是bottom-up，会造成很大噪音 - cnn神经网络更适合学习architecture而不是shape - gui detection需要更高的识别准确度，而目前一般的识别准度只是要求超过0.5 - 模型选择问题</p>
-<h2 id="overall-performance">overall performance</h2>
-<p>faster Rcnn &gt; deep learning &gt; 传统方法</p>
+    <title>Jetbrains Report 重构？重写？</title>
+    <url>/2020/07/31/report/jetbrain-report/</url>
+    <content><![CDATA[<p>问题1: 长方法：不是一个很容易解决的问题 根源的原因：重复</p>
+<p>重构过程中尽可能的去运行测试以免破坏任何的逻辑</p>
+<p>工具：提取方法</p>
+<p>问题2: 变量扎堆出现 -&gt; 多个变量同时表达了一个概念 工具：introduce parameter object 但是会引起一些比较长的调用逻辑</p>
+<p>问题3： 用一个看起来简单的表示一个复杂的对象 -&gt; 为什么不直接用一个原来的来表示？</p>
+<p>问题4: 违反迪米特法则 -&gt; 提取方法，把逻辑封装起来</p>
 ]]></content>
       <categories>
         <category>report</category>
       </categories>
       <tags>
-        <tag>gui</tag>
-        <tag>mobile</tag>
+        <tag>coding</tag>
       </tags>
   </entry>
   <entry>
@@ -199,23 +216,6 @@
       <tags>
         <tag>writing</tag>
         <tag>english</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Jetbrains Report 重构？重写？</title>
-    <url>/2020/07/31/report/jetbrain-report/</url>
-    <content><![CDATA[<p>问题1: 长方法：不是一个很容易解决的问题 根源的原因：重复</p>
-<p>重构过程中尽可能的去运行测试以免破坏任何的逻辑</p>
-<p>工具：提取方法</p>
-<p>问题2: 变量扎堆出现 -&gt; 多个变量同时表达了一个概念 工具：introduce parameter object 但是会引起一些比较长的调用逻辑</p>
-<p>问题3： 用一个看起来简单的表示一个复杂的对象 -&gt; 为什么不直接用一个原来的来表示？</p>
-<p>问题4: 违反迪米特法则 -&gt; 提取方法，把逻辑封装起来</p>
-]]></content>
-      <categories>
-        <category>report</category>
-      </categories>
-      <tags>
-        <tag>coding</tag>
       </tags>
   </entry>
   <entry>
@@ -828,29 +828,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [EMSE] On the Naturalness of Software</title>
-    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
-</blockquote>
-<blockquote>
-<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
-</blockquote>
-<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Empirical Software Engineering</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [EMSE] Where Do Developers Log? An Empirical Study on Logging Practices in Industry</title>
     <url>/2020/08/15/paper/ISER/Empirical%20Software%20Engineering/emse-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -911,6 +888,29 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <p>通过工具自动分类的结果：</p>
 <p>RQ2: 代码会因为哪些原因被log</p>
 <p>RQ3: 是否存在某种途径能够自动决定log的位置</p>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Empirical Software Engineering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [EMSE] On the Naturalness of Software</title>
+    <url>/2020/08/12/paper/ISER/Empirical%20Software%20Engineering/emse-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Abstract—Natural languages like English are rich, complex, and powerful. The highly creative and graceful use of languages like English and Tamil, by masters like Shakespeare and Avvai yar, can certainly delight and inspire. But in practice, given cognitive constraints and the exigencies of daily life, most humanutterances are far simpler and much more repetitive and pre dictable. In fact, these utterances can be very usefully modeled using modern statistical methods. This fact has led to the phenomenal success of statistical approaches to speech recognition, natural language translation, question-answering, and text mining and comprehension.</p>
+</blockquote>
+<blockquote>
+<p>We begin with the conjecture that most software is also natural, in the sense that it is created by humans at work, with all the attendant constraints and limitations—and thus, like natural language, it is also likely to be repetitive and predictable. Wethen proceed to ask whether a) code can be usefully modeled bystatistical language models and b) such models can be leveragedto support software engineers. Using the widely adoptedn-grammodel, we provide empirical evidence supportive of a positiveanswer to both these questions. We show that code is also veryrepetitive, and in fact even more so than natural languages. Asan example use of the model, we have developed a simple codecompletion engine for Java that, despite its simplicity, alreadyimproves Eclipse’s completion capability. We conclude the paper by laying out a vision for future research in this area.</p>
+</blockquote>
+<p>keywords:language models; n-gram; nature language processing; code completion; code suggestion</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
 ]]></content>
       <categories>
         <category>paper</category>
@@ -1114,6 +1114,26 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
     <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1154,15 +1174,44 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
+    <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-
+<p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
 </blockquote>
-<p>keywords:</p>
+<blockquote>
+<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
+</blockquote>
+<blockquote>
+<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
+</blockquote>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
+<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
+</blockquote>
+<blockquote>
+<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
+</blockquote>
+<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
@@ -1170,7 +1219,33 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Software Engineering Process</tag>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] AddressSanitizer: A fast address sanity checker</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Memory access bugs, including buffer overflows and uses of freed heap memory, remain a serious problem for programming languages like C and C++. Many memory error detectors exist, but most of them are either slow or detect a limited set of bugs, or both.</p>
+</blockquote>
+<blockquote>
+<p>This paper presents AddressSanitizer, a new memory error detector. Our tool finds out-of-bounds accesses to heap, stack, and global objects, as well as use-after-free bugs. It employs a specialized memory allocator and code instrumentation that is simple enough to be implemented in any compiler, binary translation system, or even in hardware.</p>
+</blockquote>
+<blockquote>
+<p>AddressSanitizer achieves efficiency without sacrificing comprehensiveness. Its average slowdown is just 73% yet it accurately detects bugs at the point of occurrence. It has found over 300 previously unknown bugs in the Chromium browser and many bugs in other software.</p>
+</blockquote>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>目前检测边界溢出和访问已释放问题的工具要么不够快要么开销太大（好简单粗暴</p>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -1219,26 +1294,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SME] A technique for cheap recovery</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [SME] Ten years of implementation and experience</title>
     <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1259,19 +1314,15 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
+    <title>[ISER] [SME] A technique for cheap recovery</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
+
 </blockquote>
-<blockquote>
-<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
-</blockquote>
-<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
+<p>keywords:</p>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
-<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
@@ -1279,32 +1330,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
-    <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>A major obstacle to finding program errors in a real system is knowing what correctness rules the system must obey. These rules are often undocumented or specified in an ad hoc manner. This paper demonstrates techniques that automatically extract such checking information from the source code itself, rather than the programmer, thereby avoiding the need for a priori knowledge of system rules.</p>
-</blockquote>
-<blockquote>
-<p>The cornerstone of our approach is inferring programmer "beliefs" that we then crosscheck for contra dictions. Beliefs are facts implied by code: a dereference of a pointer, p, implies a belief that p is nonnull, a call to "tmlock(1)" implies that 1 was locked, etc. For be liefs we know the programmer must hold, such as the pointer dereference above, we immediately flag contra dictions as errors. For beliefs that the programmer may hold, we can assume these beliefs hold and use a statistical analysis to rank the resulting errors from most to least likely. For example, a call to "spin_lock" followed once by a call to "spin_tmlock" implies that the programmer may have paired these calls by coincidence.</p>
-</blockquote>
-<blockquote>
-<p>If the pairing happens 999 out of 1000 times, though, then it is probably a valid belief and the sole deviation a probable error. The key feature of this approach is that it requires no a priori knowledge of truth: if two beliefs contradict, we know that one is an error without knowing what the correct belief is. Conceptually, our checkers extract beliefs by tailor ing rule "templates" to a system for example, finding all functions that fit the rule template "&lt;a&gt; must be paired with &lt; b&gt;." We have developed six checkers that follow this conceptual framework. They find hundreds of bugs in real systems such as Linux and OpenBSD. From our experience, they give a dramatic reduction in the manual effort needed to check a large system. Com pared to our previous work , these template checkers find ten to one hundred times more rule instances and derive properties we found impractical to specify manually.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
+        <tag>Software Maintence and Evolution</tag>
       </tags>
   </entry>
   <entry>
@@ -1324,32 +1350,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>文件系统中会有各种各样的机制来预防崩溃，而如果这些机制中也出现了bug，那会是十分严重的。但是目前已有的工作检测文件系统中的bug的方法还是非常的原始和低效的，因此就开发了一个新的工具（严重缺乏操作系统关于文件系统的知识，很多地方没看懂） ### Evalution</p>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [STA] AddressSanitizer: A fast address sanity checker</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Memory access bugs, including buffer overflows and uses of freed heap memory, remain a serious problem for programming languages like C and C++. Many memory error detectors exist, but most of them are either slow or detect a limited set of bugs, or both.</p>
-</blockquote>
-<blockquote>
-<p>This paper presents AddressSanitizer, a new memory error detector. Our tool finds out-of-bounds accesses to heap, stack, and global objects, as well as use-after-free bugs. It employs a specialized memory allocator and code instrumentation that is simple enough to be implemented in any compiler, binary translation system, or even in hardware.</p>
-</blockquote>
-<blockquote>
-<p>AddressSanitizer achieves efficiency without sacrificing comprehensiveness. Its average slowdown is just 73% yet it accurately detects bugs at the point of occurrence. It has found over 300 previously unknown bugs in the Chromium browser and many bugs in other software.</p>
-</blockquote>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>目前检测边界溢出和访问已释放问题的工具要么不够快要么开销太大（好简单粗暴</p>
-<h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
       <categories>
