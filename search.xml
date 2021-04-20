@@ -298,10 +298,43 @@
       </categories>
   </entry>
   <entry>
-    <title>Types and Programming Languages notes</title>
-    <url>/2020/09/25/lecture/fspl/tpl-notes/</url>
-    <content><![CDATA[<h2 id="ch3-untyped-arithmetic-expressions">ch3 Untyped Arithmetic Expressions</h2>
+    <title>[课堂笔记] 软件工程研究入门</title>
+    <url>/2020/09/18/lecture/iser/iser-notes/</url>
+    <content><![CDATA[<h3 id="conduct-rigorous-and-scientific-research">Conduct Rigorous And Scientific Research</h3>
+<h4 id="写作中的presentation">写作中的presentation</h4>
+<ul>
+<li>前后用词一致</li>
+<li>类似句子不要换用句式</li>
+<li>并排枚举的时候强制加上逗号</li>
+<li>宾语从句里面也不要省略that，例如Suppose that / We assume that</li>
+</ul>
+<h4 id="research-formulation">Research Formulation</h4>
+<p>整体上来说，做科研和写论文通常是一起进行的。</p>
+<p>关键概念：必须先定义再使用，用数学上可表达或者机器可执行的形式去定义 非关键概念：尽量把它扔掉 在同一篇论文中每个概念都需要一个很明确的指代，而不能经常变换</p>
+<p>Research Problem 需要有明确的定义的问题边界，不要over claim</p>
+<p>Motivating Example 找到一些有区分度的例子——已有工作在这个例子中不能做，而我们的工作可以做</p>
+<p>Inadequacy Of Related Work 只需要展示不同点，而不要去批判</p>
+<p>Insight 最重要的点，为什么我们的工作比相关工作做的更好</p>
+<h4 id="experimentation">Experimentation</h4>
+<p>Experimentation 和 Case Study的区别：实验环节是可以控制变量的，并且是在一个实验室的环境中。case study是无法控制变量的，是在实际生产环境中的结果</p>
+<h5 id="questions-and-subjects">Questions and Subjects</h5>
+<p>问题设置：在<strong><em>什么条件下</em></strong>通过<strong><em>什么途径</em></strong>在什么<strong><em>方面</em></strong>做得好 主体的选择是否具有代表性</p>
+<h5 id="experimentation-design">Experimentation Design</h5>
+<p>Variable Independent variables（factors） ： 类似与函数中的自变量 Dependent variables ：类似于函数中的应变量，是用于衡量实验结果的一些指标 Controlled variables ：由于难以控制因此一些被固定下来的值，但是这些值对实验不会产生决定性的影响</p>
+<h5 id="threats-to-validity">Threats to Validity</h5>
+<ul>
+<li>constuct validity</li>
+<li>internal validity</li>
+<li>external validity</li>
+<li>concluusion validity</li>
+</ul>
+<p>todo：看一下原文</p>
+<h5 id="exercise-and-discussion">Exercise and discussion</h5>
+<p>回答为什么这些threats会影响实验数据<strong><em>但是</em></strong>为什么不会影响结论的正确性</p>
 ]]></content>
+      <tags>
+        <tag>lecture notes</tag>
+      </tags>
   </entry>
   <entry>
     <title>[课堂笔记] 程序设计语言的形式语义</title>
@@ -354,43 +387,10 @@
       </tags>
   </entry>
   <entry>
-    <title>[课堂笔记] 软件工程研究入门</title>
-    <url>/2020/09/18/lecture/iser/iser-notes/</url>
-    <content><![CDATA[<h3 id="conduct-rigorous-and-scientific-research">Conduct Rigorous And Scientific Research</h3>
-<h4 id="写作中的presentation">写作中的presentation</h4>
-<ul>
-<li>前后用词一致</li>
-<li>类似句子不要换用句式</li>
-<li>并排枚举的时候强制加上逗号</li>
-<li>宾语从句里面也不要省略that，例如Suppose that / We assume that</li>
-</ul>
-<h4 id="research-formulation">Research Formulation</h4>
-<p>整体上来说，做科研和写论文通常是一起进行的。</p>
-<p>关键概念：必须先定义再使用，用数学上可表达或者机器可执行的形式去定义 非关键概念：尽量把它扔掉 在同一篇论文中每个概念都需要一个很明确的指代，而不能经常变换</p>
-<p>Research Problem 需要有明确的定义的问题边界，不要over claim</p>
-<p>Motivating Example 找到一些有区分度的例子——已有工作在这个例子中不能做，而我们的工作可以做</p>
-<p>Inadequacy Of Related Work 只需要展示不同点，而不要去批判</p>
-<p>Insight 最重要的点，为什么我们的工作比相关工作做的更好</p>
-<h4 id="experimentation">Experimentation</h4>
-<p>Experimentation 和 Case Study的区别：实验环节是可以控制变量的，并且是在一个实验室的环境中。case study是无法控制变量的，是在实际生产环境中的结果</p>
-<h5 id="questions-and-subjects">Questions and Subjects</h5>
-<p>问题设置：在<strong><em>什么条件下</em></strong>通过<strong><em>什么途径</em></strong>在什么<strong><em>方面</em></strong>做得好 主体的选择是否具有代表性</p>
-<h5 id="experimentation-design">Experimentation Design</h5>
-<p>Variable Independent variables（factors） ： 类似与函数中的自变量 Dependent variables ：类似于函数中的应变量，是用于衡量实验结果的一些指标 Controlled variables ：由于难以控制因此一些被固定下来的值，但是这些值对实验不会产生决定性的影响</p>
-<h5 id="threats-to-validity">Threats to Validity</h5>
-<ul>
-<li>constuct validity</li>
-<li>internal validity</li>
-<li>external validity</li>
-<li>concluusion validity</li>
-</ul>
-<p>todo：看一下原文</p>
-<h5 id="exercise-and-discussion">Exercise and discussion</h5>
-<p>回答为什么这些threats会影响实验数据<strong><em>但是</em></strong>为什么不会影响结论的正确性</p>
+    <title>Types and Programming Languages notes</title>
+    <url>/2020/09/25/lecture/fspl/tpl-notes/</url>
+    <content><![CDATA[<h2 id="ch3-untyped-arithmetic-expressions">ch3 Untyped Arithmetic Expressions</h2>
 ]]></content>
-      <tags>
-        <tag>lecture notes</tag>
-      </tags>
   </entry>
   <entry>
     <title>JVM习题</title>
@@ -940,102 +940,77 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
-    <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
+    <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
+    <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-<p>Models of programming and debugging suggest many causes of errors, and many classifications of error types exist. Yet, there has been no attempt to link causes of errors to these classifications, nor is there a common vocabulary for reasoning about such causal links. This makes it difficult to compare the abilities of programming styles, languages, and environments to prevent errors. To address this issue, this paper presents a model of programming errors based on past studies of errors. The model was evaluated with two observational of Alice, an event-based programming system, revealing that most errors were due to attentional and strategic problems in implementing algorithms, language constructs, and uses of libraries. In general, the model can support theoretical, design, and educational programming research.</p>
+<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
 </blockquote>
+<p>keywords: model-checking</p>
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
+<ol type="1">
+<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
+<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
+<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
+</ol>
 <h3 id="evalution">Evalution</h3>
+<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
+<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
 <h3 id="details">Details</h3>
+<h4 id="什么是model-checking">什么是model checking</h4>
+<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
+<h4 id="缩减状态空间">缩减状态空间</h4>
+<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
+<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
+<blockquote>
+<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
+</blockquote>
+<h4 id="优化探索策略">优化探索策略</h4>
+<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
+<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
+<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
+<h4 id="todo">todo</h4>
+<p>算法的直觉还是没能很好的get，再讨论一下</p>
 ]]></content>
       <categories>
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Software Engineering Process</tag>
+        <tag>Formal Methods</tag>
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [SEP] A study of developer work habits</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
+    <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
+    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
 <blockquote>
-
+<p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
 </blockquote>
 <p>keywords:</p>
 <h3 id="总体评价">总体评价</h3>
+<h4 id="contribution">Contribution</h4>
+<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
 <h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
+<ul>
+<li>以往工具在大型项目上表现不佳
+<ul>
+<li>路径爆炸</li>
+<li>与环境交互处理方式不当 ### Evalution</li>
+</ul></li>
+</ul>
 <h3 id="details">Details</h3>
+<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
+<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
+<h3 id="todo">todo</h3>
+<p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
 ]]></content>
       <categories>
         <category>paper</category>
       </categories>
       <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
-    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
-    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Engineering Process</tag>
+        <tag>Formal Methods</tag>
       </tags>
   </entry>
   <entry>
@@ -1080,80 +1055,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [FM] KLEE : Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs</title>
-    <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>We present a new symbolic execution tool, KLEE, capable of automatically generating tests that achievehigh coverage on a diverse set of complex andenvironmentally-intensive programs. We used KLEE tothoroughly check all 89 standalone programs in theGNU COREUTILS utility suite, which form the coreuser-level environment installed on millions of Unix systems, and arguably are the single most heavily tested setof open-source programs in existence. KLEE-generatedtests achieve high line coverage — on average over 90%per tool (median: over 94%) — and significantly beatthe coverage of the developers’ own hand-written testsuite. When we did the same for 75 equivalent tools inthe BUSYBOX embedded system suite, results were evenbetter, including 100% coverage on 31 of them.We also used KLEE as a bug finding tool, applying it to 452 applications (over 430K total lines of code), whereit found 56 serious bugs, including three in COREUTILSthat had been missed for over 15 years. Finally, we usedKLEE to crosscheck purportedly identical BUSYBOX andCOREUTILS utilities, finding functional correctness errors and a myriad of inconsistencies.</p>
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h4 id="contribution">Contribution</h4>
-<p>KLEE的优势： - 适用于大型项目 - 简洁的状态表示 - 启发式搜索算法获得高代码覆盖率 - 简洁直接的与环境交互的方法</p>
-<h3 id="motivation">Motivation</h3>
-<ul>
-<li>以往工具在大型项目上表现不佳
-<ul>
-<li>路径爆炸</li>
-<li>与环境交互处理方式不当 ### Evalution</li>
-</ul></li>
-</ul>
-<h3 id="details">Details</h3>
-<p>运行原理： KLEE的核心逻辑是一个解释器循环，它每次都选择一个state去执行并且把执行到的指令进行符号化，直到没有更多的state可以执行或者超过了规定的执行时间</p>
-<p>KLEE的设计 symbolic process(state) : register file, stack, heap, pc,path condition</p>
-<h3 id="todo">todo</h3>
-<p>Evalution部分还没有看，这部分实验很厉害，好好看一下</p>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [FM] Model Checking for Programming Languages using VeriSoft</title>
-    <url>/2020/07/19/paper/ISER/Formal%20Methods/fm-2/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Verication by state-space exploration, also often referred to as checking", is an eective methodfor analyzing the correctness of concurrent reactive systems (e.g., communication protocols). Unfortunately,existing model-checking techniques are restricted to theverication of properties of models, i.e., abstractions, ofconcurrent systems.In this paper, we discuss how model checking can beextended to deal directly with " descriptions ofconcurrent systems, e.g., implementations of communication protocols written in programming languages suchas C or C++. We then introduce a new search technique that is suitable for exploring the state spaces ofsuch systems. This algorithm has been implemented inVeriSoft, a tool for systematically exploring the statespaces of systems composed of several concurrent processes executing arbitrary C code. As an example ofapplication, we describe how VeriSoft successfully dis-covered an error in a 2500-line C program controllingrobots operating in an unpredictable environment.</p>
-</blockquote>
-<p>keywords: model-checking</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<ol type="1">
-<li>并发系统中非model-checking的方法找到难以检查或复现的error</li>
-<li>过去的一些工具都是建立在“系统的每一个状态都能够很容易的被一个唯一的标示符表示”的这一假设上。然而实际上，一个进程的状态是由它可以访问的并且可能会改变它本身的状态的数据组成的（简单点说例如寄存器和内存），这是不可能由一个简单的string来表示的，因此在执行中会遇到各种各样的问题</li>
-<li>原有方法的状态探索的策略会在面对状态空间膨胀时缺乏一个有效的机制能减少无效探索</li>
-</ol>
-<h3 id="evalution">Evalution</h3>
-<p>设计了一个叫做测试verisoft的工具测试了一个2500行的C程序。 主要检查四类问题：deadlock assertion divergence（某个visible operation超时） livelock（某个时刻资源必须大于n） 结果：成功的在几分钟内找到了29个transition的组合会导致divergence问题</p>
-<p>我认为Evaluation不是这篇文章最大的亮点，但是这个确实证明了文中提出的算法能够在一个复杂的由现代语言编写的中小型规模项目中work，并且时间是可以完全可以接受的（几分钟）</p>
-<h3 id="details">Details</h3>
-<h4 id="什么是model-checking">什么是model checking</h4>
-<p>model checking是一种用于验证并发系统正确性的方法（后来分布式系统也可以认为是一种并发系统），而广义上讲，所有通过自动化状态空间探索来验证程序的方法都被成为model checking。它使用一种modeling language来描述程序的状态空间，并以此为基础来检查一些特定的属性，例如死锁、assertion。model checking主要用于寻找难以检测和复现的error</p>
-<h4 id="缩减状态空间">缩减状态空间</h4>
-<p>step1 定义一系列的形式化的语义（具体见liquidtext笔记） step2 使用所有可达的的全局状态以及这些状态之间的transition来描述整个系统的行为，在这里就缩减了大量的无关状态。在一个全局状态上，要么blocking，要么就能够通过有限的进程内的执行达到下一个全局状态 step3 通过优化的算法来减少无效的状态访问</p>
-<p>理论依据（证明略） &gt; Consider a concurrent system as dened above, and let AG denote its state space. Then, all the dead locks that are reachable after the initialization of the system are global states, and are therefore in AG. Moreover, if there exists a state reachable after the initialization of the system where an assertion is violated, then there exists a global state in AG where the same assertion is violated.</p>
-<blockquote>
-<p>知乎上的一个解释 针对无死锁这个性质对程序做model checking。 那么它是怎么减少状态空间的大小的呢？ 无死锁这个性质显然针对的是多线程程序。 对于多线程程序，每个线程都有自己的局部状态(如local stack) 以及共享的全局状态(比如全局变量)。它们合并起来就是整个程序状态。 产生死锁就是指在某个程序状态上，每个线程的局部状态都不能再前进了。 设想一下，每个线程在执行指令的过程中要么改变的是自己的局部状态， 要么改变的是全局状态来和其它线程通信。我们把它们分别称作局部指令与全局指令。 两条全局指令之间的那些局部指令要么是有限的，要么会陷入某种等待。 所以当没有死锁的时候，即各个线程没有同时陷入等待的时候， 经过有限步局部指令，全局状态必然会因为全局指令的执行而不断改变。 反之，如果产生死锁，全局状态就不能再前进了。 因此，我们只要无视局部状态，仅观察全局状态能否前进就可以确定有没有死锁产生了。 程序的状态空间这样就被我们缩减到了全局状态空间</p>
-</blockquote>
-<h4 id="优化探索策略">优化探索策略</h4>
-<p>原来的探索策略 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize:Set is empty; H is empty;</span><br><span class="line">    add s0 to Set;</span><br><span class="line">Loop: <span class="keyword">while</span> Set != empty ; <span class="keyword">do</span> &#123;</span><br><span class="line">    take s out of Set;</span><br><span class="line">    <span class="keyword">if</span> s is NOT already in H then&#123;</span><br><span class="line">      enter s in H;</span><br><span class="line">      T = enabled(s);</span><br><span class="line">      <span class="keyword">for</span> all t in T <span class="keyword">do</span>&#123;</span><br><span class="line">        s<span class="number">&#x27;</span> = succ(s) after t;</span><br><span class="line">        add s<span class="number">&#x27;</span> to Set;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>问题1：状态表示过于简单；状态庞大且复杂难以存储 -&gt; 依然进行探索但是不存放状态，而是存放一个有上限的transion记录 问题2：会产生大量的重入 -&gt; 根据依赖关系选择transition，并且记录已经达到过的transition</p>
-<p>优化后的算法 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Initialize: Stack is empty;</span><br><span class="line">Search() &#123;</span><br><span class="line">    DFS(∅);</span><br><span class="line">  &#125;</span><br><span class="line">DFS(<span class="built_in">set</span>: Sleep) &#123;</span><br><span class="line">    T = Persistent Set()\Sleep;</span><br><span class="line">    <span class="keyword">while</span> T <span class="number">6</span>= ; <span class="keyword">do</span> &#123;</span><br><span class="line">      take t out of T ;</span><br><span class="line">      push (t) onto Stack;</span><br><span class="line">      Execute(t);</span><br><span class="line">      DFS(&#123;t<span class="number">&#x27;</span> ∈ Sleep | t<span class="number">&#x27;</span> <span class="keyword">and</span> t are independent&#125;);</span><br><span class="line">      pop t from Stack;</span><br><span class="line">      Undo(t);</span><br><span class="line">      Sleep = Sleep ∪ &#123;t&#125;;</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure> 理论依据（证明略） &gt; Consider a concurrent system as dened in Section 2, and let AG denote its state space. Assume AG is nite and acyclic. Then, al l the dead locks in AG are visited by Algorithm 2（上面的这个算法）. Moreover, if there exists a global state in AG where an assertion is violated, then there exists a global state visited by Algorithm 2 where the same assertion is violated.</p>
-<p>产生重入的两个原因 - From the initial state, the exploration of any interleaving of a single finite partial ordering of transitions of the system always leads to the same state.This state will thus be visited several times because of all these interleavings. - From the initial state, explorations of differentnite partial orderings of transitions may lead to the same state.</p>
-<h4 id="todo">todo</h4>
-<p>算法的直觉还是没能很好的get，再讨论一下</p>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Formal Methods</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [FM] Scalable multiline program patch synthesis via symbolic analysis</title>
     <url>/2020/07/25/paper/ISER/Formal%20Methods/fm-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1174,6 +1075,105 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [SEP] Development and evaluation of a model of programming errors</title>
+    <url>/2020/08/19/paper/ISER/Software%20Engineering%20Process/sep-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Models of programming and debugging suggest many causes of errors, and many classifications of error types exist. Yet, there has been no attempt to link causes of errors to these classifications, nor is there a common vocabulary for reasoning about such causal links. This makes it difficult to compare the abilities of programming styles, languages, and environments to prevent errors. To address this issue, this paper presents a model of programming errors based on past studies of errors. The model was evaluated with two observational of Alice, an event-based programming system, revealing that most errors were due to attentional and strategic problems in implementing algorithms, language constructs, and uses of libraries. In general, the model can support theoretical, design, and educational programming research.</p>
+</blockquote>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] A study of developer work habits</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-2/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] code2vec: Learning distributed representations of code</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-4/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] A Three-Year Participant Observation of Software Startup Software Evolution</title>
+    <url>/2020/08/27/paper/ISER/Software%20Engineering%20Process/sep-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [SEP] Automating string processing in spreadsheets using input-output examples</title>
+    <url>/2020/09/18/paper/ISER/Software%20Engineering%20Process/sep-5/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Engineering Process</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SME] Visualization of test information to assist fault localization</title>
     <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-1/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1184,26 +1184,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>人工定位bug是想当费事的事情，因此希望使用自动执行测试的办法在执行过程中使用不同的颜色以及颜色的不同深度来映射代码的可信程度，帮助用户来定位bug</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Maintence and Evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[ISER] [SME] A technique for cheap recovery</title>
-    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-
-</blockquote>
-<p>keywords:</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
 <h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
@@ -1239,6 +1219,26 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
+    <title>[ISER] [SME] A technique for cheap recovery</title>
+    <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-3/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+
+</blockquote>
+<p>keywords:</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<h3 id="evalution">Evalution</h3>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Maintence and Evolution</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[ISER] [SME] Ten years of implementation and experience</title>
     <url>/2020/09/18/paper/ISER/Software%20Maintenance%20and%20Evolution/sme-4/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1259,30 +1259,6 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
       </tags>
   </entry>
   <entry>
-    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
-    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
-    <content><![CDATA[<h3 id="abstract">Abstract</h3>
-<blockquote>
-<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
-</blockquote>
-<blockquote>
-<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
-</blockquote>
-<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
-<h3 id="总体评价">总体评价</h3>
-<h3 id="motivation">Motivation</h3>
-<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
-<h3 id="evalution">Evalution</h3>
-<h3 id="details">Details</h3>
-]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
-      <tags>
-        <tag>Software Testing and Analysis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[ISER] [STA] Bugs as deviant behavior: A general approach to inferring errors in systems code</title>
     <url>/2021/04/12/paper/ISER/Software%20Testing%20and%20Analysis/sta-2/</url>
     <content><![CDATA[<h3 id="abstract">Abstract</h3>
@@ -1298,6 +1274,30 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <h3 id="总体评价">总体评价</h3>
 <h3 id="motivation">Motivation</h3>
 <p>这篇文章基于的一个假设是人是很难寻找和归纳出对于一个程序什么是必须遵循的正确的法则，什么是应该遵循的法则。这并不是指人不能总结出一些法则，而是说在编码过程中很难强制机器去遵守。因此，希望能够自动提取出某段特定代码应该有什么样的约束，例如在使用指针的时候指针指向的对象必须非空，例如lock和unlock应该要成对出现。而在静态检查的过程中如果发现代码违背了这些最基本的一些应该遵守的法则，那么就认为是一个可能的错误。 ### Evalution</p>
+<h3 id="details">Details</h3>
+]]></content>
+      <categories>
+        <category>paper</category>
+      </categories>
+      <tags>
+        <tag>Software Testing and Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[ISER] [STA] Dynamically discovering likely program invariants to support program evolution</title>
+    <url>/2020/09/18/paper/ISER/Software%20Testing%20and%20Analysis/sta-1/</url>
+    <content><![CDATA[<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces.</p>
+</blockquote>
+<blockquote>
+<p>This article reports three results. First, it describes techniques for dynamically discovering invariants,along with an implementation, named Daikon, that embodies these techniques. Second, it reports on theapplication of Daikon to two sets of target programs. In programs from Gries's work on program derivation,the system rediscovered predened invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least forsmall programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues such asinvariant detection runtime and accuracy as functions of test suites and program points instrumented.</p>
+</blockquote>
+<p>keywords: Program invariants, formal specication, software evolution, dynamic analysis, execution traces, logical inference, pattern recognition</p>
+<h3 id="总体评价">总体评价</h3>
+<h3 id="motivation">Motivation</h3>
+<p>不变式在程序开发的过程中是十分重要的，它能够保证程序不会因为修改代码而破坏原有的代码正确性。但是大多数时候不变式都是非显式的，这篇文章就想通过追踪变量值的变化来动态的推导出不变式。</p>
+<h3 id="evalution">Evalution</h3>
 <h3 id="details">Details</h3>
 ]]></content>
       <categories>
@@ -1837,7 +1837,7 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <tbody>
 <tr class="odd">
 <td>GP 1.1 执行特定实践</td>
-<td><strong>执行过程域的特定实践，以开发工作产品并提供服务来达成过程域的特定目标。</strong></td>
+<td>执行过程域的特定实践，以开发工作产品并提供服务来达成过程域的特定目标。</td>
 </tr>
 </tbody>
 </table>
@@ -1855,43 +1855,43 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <tbody>
 <tr class="odd">
 <td>GP 2.1 建立组织级方针</td>
-<td><strong>建立并维护组织级方针，以计划并执行过程。</strong></td>
+<td>建立并维护组织级方针，以计划并执行过程。</td>
 </tr>
 <tr class="even">
 <td>GP 2.2 计划过程</td>
-<td><strong>建立并维护计划，以执行过程。</strong></td>
+<td>建立并维护计划，以执行过程。</td>
 </tr>
 <tr class="odd">
 <td>GP 2.3 提供资源</td>
-<td><strong>提供充分的资源，以执行过程、开发工作产品并提供过程的服务。</strong></td>
+<td>提供充分的资源，以执行过程、开发工作产品并提供过程的服务。</td>
 </tr>
 <tr class="even">
 <td>GP 2.4 分派职责</td>
-<td><strong>分派职责与职权，以执行过程、开发工作产品并提供过程的服务。</strong></td>
+<td>分派职责与职权，以执行过程、开发工作产品并提供过程的服务。</td>
 </tr>
 <tr class="odd">
 <td>GP 2.5 培训人员</td>
-<td><strong>必要时，培训过程的执行或支持人员。</strong></td>
+<td>必要时，培训过程的执行或支持人员。</td>
 </tr>
 <tr class="even">
 <td>GP 2.6 控制工作产品</td>
-<td><strong>将所选择的过程工作产品置于适当的控制级别。</strong></td>
+<td>将所选择的过程工作产品置于适当的控制级别。</td>
 </tr>
 <tr class="odd">
 <td>GP 2.7 识别相关干系人，并使之参与</td>
-<td><strong>识别过程的相关干系人，并使之按计划参与。</strong></td>
+<td>识别过程的相关干系人，并使之按计划参与。</td>
 </tr>
 <tr class="even">
 <td>GP 2.8 监督并控制过程</td>
-<td><strong>对照执行过程的计划，监督并控制过程，并采取适当的纠正措施。</strong></td>
+<td>对照执行过程的计划，监督并控制过程，并采取适当的纠正措施。</td>
 </tr>
 <tr class="odd">
 <td>GP 2.9 客观评价遵守程度</td>
-<td><strong>对照过程描述、标准与规程，对过程与所选工作产品的遵守程度进行客观评价，并处理不符合的情况。</strong></td>
+<td>对照过程描述、标准与规程，对过程与所选工作产品的遵守程度进行客观评价，并处理不符合的情况。</td>
 </tr>
 <tr class="even">
 <td>GP 2.10 与上级管理层一起进行状态评审</td>
-<td><strong>与上级管理层一起对过程的活动、状态与结果进行评审，并解决问题。</strong></td>
+<td>与上级管理层一起对过程的活动、状态与结果进行评审，并解决问题。</td>
 </tr>
 </tbody>
 </table>
@@ -1909,11 +1909,11 @@ D. 哈，你也发现其实啥也说明不了了吧？这是一道送分题，�
 <tbody>
 <tr class="odd">
 <td>GP 3.1 建立已定义的过程</td>
-<td><strong>建立并维护已定义过程的描述。</strong></td>
+<td>建立并维护已定义过程的描述。</td>
 </tr>
 <tr class="even">
 <td>GP 3.2 收集与过程相关的经验</td>
-<td><strong>收集源于过程的计划与执行的、与过程相关的经验，以支持组织过程与过程资产未来的使用与改进。</strong></td>
+<td>收集源于过程的计划与执行的、与过程相关的经验，以支持组织过程与过程资产未来的使用与改进。</td>
 </tr>
 </tbody>
 </table>
