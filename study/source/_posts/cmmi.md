@@ -65,22 +65,22 @@ description: 软件过程改进课堂笔记
 ## 过程改进
 1. 过程的定义
 
-> - **IEEE: Sequence of steps performed for a given purpose**
-- **PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a SP ecified end result**
-- **CMMI GLOSSARY: A set of interrelated activities, which transform inputs into outputs, to achieve a given purpose (These activities can be mapped to one or more practices in CMMI process areas to allow a model to be useful for process improvement and process appraisal.)**
+- IEEE: Sequence of steps performed for a given purpose
+- PALL: Logical organization of people, materials, energy, equipment, and procedures into work activities designed to produce a SP ecified end result
+- CMMI GLOSSARY: A set of interrelated activities, which transform inputs into outputs, to achieve a given purpose (These activities can be mapped to one or more practices in CMMI process areas to allow a model to be useful for process improvement and process appraisal.)
 
 
 <img src="https://mignuw-private-blog.oss-cn-shanghai.aliyuncs.com/img/20210413091924.png" width="60%"/>
 
 **如上图所示，将这三个重要方面结合到一起的是组织中所使用的过程。**
 
-1. **过程改进的好处**
+1. 过程改进的好处
 - 过程使您能够了解正在发生的事情。
 - 通过定义，测量和控制过程，改进将更加成功和持久。 
 - 成功引入适当的技术，技巧和工具的可能性增加。
 - 人们可以更加充分地发挥潜力，更加有效。
 
-3. **软件过程和生命周期模型的区别**
+2. 软件过程和生命周期模型的区别
 
 > 软件过程和生命周期模型的区别
 > 
@@ -91,7 +91,7 @@ description: 软件过程改进课堂笔记
 > 区别：1、生命周期模型是 对一个软件开发过程的人为划分.同样的软件开发过程, 因为目的不一样, 可能会被划分和 命名成不同的生命周期模型。反过来，同样的生命周期模型，可能软件过程完全不同 2、生命周期模型是软件开发过程的主框架, 是对软件开发过程的一种粗粒度划分。3、生命周期模型中往往只定义管理实践，不包括技术实践
 
 
-4. **软件项目管理和软件过程管理在管理对象、实现目标和参考模型三个角度的区别**
+3. 软件项目管理和软件过程管理在管理对象、实现目标和参考模型三个角度的区别
 
 > 软件项目管理是应用方法、工具、技术以及人员能力来完成软件项目，实现项目目标的过程，其管理的对象是各类软件项目。实现目标：成本、质量、工期（管理三大要素：目标、状态、纠偏）。
 > 
@@ -101,7 +101,7 @@ description: 软件过程改进课堂笔记
 > 
 > 参考模型：流水线设计管理。软件项目管理通常关注于一个项目，软件过程管理通常关注不止一个项目。软件项目管理（SCRUM,XP）类似于产品生产管理，软件过程管理（CMMI,SPICE）对应流水线的升级、建设、优化、维护、升级改造。软件过程管理参考模型 CMM/CMMI, SPICE 等软件过程改进参考模型 PDCA，IDEAL，软件过程管理与软件过程改进意思相近。
 
-5. 过程改进的底线
+4. 过程改进的底线
 - 过程改进必须要服务于商业目标，不能为了改进而改进。 
   - 比如为了一张证书而改进就是为了改进而改进。
   - 评估应该是改进的起点而不是终点。
