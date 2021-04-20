@@ -7,4 +7,4 @@ git add .
 git commit -m "update md"
 git push
 
-hexo d
+sudo hexo d
